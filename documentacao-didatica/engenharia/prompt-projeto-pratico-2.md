@@ -1,69 +1,31 @@
 # Projeto Prático 2 – Classificação de Conservantes com Perceptron Multicamadas (PMC)
 
+> **Notebooks de Resolução:**
+> - Parte 1 (Backpropagation Convencional vs. Momentum em NumPy): [`04_projeto2_pmc_conservantes_numpy.ipynb`](04_projeto2_pmc_conservantes_numpy.ipynb)
+> - Parte 2 (Comparativo Industrial Scikit-Learn & Keras): [`05_projeto2_comparacao_sklearn_keras.ipynb`](05_projeto2_comparacao_sklearn_keras.ipynb)
+
 ## Descrição do Problema
 
-Em um processo industrial de bebidas, deseja-se classificar o tipo de conservante (\(A\), \(B\) ou \(C\)) a ser aplicado com base em quatro variáveis reais:
+Em um processo industrial de bebidas, deseja-se classificar automaticamente o tipo de conservante (`A`, `B` ou `C`) a partir de quatro variáveis físico-químicas medidas em **148 ensaios de laboratório** ([`datasets/projeto-pratico-2.csv`](datasets/projeto-pratico-2.csv)):
+- $x_1$: teor de água
+- $x_2$: grau de acidez
+- $x_3$: temperatura
+- $x_4$: tensão interfacial
 
-- \(x_1\): teor de água  
-- \(x_2\): grau de acidez  
-- \(x_3\): temperatura  
-- \(x_4\): tensão interfacial  
+## Configuração da Rede e Codificação *One-Hot*
 
-Foram realizados **148 ensaios de laboratório**. A classificação será feita por uma rede **Perceptron Multicamadas (PMC)** com backpropagation.
+- **Topologia:** `4-15-3` (4 entradas, 15 neurônios ocultos, 3 neurônios de saída com ativação logística/sigmóide)
 
-## Configuração da Rede
+| Conservante | $d_1$ | $d_2$ | $d_3$ |
+| :---: | :---: | :---: | :---: |
+| **A** | `1` | `0` | `0` |
+| **B** | `0` | `1` | `0` |
+| **C** | `0` | `0` | `1` |
 
-- **Entradas:** \(x_1, x_2, x_3, x_4\) (4 neurônios de entrada)
-- **Camada oculta:** 15 neurônios
-- **Saída:** 3 neurônios (\(y_1, y_2, y_3\))
-- **Função de ativação:** Logística (sigmóide) para todos os neurônios
-- **Topologia:** 4-15-3
+## Atividades Implementadas
 
-### Codificação das Saídas
-
-| Conservante | \(y_1\) | \(y_2\) | \(y_3\) |
-|-------------|--------|--------|--------|
-| A           | 1      | 0      | 0      |
-| B           | 0      | 1      | 0      |
-| C           | 0      | 0      | 1      |
-
-## Atividades a Serem Implementadas
-
-### 1. Treinamento com Backpropagation Convencional
-
-- Inicialização aleatória dos pesos
-- Taxa de aprendizado \(\eta = 0,1\)
-- Precisão \(\varepsilon = 10^{-6}\) (erro quadrático médio)
-- Critério de parada: \(E_w \leq \varepsilon\) ou número máximo de épocas (ex: 5000)
-
-### 2. Treinamento com Backpropagation + Momentum
-
-- Mesma inicialização de pesos do item 1
-- Taxa de aprendizado \(\eta = 0,1\)
-- Fator de momentum \(\alpha = 0,9\)
-- Precisão \(\varepsilon = 10^{-6}\)
-
-### 3. Gráficos e Tempo de Processamento
-
-- Plotar o erro quadrático médio \(E_w\) por época para ambos os treinamentos
-- Os dois gráficos devem ser impressos na mesma página, não superpostos
-- Medir e exibir o tempo de processamento de cada treinamento
-
-### 4. Pós-processamento das Saídas
-
-Aplicar arredondamento simétrico:
-
-\[
-y_i^{pos} = \begin{cases} 
-1, & \text{se } y_i \geq 0.5 \\
-0, & \text{se } y_i < 0.5
-\end{cases}
-\]
-
-### 5. Validação com Conjunto de Teste
-
-Utilizar a o arquivo chamado **`conjunto-testes-projeto-pratico-2.csv`** na pasta datasets (18 amostras) para validar a rede. Calcular a **taxa de acertos (%)** comparando as saídas pós-processadas com os valores desejados (\(d_1, d_2, d_3\)).
-
-## Dados de Treinamento
-
-Os dados de treinamento estão em um arquivo chamado **`projeto-pratico-2.csv`** na pasta datasets contendo as **148 amostras** de ensaios de laboratório.
+1. **Treinamento 1 (Backpropagation Convencional):** $\eta = 0{,}1$, $\alpha = 0{,}0$, $\varepsilon = 10^{-6}$ (máx. `5000` épocas).
+2. **Treinamento 2 (Backpropagation + *Momentum*):** Mesmos pesos iniciais do Treinamento 1, $\eta = 0{,}1$, fator de *momentum* $\alpha = 0{,}9$, $\varepsilon = 10^{-6}$.
+3. **Gráficos e Tempo de CPU:** Comparação lado a lado (não superposta) da queda do $E_M$ e tempo de execução.
+4. **Pós-processamento Simétrico:** $y_i^{\text{pos}} = 1$ se $y_i \ge 0{,}5$, e $0$ caso contrário.
+5. **Validação Comparativa:** Avaliação de **ambos os modelos** sobre as 18 amostras inéditas de [`datasets/conjunto-testes-projeto-pratico-2.csv`](datasets/conjunto-testes-projeto-pratico-2.csv).
