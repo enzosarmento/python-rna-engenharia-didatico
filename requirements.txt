@@ -1,0 +1,25 @@
+# Dependências do Repositório Didático: Integração de RNAs à Engenharia (PID)
+# Compatível com Python 3.10, 3.11 e 3.12
+# Instalação recomendada (dentro de um ambiente virtual):
+#   pip install -r requirements.txt
+
+# Computação numérica e Álgebra Linear (vetores e matrizes)
+numpy>=1.26.0
+
+# Manipulação e limpeza de tabelas de dados (DataFrames e arquivos CSV)
+pandas>=2.1.0
+
+# Visualização científica de dados (gráficos 2D, 3D e estatísticos)
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Aprendizado de Máquina clássico e Redes Neurais industriais (Perceptron, MLP, StandardScaler)
+scikit-learn>=1.4.0
+
+# Deep Learning (Keras integrado ao TensorFlow para os comparativos avançados)
+tensorflow>=2.16.0
+
+# Ambiente interativo para abrir e executar os cadernos (.ipynb)
+jupyterlab>=4.1.0
+ipykernel>=6.29.0
+
