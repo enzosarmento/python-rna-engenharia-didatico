@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topologia de Rede Neural - Azul e Verde</title>
+<style>
+  /* Reset e estilo da página */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Container principal da rede */
+  .network-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Estilos aplicados aos círculos (neurônios azuis) */
+  .node-circle {
+    fill: url(#blueGradient);
+    stroke: #000;
+    stroke-width: 2.5;
+  }
+
+  /* Estilos aplicados aos quadrados (entradas verdes) */
+  .node-square {
+    fill: url(#greenGradient);
+    stroke: #000;
+    stroke-width: 1.5;
+  }
+
+  .line {
+    stroke: #000;
+    stroke-width: 1.5;
+    marker-end: url(#arrow); /* Adiciona a seta no final da linha */
+  }
+
+  .dotted-line {
+    stroke: #888;
+    stroke-width: 3;
+    stroke-dasharray: 4, 4; /* Cria o efeito de pontilhado */
+  }
+
+  .text-label {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    fill: #000;
+  }
+
+  .text-sub {
+    font-size: 12px;
+  }
+
+  .text-number {
+    font-size: 22px;
+    font-weight: bold;
+    fill: #000;
+    text-anchor: middle;       /* Centraliza o texto horizontalmente */
+    dominant-baseline: central; /* Centraliza o texto verticalmente */
+  }
+</style>
+</head>
+<body>
+
+<div class="network-container">
+  <svg width="600" height="350" viewBox="0 0 600 350">
+    <defs>
+      <radialGradient id="greenGradient" cx="35%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#e2f5e6"/> <stop offset="100%" stop-color="#9acfa5"/> </radialGradient>
+      
+      <radialGradient id="blueGradient" cx="35%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#7db9e8"/> <stop offset="100%" stop-color="#1e5799"/> </radialGradient>
+      
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#000" />
+      </marker>
+    </defs>
+
+    <line x1="111" y1="80" x2="261" y2="56" class="line" />
+    <line x1="111" y1="80" x2="264" y2="157" class="line" />
+    <line x1="111" y1="80" x2="274" y2="270" class="line" />
+
+    <line x1="111" y1="175" x2="267" y2="72" class="line" />
+    <line x1="111" y1="175" x2="260" y2="175" class="line" />
+    <line x1="111" y1="175" x2="267" y2="278" class="line" />
+
+    <line x1="111" y1="270" x2="274" y2="80" class="line" />
+    <line x1="111" y1="270" x2="264" y2="193" class="line" />
+    <line x1="111" y1="270" x2="261" y2="294" class="line" />
+
+    <line x1="332" y1="50" x2="468" y2="151" class="line" />
+    <line x1="332" y1="175" x2="460" y2="175" class="line" />
+    <line x1="332" y1="300" x2="468" y2="199" class="line" />
+
+    <line x1="532" y1="175" x2="570" y2="175" class="line" />
+
+    <line x1="300" y1="215" x2="300" y2="260" class="dotted-line" />
+
+    <rect x="95" y="72" width="16" height="16" class="node-square" />
+    <rect x="95" y="167" width="16" height="16" class="node-square" />
+    <rect x="95" y="262" width="16" height="16" class="node-square" />
+
+    <text x="85" y="86" class="text-label" text-anchor="end">x<tspan class="text-sub" dy="4">1</tspan></text>
+    <text x="85" y="181" class="text-label" text-anchor="end">x<tspan class="text-sub" dy="4">2</tspan></text>
+    <text x="85" y="276" class="text-label" text-anchor="end">x<tspan class="text-sub" dy="4">3</tspan></text>
+
+    <circle cx="300" cy="50" r="32" class="node-circle" />
+    <circle cx="300" cy="175" r="32" class="node-circle" />
+    <circle cx="300" cy="300" r="32" class="node-circle" />
+
+    <text x="300" y="50" class="text-number">1</text>
+    <text x="300" y="175" class="text-number">2</text>
+    <text x="300" y="300" class="text-number">10</text>
+
+    <circle cx="500" cy="175" r="32" class="node-circle" />
+    <text x="500" y="175" class="text-number">1</text>
+
+    <text x="580" y="180" class="text-label">y</text>
+
+  </svg>
+</div>
+
+</body>
+</html>
