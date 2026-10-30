@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portal didático aberto de Python, Ciência de Dados e Redes Neurais Artificiais para estudantes de Engenharia (PID/UESC)."/>
+  <title>Guia de Instalação Passo a Passo • PyEngenharia UESC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#ffdad6","on-tertiary-container":"#10b981","secondary-container":"#fd651e","on-primary-fixed":"#001c37","on-tertiary-fixed-variant":"#005236","surface-container-highest":"#e1e3e4","on-surface":"#191c1d","surface-dim":"#d9dadb","on-error":"#ffffff",secondary:"#a73a00","surface-tint":"#436084",primary:"#002444","tertiary-container":"#00422b","inverse-surface":"#2e3132","inverse-on-surface":"#f0f1f2","surface-container-lowest":"#ffffff","tertiary-fixed":"#6ffbbe","primary-fixed-dim":"#abc9f2","on-background":"#191c1d","secondary-fixed":"#ffdbce","surface-container-low":"#f3f4f5","primary-fixed":"#d2e4ff",outline:"#73777f","on-secondary":"#ffffff",error:"#ba1a1a",surface:"#f8f9fa","on-primary-fixed-variant":"#2a486b","secondary-fixed-dim":"#ffb599","surface-container-high":"#e7e8e9","inverse-primary":"#abc9f2",background:"#f8f9fa",tertiary:"#002a1a","on-surface-variant":"#43474e","surface-container":"#edeeef","on-secondary-fixed-variant":"#7f2b00","tertiary-fixed-dim":"#4edea3","on-error-container":"#93000a","on-tertiary-fixed":"#002113","on-primary-container":"#87a4cc","surface-variant":"#e1e3e4","on-secondary-fixed":"#370e00","outline-variant":"#c3c6cf","primary-container":"#1a3a5c","on-primary":"#ffffff","on-tertiary":"#ffffff","on-secondary-container":"#571a00","surface-bright":"#f8f9fa"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"2.5rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem",margin:"2rem",gutter:"1.5rem","gutter-mobile":"1rem"},fontFamily:{"display-lg-mobile":["Inter","sans-serif"],"body-md":["Inter","sans-serif"],"headline-md":["Inter","sans-serif"],"headline-lg":["Inter","sans-serif"],"display-lg":["Inter","sans-serif"],"label-md":["Inter","sans-serif"],"title-md":["Inter","sans-serif"],"body-lg":["Inter","sans-serif"],"code-inline":["JetBrains Mono","monospace"],"headline-lg-mobile":["Inter","sans-serif"],"code-block":["JetBrains Mono","monospace"],"headline-sm":["Inter","sans-serif"]},fontSize:{"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"title-md":["18px",{lineHeight:"26px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"code-inline":["13px",{lineHeight:"20px",fontWeight:"500"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"code-block":["13px",{lineHeight:"22px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <script src="assets/app.js" defer></script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface">
+  <!-- HEADER FIXO -->
+  <header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest border-b border-outline-variant/40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 w-full px-gutter-mobile lg:px-gutter flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm min-w-0 sm:min-w-[240px]">
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menu de navegação" class="lg:hidden p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center justify-center transition-colors" type="button">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+        <a class="flex items-center gap-2.5 min-w-0" href="index.html">
+          <svg class="h-9 w-9 shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="40" height="40" rx="9" fill="#002444"/>
+  <circle cx="11" cy="13" r="3" fill="#abc9f2"/>
+  <circle cx="11" cy="27" r="3" fill="#abc9f2"/>
+  <circle cx="21" cy="20" r="3.5" fill="#fd651e"/>
+  <circle cx="30" cy="20" r="3" fill="#10b981"/>
+  <path d="M13.5 14.5L18 18.2M13.5 25.5L18 21.8M24.5 20H27" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
+          <div class="flex flex-col min-w-0">
+            <span class="font-headline-sm text-title-md text-primary font-bold leading-tight truncate">PyEngenharia</span>
+            <span class="font-label-md text-label-md text-on-surface-variant leading-none truncate">UESC • Python &amp; RNAs</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Busca Global (Ctrl + K) -->
+      <div class="flex-1 max-w-xl hidden md:block relative">
+        <div class="relative flex items-center w-full">
+          <span class="material-symbols-outlined absolute left-3 text-outline text-[20px] pointer-events-none">search</span>
+          <input id="global-search-input" autocomplete="off" class="w-full h-[38px] pl-10 pr-20 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#1A3A5C] transition-all" placeholder="Pesquisar tópicos, notebooks ou termos... (ex: Pandas, Momentum, TDNN)" type="text"/>
+          <div class="absolute right-2 flex items-center gap-0.5 bg-surface-container-highest px-1.5 py-0.5 rounded text-outline font-code-inline text-[11px] pointer-events-none">
+            <span>Ctrl+K</span>
+          </div>
+        </div>
+        <div id="global-search-results" class="hidden absolute left-0 right-0 top-11 bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-xl overflow-hidden z-50"></div>
+      </div>
+
+      <!-- Links Superiores -->
+      <div class="flex items-center gap-space-md shrink-0">
+        <nav class="hidden xl:flex items-center gap-5">
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="index.html">Guia Principal</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="notebooks.html">Notebooks (22)</a>
+          <a class="text-primary font-semibold border-b-2 border-secondary pb-0.5 font-label-md text-label-md transition-colors" href="instalacao.html">Instalação</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="glossario.html">Glossário</a>
+        </nav>
+        <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm hover:bg-primary-container transition-colors" href="https://github.com/enzosarmento/python-rna-engenharia-didatico" rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[18px]">code</span>
+          <span class="hidden sm:inline">Ver no GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BACKDROP MOBILE -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black/40 z-40 hidden lg:hidden backdrop-blur-[1px]"></div>
+
+  <!-- SIDEBAR LATERAL (Drawer Mobile + Fixa Desktop >= lg) -->
+  <aside id="left-sidebar" class="fixed top-16 left-0 bottom-0 w-72 bg-surface-container-lowest z-40 flex flex-col border-r border-outline-variant/40 shadow-[1px_0_6px_rgba(0,0,0,0.04)] -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-out">
+    <div class="p-space-md overflow-y-auto flex-1">
+      <div class="flex items-center justify-between lg:hidden mb-space-sm pb-2 border-b border-surface-container">
+        <span class="font-title-md text-sm font-bold text-primary">Navegação do Curso</span>
+        <button id="mobile-close-btn" aria-label="Fechar menu" class="p-1 rounded text-outline hover:text-primary" type="button">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Páginas do Portal</div>
+      <nav class="flex flex-col gap-1 mb-space-lg">
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="index.html">
+          <span class="material-symbols-outlined text-[19px]">home</span>
+          <span>Guia Principal (README)</span>
+        </a>
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html">
+          <span class="material-symbols-outlined text-[19px]">terminal</span>
+          <span>Catálogo de Notebooks (22)</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-space-sm py-2 rounded-lg bg-primary-container text-on-primary font-semibold font-body-md text-body-md transition-colors shadow-sm" href="instalacao.html">
+          <span class="material-symbols-outlined text-[19px]">download_done</span>
+          <span>Instalação Passo a Passo</span>
+        </a>
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="glossario.html">
+          <span class="material-symbols-outlined text-[19px]">menu_book</span>
+          <span>Glossário de Engenharia</span>
+        </a>
+      </nav>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Capítulos do Guia</div>
+      <nav class="flex flex-col gap-0.5 mb-space-lg">
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="visao-geral" href="index.html#visao-geral">1. Visão Geral &amp; Metodologia</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="instalacao" href="index.html#instalacao">2. Instalação Rápida</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="estrutura" href="index.html#estrutura">3. Estrutura de Pastas</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="ordem-de-estudo" href="index.html#ordem-de-estudo">4. Ordem de Estudo (4 Etapas)</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="teoria-simplificada" href="index.html#teoria-simplificada">5. Teoria com Analogias</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="resultados" href="index.html#resultados">6. Resultados &amp; Gráficos</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="troubleshooting" href="index.html#troubleshooting">7. Troubleshooting (Erros)</a>
+      </nav>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Trilha Prática</div>
+      <nav class="flex flex-col gap-0.5">
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-base">Etapa 1 • Base Python &amp; RNAs</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-titanic">Etapa 2 • Laboratório Titanic</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-iris">Etapa 3 • Laboratório Íris</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-engenharia">Etapa 4 • Projetos Engenharia</a>
+      </nav>
+    </div>
+
+    <div class="p-space-md bg-surface-container-low border-t border-surface-container">
+      <div class="flex items-center justify-between text-outline font-label-md text-label-md">
+        <span>Programa PID • UESC</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-code-inline text-[11px]">22 .ipynb</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="lg:pl-72 flex flex-col min-h-screen">
+    <main class="flex-1 pt-16 w-full px-gutter-mobile lg:px-gutter py-space-lg bg-surface">
+      <div class="max-w-[1360px] mx-auto flex flex-col w-full">
+        
+<section class="w-full rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-md p-space-lg lg:p-space-xl mb-space-lg">
+  <span class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-md text-xs font-semibold">Guia Passo a Passo • Zero Absoluto</span>
+  <h1 class="font-display-lg text-display-lg-mobile lg:text-[36px] text-primary font-extrabold tracking-tight mt-3 mb-2">
+    Preparando sua Bancada Computacional
+  </h1>
+  <p class="text-on-surface-variant text-body-lg leading-relaxed max-w-3xl m-0">
+    Se você cursa Engenharia e <strong>nunca instalou Python nem abriu um terminal na vida</strong>, este guia foi escrito para você. Escolha <strong>apenas UMA</strong> das três opções abaixo conforme a sua rotina:
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md">
+    <a href="#opcao-anaconda" class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high border-l-4 border-on-tertiary-container transition-all flex flex-col gap-1">
+      <span class="text-xs font-bold text-tertiary uppercase">Opção 1 • Recomendada para Iniciantes</span>
+      <span class="font-title-md text-primary font-bold">Anaconda + JupyterLab</span>
+      <span class="text-xs text-on-surface-variant">Instalador visual completo que já traz Python, JupyterLab e pacotes científicos prontos.</span>
+    </a>
+    <a href="#opcao-vscode" class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high border-l-4 border-primary transition-all flex flex-col gap-1">
+      <span class="text-xs font-bold text-primary uppercase">Opção 2 • Leve e Profissional</span>
+      <span class="font-title-md text-primary font-bold">Python Oficial + VS Code (.venv)</span>
+      <span class="text-xs text-on-surface-variant">Ideal para quem prefere o editor Visual Studio Code com ambiente virtual isolado.</span>
+    </a>
+    <a href="#opcao-colab" class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high border-l-4 border-secondary transition-all flex flex-col gap-1">
+      <span class="text-xs font-bold text-secondary uppercase">Opção 3 • Zero Instalação</span>
+      <span class="font-title-md text-primary font-bold">Google Colab no Navegador</span>
+      <span class="text-xs text-on-surface-variant">Perfeito para computadores de laboratório sem permissão de administrador.</span>
+    </a>
+  </div>
+</section>
+
+<div class="flex flex-col gap-space-lg prose-body">
+  <!-- OPÇÃO 1 -->
+  <article id="opcao-anaconda" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">Opção 1: Anaconda + JupyterLab (Recomendada)</h2>
+      <span class="px-3 py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-md text-xs font-bold">Mais Simples</span>
+    </div>
+    <p class="text-on-surface leading-relaxed m-0">
+      O <strong>Anaconda</strong> é uma distribuição gratuita criada para cientistas e engenheiros. Ao instalá-lo, você recebe automaticamente o Python, o <strong>JupyterLab</strong> (interface onde abrimos os arquivos <span class="code-token">.ipynb</span>) e as principais bibliotecas matemáticas (<span class="code-token">numpy</span>, <span class="code-token">pandas</span>, <span class="code-token">matplotlib</span>, <span class="code-token">seaborn</span> e <span class="code-token">scikit-learn</span>).
+    </p>
+    <ol class="list-decimal pl-5 space-y-2 text-on-surface leading-relaxed">
+      <li><strong>Baixe e instale o Anaconda:</strong> acesse <a href="https://www.anaconda.com/download" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">anaconda.com/download</a> (clique em <em>Skip registration</em> se desejar), baixe o instalador para Windows, macOS ou Linux e mantenha as opções padrão (<em>Next → Agree → Just Me → Install</em>).</li>
+      <li><strong>Baixe este repositório:</strong> na página do <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">GitHub</a>, clique no botão verde <strong>&lt;&gt; Code → Download ZIP</strong> e extraia na sua pasta <span class="code-token">Documentos</span> (ou use <span class="code-token">git clone</span> abaixo).</li>
+      <li><strong>Instale o pacote complementar (<span class="code-token">tensorflow</span>) e abra o JupyterLab:</strong> abra o programa <strong>Anaconda Prompt</strong> no menu Iniciar (ou Terminal no Linux/macOS) e execute:</li>
+    </ol>
+    <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">Anaconda Prompt / Terminal</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Bash</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-anaconda-cmd" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="inst-anaconda-cmd">git clone https://github.com/enzosarmento/python-rna-engenharia-didatico.git
+cd python-rna-engenharia-didatico
+pip install -r requirements.txt
+jupyter lab</code></pre>
+  </div>
+</div>
+    <p class="text-sm text-on-surface-variant m-0">
+      Uma aba abrirá automaticamente no navegador! Na barra lateral esquerda do JupyterLab, dê duplo clique na pasta <span class="code-token">documentacao-didatica</span> e abra <span class="code-token">00_introducao_python_engenharia.ipynb</span>.
+    </p>
+  </article>
+
+  <!-- OPÇÃO 2 -->
+  <article id="opcao-vscode" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">Opção 2: Python Oficial + VS Code + Ambiente Virtual (venv)</h2>
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/requirements.txt" target="_blank" rel="noreferrer" class="text-xs font-code-inline text-primary underline">Ver requirements.txt ↗</a>
+    </div>
+    <ol class="list-decimal pl-5 space-y-2 text-on-surface leading-relaxed">
+      <li><strong>Instale o Python (3.10 a 3.12):</strong> baixe em <a href="https://www.python.org/downloads/" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">python.org/downloads</a>. <strong>Atenção no Windows:</strong> marque a caixa <span class="code-token">Add python.exe to PATH</span> na primeira tela antes de clicar em <em>Install Now</em>.</li>
+      <li><strong>Instale o VS Code:</strong> baixe em <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">code.visualstudio.com</a> e, na aba de Extensões, instale as extensões oficiais <strong>Python</strong> e <strong>Jupyter</strong> (Microsoft).</li>
+      <li><strong>Crie o ambiente virtual isolado (<span class="code-token">.venv</span>):</strong> abra a pasta do repositório no VS Code, abra o terminal integrado (<span class="code-token">Ctrl + '</span>) e execute:</li>
+    </ol>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+      <div>
+        <span class="font-label-md text-xs font-bold text-primary uppercase block mb-1">No Linux / macOS</span>
+        <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">Terminal Linux/macOS</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Bash</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-vs-linux" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="inst-vs-linux">python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt</code></pre>
+  </div>
+</div>
+      </div>
+      <div>
+        <span class="font-label-md text-xs font-bold text-primary uppercase block mb-1">No Windows (PowerShell)</span>
+        <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">PowerShell Windows</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">PowerShell</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-vs-win" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="inst-vs-win">python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install -r requirements.txt</code></pre>
+  </div>
+</div>
+      </div>
+    </div>
+    <p class="text-sm text-on-surface-variant m-0">
+      Ao abrir qualquer notebook <span class="code-token">.ipynb</span> no VS Code, clique em <strong>Select Kernel</strong> (canto superior direito) e selecione o ambiente <strong>.venv</strong>.
+    </p>
+  </article>
+
+  <!-- OPÇÃO 3 -->
+  <article id="opcao-colab" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">Opção 3: Google Colab (Sem Instalar Nada no Computador)</h2>
+      <span class="px-3 py-1 rounded-full bg-secondary-fixed text-secondary font-label-md text-xs font-bold">100% em Nuvem</span>
+    </div>
+    <p class="text-on-surface leading-relaxed m-0">
+      Na página <a href="notebooks.html" class="text-secondary font-semibold underline">Catálogo de Notebooks</a> deste site, cada um dos 22 cadernos possui um botão laranja <strong>Abrir no Colab</strong> que carrega o notebook diretamente nos servidores gratuitos do Google!
+    </p>
+    <div class="w-full bg-secondary-container/10 p-space-md rounded-xl border-l-4 border-secondary text-sm text-on-surface">
+      <strong class="text-secondary block mb-1">Dica crucial sobre os arquivos .CSV no Google Colab:</strong>
+      Quando você abre apenas um notebook isolado no Colab, as pastas <span class="code-token">arquivos-csv/</span> e <span class="code-token">datasets/</span> ainda não estão na máquina virtual do Google. Para trazer todas as pastas de dados automaticamente em 3 segundos, crie uma célula no topo do Colab e rode:
+    </div>
+    <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">Célula Inicial no Google Colab</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Colab Magic</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-colab-clone" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="inst-colab-clone">!git clone https://github.com/enzosarmento/python-rna-engenharia-didatico.git
+%cd python-rna-engenharia-didatico/documentacao-didatica</code></pre>
+  </div>
+</div>
+  </article>
+
+  <!-- COMO USAR O JUPYTER + TESTE DE 30s -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+    <article class="bg-surface-container-lowest rounded-2xl p-space-lg border border-outline-variant/40 shadow-md flex flex-col gap-3">
+      <h2 class="font-headline-sm text-headline-sm text-primary font-bold m-0">Como Operar um Notebook Jupyter (.ipynb)</h2>
+      <p class="text-sm text-on-surface leading-relaxed m-0">
+        Pense no Jupyter Notebook como um <strong>memorial de cálculo vivo</strong> que intercala células de texto (Markdown) e células de código (Python):
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-sm text-on-surface leading-relaxed m-0">
+        <li><strong>Executar uma célula:</strong> clique dentro do bloco de código e pressione <span class="code-token">Shift + Enter</span>.</li>
+        <li><strong>A ordem importa!</strong> As variáveis criadas na Célula 1 alimentam a Célula 2. Rodar uma célula do meio sem executar as anteriores gera <span class="code-token">NameError</span>.</li>
+        <li><strong>Reiniciar limpo:</strong> use o menu <span class="code-token">Kernel → Restart Kernel and Run All Cells</span> sempre que quiser reexecutar tudo do início em ordem garantida.</li>
+      </ul>
+    </article>
+
+    <article class="bg-surface-container-lowest rounded-2xl p-space-lg border border-outline-variant/40 shadow-md flex flex-col gap-3">
+      <h2 class="font-headline-sm text-headline-sm text-primary font-bold m-0">Teste de Verificação em 30 Segundos</h2>
+      <p class="text-sm text-on-surface leading-relaxed m-0">
+        Rode este trecho em uma célula para confirmar que todas as bibliotecas científicas estão prontas:
+      </p>
+      <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">teste_ambiente.py</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Python</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-verify-py" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="inst-verify-py">import numpy as np
+import pandas as pd
+import matplotlib
+import seaborn as sns
+import sklearn
+
+print(&quot;Ambiente configurado com sucesso!&quot;)
+print(&quot;NumPy:&quot;, np.__version__, &quot;| Pandas:&quot;, pd.__version__, &quot;| Scikit-Learn:&quot;, sklearn.__version__)</code></pre>
+  </div>
+</div>
+    </article>
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/40 shadow-[0_-1px_6px_rgba(0,0,0,0.02)] py-space-lg px-gutter-mobile lg:px-gutter mt-space-xl">
+      <div class="max-w-[1360px] mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <div class="flex flex-col gap-1 text-center md:text-left">
+          <span class="font-title-md text-title-md text-primary font-semibold">PyEngenharia UESC • Integração de RNAs à Engenharia</span>
+          <span class="font-body-md text-body-md text-on-surface-variant">Programa de Iniciação à Docência (PID) • Enzo Fernandes Sarmento</span>
+        </div>
+        <nav class="flex flex-wrap items-center justify-center gap-space-md">
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="index.html">Guia Principal</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="notebooks.html">22 Notebooks</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="instalacao.html">Instalação</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="glossario.html">Glossário</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="https://github.com/enzosarmento/python-rna-engenharia-didatico" rel="noreferrer" target="_blank">Repositório GitHub</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  
+</body>
+</html>

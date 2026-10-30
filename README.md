@@ -1,5 +1,7 @@
 # Integração de Redes Neurais Artificiais à Engenharia — Guia Didático Completo (PID)
 
+> 🌐 **Acesse o Portal Didático Online (GitHub Pages):** https://enzosarmento.github.io/python-rna-engenharia-didatico/
+>
 > **Público-alvo:** Estudantes de Engenharia (Química, Mecânica, Produção, Elétrica, Materiais, Controle e Automação) e Ciências Exatas que **nunca programaram em Python** e **nunca estudaram Redes Neurais Artificiais**, mas já dominam a base matemática da graduação (Cálculo, Álgebra Linear e Estatística Básica).
 
 ---
@@ -44,8 +46,8 @@ Os arquivos interativos deste curso possuem extensão `.ipynb` (*Jupyter Noteboo
 
 1. **Clone ou baixe este repositório** e entre na pasta raiz pelo terminal:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
-   cd rna-engenharia
+   git clone https://github.com/enzosarmento/python-rna-engenharia-didatico.git
+   cd python-rna-engenharia-didatico
    ```
 
 2. **Crie e ative um ambiente virtual isolado** (pasta local `.venv` que guarda as bibliotecas do projeto sem bagunçar o restante do seu computador):
@@ -84,6 +86,7 @@ rna-engenharia/
 ├── INSTALACAO.md                    # Passo a passo ilustrado (Anaconda, VS Code e Google Colab)
 ├── GLOSSARIO.md                     # Dicionário de termos técnicos traduzidos para Engenharia
 ├── requirements.txt                 # Lista padronizada de bibliotecas Python e suas versões
+├── docs/                            # Portal estático publicado no GitHub Pages (index, notebooks, instalação, glossário)
 │
 ├── documentacao-didatica/           # Núcleo didático principal (22 notebooks numerados)
 │   ├── 00_introducao_python_engenharia.ipynb

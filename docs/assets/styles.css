@@ -1,0 +1,95 @@
+/* Academic Tech Clean — Complemento ao Design System do Stitch */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.25rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #191c1d;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Modo de leitura ampliado (botão A+ da barra de leitura) */
+html.reader-lg body {
+  font-size: 16px;
+}
+html.reader-lg .prose-body {
+  font-size: 17px !important;
+  line-height: 1.75 !important;
+}
+
+/* Barras de rolagem discretas para código, tabelas e sidebar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.dark-scroll::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* Token inline fiel ao DESIGN.md */
+.code-token {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  font-weight: 500;
+  background-color: #eef2f6;
+  border: 1px solid #e2e8f0;
+  color: #1a3a5c;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Bloco matemático limpo e legível */
+.math-block {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #1a3a5c;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  color: #002444;
+  overflow-x: auto;
+}
+
+/* Destaque de link ativo na navegação lateral (drawer esquerda) */
+.sidebar-nav-link.active {
+  background-color: #f8fafc;
+  color: #1a3a5c;
+  font-weight: 600;
+  border-left: 3px solid #1a3a5c;
+}
+
+/* Destaque dinâmico de item ativo no card "Sumário Linear do Guia" */
+.module-item.active {
+  background-color: #1a3a5c !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 36, 68, 0.16);
+}
+.module-item.active .module-icon,
+.module-item.active .module-title {
+  color: #ffffff !important;
+}
+.module-item.active .module-badge {
+  color: #d2e4ff !important;
+}
+
+/* Transição suave do drawer mobile */
+.mobile-drawer-open {
+  transform: translateX(0) !important;
+}
+

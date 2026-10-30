@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portal didático aberto de Python, Ciência de Dados e Redes Neurais Artificiais para estudantes de Engenharia (PID/UESC)."/>
+  <title>PyEngenharia UESC • Guia Didático de Python e Redes Neurais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#ffdad6","on-tertiary-container":"#10b981","secondary-container":"#fd651e","on-primary-fixed":"#001c37","on-tertiary-fixed-variant":"#005236","surface-container-highest":"#e1e3e4","on-surface":"#191c1d","surface-dim":"#d9dadb","on-error":"#ffffff",secondary:"#a73a00","surface-tint":"#436084",primary:"#002444","tertiary-container":"#00422b","inverse-surface":"#2e3132","inverse-on-surface":"#f0f1f2","surface-container-lowest":"#ffffff","tertiary-fixed":"#6ffbbe","primary-fixed-dim":"#abc9f2","on-background":"#191c1d","secondary-fixed":"#ffdbce","surface-container-low":"#f3f4f5","primary-fixed":"#d2e4ff",outline:"#73777f","on-secondary":"#ffffff",error:"#ba1a1a",surface:"#f8f9fa","on-primary-fixed-variant":"#2a486b","secondary-fixed-dim":"#ffb599","surface-container-high":"#e7e8e9","inverse-primary":"#abc9f2",background:"#f8f9fa",tertiary:"#002a1a","on-surface-variant":"#43474e","surface-container":"#edeeef","on-secondary-fixed-variant":"#7f2b00","tertiary-fixed-dim":"#4edea3","on-error-container":"#93000a","on-tertiary-fixed":"#002113","on-primary-container":"#87a4cc","surface-variant":"#e1e3e4","on-secondary-fixed":"#370e00","outline-variant":"#c3c6cf","primary-container":"#1a3a5c","on-primary":"#ffffff","on-tertiary":"#ffffff","on-secondary-container":"#571a00","surface-bright":"#f8f9fa"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"2.5rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem",margin:"2rem",gutter:"1.5rem","gutter-mobile":"1rem"},fontFamily:{"display-lg-mobile":["Inter","sans-serif"],"body-md":["Inter","sans-serif"],"headline-md":["Inter","sans-serif"],"headline-lg":["Inter","sans-serif"],"display-lg":["Inter","sans-serif"],"label-md":["Inter","sans-serif"],"title-md":["Inter","sans-serif"],"body-lg":["Inter","sans-serif"],"code-inline":["JetBrains Mono","monospace"],"headline-lg-mobile":["Inter","sans-serif"],"code-block":["JetBrains Mono","monospace"],"headline-sm":["Inter","sans-serif"]},fontSize:{"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"title-md":["18px",{lineHeight:"26px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"code-inline":["13px",{lineHeight:"20px",fontWeight:"500"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"code-block":["13px",{lineHeight:"22px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <script src="assets/app.js" defer></script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface">
+  <!-- HEADER FIXO -->
+  <header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest border-b border-outline-variant/40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 w-full px-gutter-mobile lg:px-gutter flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm min-w-0 sm:min-w-[240px]">
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menu de navegação" class="lg:hidden p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center justify-center transition-colors" type="button">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+        <a class="flex items-center gap-2.5 min-w-0" href="index.html">
+          <svg class="h-9 w-9 shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="40" height="40" rx="9" fill="#002444"/>
+  <circle cx="11" cy="13" r="3" fill="#abc9f2"/>
+  <circle cx="11" cy="27" r="3" fill="#abc9f2"/>
+  <circle cx="21" cy="20" r="3.5" fill="#fd651e"/>
+  <circle cx="30" cy="20" r="3" fill="#10b981"/>
+  <path d="M13.5 14.5L18 18.2M13.5 25.5L18 21.8M24.5 20H27" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
+          <div class="flex flex-col min-w-0">
+            <span class="font-headline-sm text-title-md text-primary font-bold leading-tight truncate">PyEngenharia</span>
+            <span class="font-label-md text-label-md text-on-surface-variant leading-none truncate">UESC • Python &amp; RNAs</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Busca Global (Ctrl + K) -->
+      <div class="flex-1 max-w-xl hidden md:block relative">
+        <div class="relative flex items-center w-full">
+          <span class="material-symbols-outlined absolute left-3 text-outline text-[20px] pointer-events-none">search</span>
+          <input id="global-search-input" autocomplete="off" class="w-full h-[38px] pl-10 pr-20 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#1A3A5C] transition-all" placeholder="Pesquisar tópicos, notebooks ou termos... (ex: Pandas, Momentum, TDNN)" type="text"/>
+          <div class="absolute right-2 flex items-center gap-0.5 bg-surface-container-highest px-1.5 py-0.5 rounded text-outline font-code-inline text-[11px] pointer-events-none">
+            <span>Ctrl+K</span>
+          </div>
+        </div>
+        <div id="global-search-results" class="hidden absolute left-0 right-0 top-11 bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-xl overflow-hidden z-50"></div>
+      </div>
+
+      <!-- Links Superiores -->
+      <div class="flex items-center gap-space-md shrink-0">
+        <nav class="hidden xl:flex items-center gap-5">
+          <a class="text-primary font-semibold border-b-2 border-secondary pb-0.5 font-label-md text-label-md transition-colors" href="index.html">Guia Principal</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="notebooks.html">Notebooks (22)</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="instalacao.html">Instalação</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="glossario.html">Glossário</a>
+        </nav>
+        <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm hover:bg-primary-container transition-colors" href="https://github.com/enzosarmento/python-rna-engenharia-didatico" rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[18px]">code</span>
+          <span class="hidden sm:inline">Ver no GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BACKDROP MOBILE -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black/40 z-40 hidden lg:hidden backdrop-blur-[1px]"></div>
+
+  <!-- SIDEBAR LATERAL (Drawer Mobile + Fixa Desktop >= lg) -->
+  <aside id="left-sidebar" class="fixed top-16 left-0 bottom-0 w-72 bg-surface-container-lowest z-40 flex flex-col border-r border-outline-variant/40 shadow-[1px_0_6px_rgba(0,0,0,0.04)] -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-out">
+    <div class="p-space-md overflow-y-auto flex-1">
+      <div class="flex items-center justify-between lg:hidden mb-space-sm pb-2 border-b border-surface-container">
+        <span class="font-title-md text-sm font-bold text-primary">Navegação do Curso</span>
+        <button id="mobile-close-btn" aria-label="Fechar menu" class="p-1 rounded text-outline hover:text-primary" type="button">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Páginas do Portal</div>
+      <nav class="flex flex-col gap-1 mb-space-lg">
+        <a class="flex items-center gap-2.5 px-space-sm py-2 rounded-lg bg-primary-container text-on-primary font-semibold font-body-md text-body-md transition-colors shadow-sm" href="index.html">
+          <span class="material-symbols-outlined text-[19px]">home</span>
+          <span>Guia Principal (README)</span>
+        </a>
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html">
+          <span class="material-symbols-outlined text-[19px]">terminal</span>
+          <span>Catálogo de Notebooks (22)</span>
+        </a>
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="instalacao.html">
+          <span class="material-symbols-outlined text-[19px]">download_done</span>
+          <span>Instalação Passo a Passo</span>
+        </a>
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="glossario.html">
+          <span class="material-symbols-outlined text-[19px]">menu_book</span>
+          <span>Glossário de Engenharia</span>
+        </a>
+      </nav>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Capítulos do Guia</div>
+      <nav class="flex flex-col gap-0.5 mb-space-lg">
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="visao-geral" href="#visao-geral">1. Visão Geral &amp; Metodologia</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="instalacao" href="#instalacao">2. Instalação Rápida</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="estrutura" href="#estrutura">3. Estrutura de Pastas</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="ordem-de-estudo" href="#ordem-de-estudo">4. Ordem de Estudo (4 Etapas)</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="teoria-simplificada" href="#teoria-simplificada">5. Teoria com Analogias</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="resultados" href="#resultados">6. Resultados &amp; Gráficos</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="troubleshooting" href="#troubleshooting">7. Troubleshooting (Erros)</a>
+      </nav>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Trilha Prática</div>
+      <nav class="flex flex-col gap-0.5">
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-base">Etapa 1 • Base Python &amp; RNAs</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-titanic">Etapa 2 • Laboratório Titanic</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-iris">Etapa 3 • Laboratório Íris</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-engenharia">Etapa 4 • Projetos Engenharia</a>
+      </nav>
+    </div>
+
+    <div class="p-space-md bg-surface-container-low border-t border-surface-container">
+      <div class="flex items-center justify-between text-outline font-label-md text-label-md">
+        <span>Programa PID • UESC</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-code-inline text-[11px]">22 .ipynb</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="lg:pl-72 flex flex-col min-h-screen">
+    <main class="flex-1 pt-16 w-full px-gutter-mobile lg:px-gutter py-space-lg bg-surface">
+      <div class="max-w-[1360px] mx-auto flex flex-col w-full">
+        
+<!-- HERO SECTION (Inspirado no Stitch Academic Tech Clean) -->
+<section class="relative w-full rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-md overflow-hidden p-space-lg lg:p-space-xl mb-space-xl">
+  <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary-fixed opacity-40 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-secondary-fixed opacity-30 blur-2xl pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-4xl flex flex-col gap-space-md">
+    <div class="flex flex-wrap items-center gap-space-xs">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-md text-label-md">
+        <span class="material-symbols-outlined text-[16px]">school</span>
+        Programa de Iniciação à Docência • UESC
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
+        <span class="material-symbols-outlined text-[16px]">trending_up</span>
+        Zero Pré-requisito de Programação
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-secondary font-label-md text-label-md">
+        <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+        Python 3.10–3.12 • Local ou Google Colab
+      </span>
+    </div>
+
+    <h1 class="font-display-lg text-display-lg-mobile lg:text-[42px] text-primary tracking-tight font-extrabold leading-tight">
+      Integração de Redes Neurais Artificiais à Engenharia
+    </h1>
+
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+      Guia didático aberto desenvolvido para estudantes de Engenharia (Química, Mecânica, Produção, Elétrica, Materiais e Controle) que <strong>nunca programaram em Python</strong> e <strong>nunca estudaram Redes Neurais</strong>, conectando Cálculo e Álgebra Linear diretamente a aplicações físicas e industriais sem caixas-pretas.
+    </p>
+
+    <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+      <a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-secondary text-on-secondary font-title-md text-[16px] font-semibold hover:bg-on-secondary-container transition-all shadow-sm" href="#ordem-de-estudo">
+        <span>Começar Ordem de Estudo</span>
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      </a>
+      <a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-on-primary font-title-md text-[16px] font-semibold hover:bg-primary-container transition-all shadow-sm" href="notebooks.html">
+        <span class="material-symbols-outlined text-[20px]">terminal</span>
+        <span>Explorar 22 Notebooks (.ipynb)</span>
+      </a>
+      <a class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-surface-container text-primary font-title-md text-[15px] font-semibold hover:bg-surface-container-high transition-all" href="glossario.html">
+        <span class="material-symbols-outlined text-[20px]">menu_book</span>
+        <span>Glossário com Analogias</span>
+      </a>
+    </div>
+
+    <!-- Métricas Rápidas -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-md mt-space-xs">
+      <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[22px]">auto_stories</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm text-headline-sm text-primary leading-tight font-bold">22 Notebooks</span>
+          <span class="font-label-md text-label-md text-on-surface-variant truncate">Comentados linha a linha + gabarito</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[22px]">functions</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm text-headline-sm text-primary leading-tight font-bold">Caixa Aberta</span>
+          <span class="font-label-md text-label-md text-on-surface-variant truncate">NumPy puro → Scikit-Learn &amp; Keras</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[22px]">precision_manufacturing</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-headline-sm text-headline-sm text-primary leading-tight font-bold">5 Casos Reais</span>
+          <span class="font-label-md text-label-md text-on-surface-variant truncate">Óleo, RM, Conservantes, TDNN e 3D</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRID PRINCIPAL (12 COLUNAS DO STITCH) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+
+  <!-- COLUNA ESQUERDA (4 COLS - ÍNDICE INTERATIVO & CARDS DE APOIO) -->
+  <aside class="xl:col-span-4 min-w-0 flex flex-col gap-space-md w-full xl:sticky xl:top-20">
+    <div class="w-full bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-md flex flex-col gap-space-sm">
+      <div class="flex items-center justify-between pb-space-xs">
+        <div>
+          <h2 class="font-title-md text-title-md text-primary font-bold">Sumário Linear do Guia</h2>
+          <p class="font-label-md text-label-md text-on-surface-variant" data-progress-label>Progresso: 0 de 22 notebooks (0%)</p>
+        </div>
+        <span class="material-symbols-outlined text-outline">menu_book</span>
+      </div>
+
+      <!-- Barra de Progresso Sincronizada -->
+      <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+        <div class="bg-secondary-container h-full w-0 rounded-full transition-all duration-500" data-progress-bar></div>
+      </div>
+
+      <!-- Filtro Instantâneo -->
+      <div class="relative w-full my-space-xs">
+        <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">filter_list</span>
+        <input id="sidebar-search-input" class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/30 shadow-sm" placeholder="Filtrar seções (ex: Teoria, Erros)..." type="text"/>
+      </div>
+
+      <div class="hidden flex-col items-center justify-center p-space-md text-center bg-surface-container-low rounded-xl" id="sidebar-empty-state">
+        <span class="material-symbols-outlined text-outline text-[28px] mb-1">search_off</span>
+        <p class="font-title-md text-sm text-primary font-semibold">Nenhuma seção encontrada</p>
+        <p class="font-body-md text-xs text-on-surface-variant">Tente pesquisar por "Teoria", "Ordem" ou "Erros".</p>
+      </div>
+
+      <nav class="flex flex-col gap-1" id="module-list">
+        <a class="module-item active flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group" data-spy-target="visao-geral" data-title="1. Visão Geral Metodologia Caixa Aberta" href="#visao-geral">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="module-icon material-symbols-outlined text-primary text-[20px]">flag</span>
+            <span class="module-title font-body-md text-body-md text-on-surface group-hover:text-primary font-medium truncate">1. Visão Geral &amp; Metodologia</span>
+          </div>
+          <span class="module-badge font-label-md text-label-md text-outline shrink-0 ml-2">Cap. 1</span>
+        </a>
+        <a class="module-item flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group" data-spy-target="instalacao" data-title="2. Instalação Rápida Anaconda VS Code Colab" href="#instalacao">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="module-icon material-symbols-outlined text-primary text-[20px]">cloud_done</span>
+            <span class="module-title font-body-md text-body-md text-on-surface group-hover:text-primary font-medium truncate">2. Instalação Rápida</span>
+          </div>
+          <span class="module-badge font-label-md text-label-md text-outline shrink-0 ml-2">Cap. 2</span>
+        </a>
+        <a class="module-item flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group" data-spy-target="estrutura" data-title="3. Estrutura de Pastas Diretórios CSV" href="#estrutura">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="module-icon material-symbols-outlined text-primary text-[20px]">folder_open</span>
+            <span class="module-title font-body-md text-body-md text-on-surface group-hover:text-primary font-medium truncate">3. Estrutura de Pastas</span>
+          </div>
+          <span class="module-badge font-label-md text-label-md text-outline shrink-0 ml-2">Cap. 3</span>
+        </a>
+        <a class="module-item flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group" data-spy-target="ordem-de-estudo" data-title="4. Ordem de Estudo 4 Etapas Notebooks Titanic Iris Engenharia" href="#ordem-de-estudo">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="module-icon material-symbols-outlined text-primary text-[20px]">route</span>
+            <span class="module-title font-body-md text-body-md text-on-surface group-hover:text-primary font-medium truncate">4. Ordem de Estudo (4 Etapas)</span>
+          </div>
+          <span class="module-badge font-label-md text-label-md text-outline shrink-0 ml-2">22 Aulas</span>
+        </a>
+        <a class="module-item flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group" data-spy-target="teoria-simplificada" data-title="5. Teoria Simplificada Analogias Válvulas Pesos Bias Backpropagation Momentum TDNN" href="#teoria-simplificada">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="module-icon material-symbols-outlined text-primary text-[20px]">calculate</span>
+            <span class="module-title font-body-md text-body-md text-on-surface group-hover:text-primary font-medium truncate">5. Teoria com Analogias</span>
+          </div>
+          <span class="module-badge font-label-md text-label-md text-outline shrink-0 ml-2">Cap. 5</span>
+        </a>
+        <a class="module-item flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group" data-spy-target="resultados" data-title="6. Resultados Gráficos Óleo PMC Momentum Impressora 3D" href="#resultados">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="module-icon material-symbols-outlined text-primary text-[20px]">monitoring</span>
+            <span class="module-title font-body-md text-body-md text-on-surface group-hover:text-primary font-medium truncate">6. Resultados &amp; Visualizações</span>
+          </div>
+          <span class="module-badge font-label-md text-label-md text-outline shrink-0 ml-2">7 Plots</span>
+        </a>
+        <a class="module-item flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-container-low transition-colors group" data-spy-target="troubleshooting" data-title="7. Troubleshooting Solução de Erros Comuns" href="#troubleshooting">
+          <div class="flex items-center gap-2.5 min-w-0">
+            <span class="module-icon material-symbols-outlined text-primary text-[20px]">build_circle</span>
+            <span class="module-title font-body-md text-body-md text-on-surface group-hover:text-primary font-medium truncate">7. Troubleshooting (Erros)</span>
+          </div>
+          <span class="module-badge font-label-md text-label-md text-outline shrink-0 ml-2">Cap. 7</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Card do Responsável Acadêmico -->
+    <div class="w-full bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex items-center gap-3">
+      <div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0">
+        <span class="material-symbols-outlined text-[24px]">engineering</span>
+      </div>
+      <div class="flex flex-col min-w-0">
+        <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Desenvolvimento PID</span>
+        <span class="font-title-md text-[16px] text-primary font-bold truncate">Enzo Fernandes Sarmento</span>
+        <span class="font-label-md text-label-md text-outline">UESC • Dep. de Ciências Exatas</span>
+      </div>
+    </div>
+
+    <!-- Quick Action Card: Bases de Dados Reais -->
+    <div class="w-full bg-surface-container-low rounded-2xl p-space-md border border-outline-variant/40 flex flex-col gap-2">
+      <div class="flex items-center justify-between">
+        <span class="font-title-md text-[16px] text-primary font-bold">Bases Experimentais</span>
+        <span class="font-label-md text-label-md text-outline font-code-inline">24 arquivos .CSV</span>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant">
+        Acesse diretamente as tabelas limpas de destilação de óleo, ressonância magnética, conservantes, séries temporais e ensaios de tração 3D.
+      </p>
+      <div class="grid grid-cols-2 gap-2 mt-1">
+        <a class="py-2 px-3 rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://github.com/enzosarmento/python-rna-engenharia-didatico/tree/main/documentacao-didatica/arquivos-csv" rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[16px]">table_view</span>
+          <span>Aulas (.csv)</span>
+        </a>
+        <a class="py-2 px-3 rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://github.com/enzosarmento/python-rna-engenharia-didatico/tree/main/documentacao-didatica/engenharia/datasets" rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[16px]">science</span>
+          <span>Engenharia</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ÁREA DE LEITURA PRINCIPAL (8 COLS) -->
+  <div class="xl:col-span-8 min-w-0 flex flex-col gap-space-lg w-full prose-body">
+
+    <!-- SEÇÃO 1: VISÃO GERAL -->
+    <article id="visao-geral" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+      <div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs border-b border-surface-container">
+        <div class="flex items-center gap-2 font-label-md text-label-md text-outline">
+          <span>Guia Principal</span>
+          <span>›</span>
+          <span class="text-primary font-semibold">1. Visão Geral</span>
+        </div>
+        <div class="flex items-center gap-space-xs">
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container font-label-md text-label-md text-on-surface-variant">
+            <span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+            Leitura Guiada
+          </span>
+          <button class="toggle-font-btn p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Alternar tamanho do texto (A+)" type="button">
+            <span class="material-symbols-outlined text-[18px]">format_size</span>
+          </button>
+          <button class="share-page-btn p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Copiar link desta página" type="button">
+            <span class="material-symbols-outlined text-[18px]">share</span>
+          </button>
+        </div>
+      </div>
+
+      <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-extrabold tracking-tight">
+        1. Visão Geral: Da Matemática de Engenharia à IA Sem Caixas-Pretas
+      </h2>
+
+      <p class="leading-relaxed text-on-surface">
+        Este repositório foi desenvolvido no âmbito do <strong>Programa de Iniciação à Docência (PID)</strong> com uma missão clara: construir uma ponte direta entre a base matemática da graduação em Engenharia e a <strong>Inteligência Artificial aplicada a problemas físicos e industriais</strong>.
+      </p>
+
+      <p class="leading-relaxed text-on-surface">
+        Em cursos tradicionais de computação, redes neurais costumam ser apresentadas como comandos mágicos — você chama <span class="code-token">modelo.fit()</span> e recebe um número sem saber quais equações foram resolvidas. Aqui adotamos a metodologia dupla <strong>"Caixa Aberta → Ferramenta Industrial"</strong>:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+        <div class="p-space-md rounded-xl bg-surface-container-low border-l-4 border-primary flex flex-col gap-1.5">
+          <div class="flex items-center gap-2 text-primary font-bold font-title-md text-[16px]">
+            <span class="material-symbols-outlined text-[20px]">functions</span>
+            <span>Etapa A • Matemática Aberta (NumPy)</span>
+          </div>
+          <p class="text-on-surface-variant text-[13.5px] leading-relaxed m-0">
+            Implementamos cada algoritmo linha por linha usando operações matriciais explícitas em <span class="code-token">Python</span> e <span class="code-token">NumPy</span>, seguindo rigorosamente as equações e tabelas do livro-texto de <em>Silva, Spatti &amp; Flauzino</em>.
+          </p>
+        </div>
+        <div class="p-space-md rounded-xl bg-surface-container-low border-l-4 border-secondary flex flex-col gap-1.5">
+          <div class="flex items-center gap-2 text-secondary font-bold font-title-md text-[16px]">
+            <span class="material-symbols-outlined text-[20px]">bolt</span>
+            <span>Etapa B • Padrão Industrial (Sklearn/Keras)</span>
+          </div>
+          <p class="text-on-surface-variant text-[13.5px] leading-relaxed m-0">
+            Em seguida, resolvemos <strong>exatamente o mesmo problema de engenharia</strong> com <span class="code-token">Scikit-Learn</span> e <span class="code-token">TensorFlow/Keras</span>, comparando velocidade computacional, convergência e precisão em teste cego.
+          </p>
+        </div>
+      </div>
+
+      <!-- Callout Pedagógico -->
+      <div class="w-full bg-tertiary-container/10 p-space-md rounded-xl border-l-4 border-on-tertiary-container flex items-start gap-3">
+        <div class="w-8 h-8 rounded-lg bg-on-tertiary-container text-on-tertiary flex items-center justify-center shrink-0 mt-0.5">
+          <span class="material-symbols-outlined text-[20px]">check_circle</span>
+        </div>
+        <div class="flex flex-col gap-1">
+          <span class="font-title-md text-[16px] text-tertiary font-bold">Diferenciais Pedagógicos deste Material</span>
+          <ul class="list-disc pl-5 text-on-surface space-y-1 text-[13.8px] leading-relaxed m-0">
+            <li><strong>Zero pré-requisito de Python:</strong> o módulo <span class="code-token">00</span> ensina variáveis, listas, laços <span class="code-token">for</span> e funções usando Lei de Ohm, pressão manométrica e deformação mecânica.</li>
+            <li><strong>Código comentado linha a linha:</strong> todos os 22 notebooks explicam o conceito antes, comentam cada linha relevante em português e discutem o significado físico logo após.</li>
+            <li><strong>Analogias de Engenharia:</strong> cada jargão de IA é traduzido na mesma frase para sistemas reais (válvulas de controle, calibração de sensores, adimensionalização e inércia mecânica).</li>
+            <li><strong>Prática ativa com gabarito oculto:</strong> exercícios ao final de todos os notebooks com soluções comentadas recolhidas em blocos expansíveis (<span class="code-token">&lt;details&gt;</span>).</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEÇÃO 2: INSTALAÇÃO -->
+    <article id="instalacao" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-extrabold tracking-tight">
+          2. Instalação Rápida do Ambiente
+        </h2>
+        <a href="instalacao.html" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary-fixed/60 hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md font-semibold transition-colors">
+          <span class="material-symbols-outlined text-[17px]">help</span>
+          <span>Ver Guia Ilustrado do Zero Absoluto</span>
+        </a>
+      </div>
+
+      <p class="leading-relaxed text-on-surface">
+        Os cadernos interativos possuem extensão <span class="code-token">.ipynb</span> (<em>Jupyter Notebooks</em> — documentos que unem explicações teóricas, equações e blocos executáveis de código Python). Se você <strong>nunca instalou Python, Anaconda ou VS Code</strong>, acesse a página dedicada de <a href="instalacao.html" class="text-secondary font-semibold underline">Instalação Passo a Passo</a> (que inclui também como rodar tudo direto no navegador via <strong>Google Colab</strong> sem instalar nada!).
+      </p>
+
+      <p class="font-semibold text-primary m-0">Resumo rápido no terminal (Linux / macOS):</p>
+      <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">terminal — Linux / macOS</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Bash</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="cmd-install-linux" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="cmd-install-linux">git clone https://github.com/enzosarmento/python-rna-engenharia-didatico.git
+cd python-rna-engenharia-didatico
+
+# Crie e ative um ambiente virtual isolado (Linux / macOS)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Instale as bibliotecas científicas e inicie o JupyterLab
+pip install --upgrade pip
+pip install -r requirements.txt
+jupyter lab</code></pre>
+  </div>
+</div>
+
+      <p class="font-semibold text-primary m-0">Resumo rápido no Windows (PowerShell):</p>
+      <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">terminal — Windows PowerShell</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">PowerShell</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="cmd-install-win" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="cmd-install-win">git clone https://github.com/enzosarmento/python-rna-engenharia-didatico.git
+cd python-rna-engenharia-didatico
+
+# Crie e ative um ambiente virtual isolado (Windows PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+pip install --upgrade pip
+pip install -r requirements.txt
+jupyter lab</code></pre>
+  </div>
+</div>
+    </article>
+
+    <!-- SEÇÃO 3: ESTRUTURA DE PASTAS -->
+    <article id="estrutura" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+      <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-extrabold tracking-tight">
+        3. Estrutura Modular de Pastas
+      </h2>
+      <p class="leading-relaxed text-on-surface">
+        O repositório separa de forma limpa a <strong>trilha teórica fundamental</strong>, os <strong>laboratórios guiados de dados</strong> (<span class="code-token">titanic/</span> e <span class="code-token">iris/</span>) e os <strong>projetos aplicados de Engenharia</strong> (<span class="code-token">engenharia/</span>):
+      </p>
+      <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">Estrutura do Repositório</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Directory Tree</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="repo-tree-code" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="repo-tree-code">rna-engenharia/
+├── README.md                        # Guia enciclopédico principal
+├── INSTALACAO.md                    # Passo a passo (Anaconda, VS Code e Google Colab)
+├── GLOSSARIO.md                     # Dicionário técnico traduzido para Engenharia
+├── requirements.txt                 # Lista padronizada de bibliotecas Python
+├── docs/                            # Portal estático publicado no GitHub Pages
+│
+├── documentacao-didatica/           # Núcleo didático principal (22 notebooks numerados)
+│   ├── 00_introducao_python_engenharia.ipynb
+│   ├── 01_numpy_vetores_e_matrizes.ipynb
+│   ├── 02_pandas_exploracao_e_agrupamento.ipynb
+│   ├── 03_pandas_limpeza_dados_reais.ipynb
+│   ├── 04_visualizacao_dados.ipynb
+│   ├── 05_perceptron_teoria_e_pratica.ipynb
+│   ├── 06_pmc_e_backpropagation.ipynb
+│   ├── arquivos-csv/                # Bases tabulares (.csv) das aulas e desafios
+│   ├── imagens/                     # Diagramas de topologia e gráficos dos resultados
+│   ├── titanic/                     # Laboratório Guiado 1: Dados reais com ruído (01 a 05)
+│   ├── iris/                        # Laboratório Guiado 2: Multiclasse 3 espécies (01 e 02)
+│   └── engenharia/                  # 5 Projetos Aplicados (Óleo, RM, Conservantes, TDNN, 3D)
+│       ├── 01_classificacao_oleo_perceptron.ipynb
+│       ├── 02_projeto1_pmc_regressao_numpy.ipynb
+│       ├── 03_projeto1_comparacao_sklearn_keras.ipynb
+│       ├── 04_projeto2_pmc_conservantes_numpy.ipynb
+│       ├── 05_projeto2_comparacao_sklearn_keras.ipynb
+│       ├── 06_projeto3_series_temporais_pmc.ipynb
+│       ├── datasets/                # Tabelas experimentais de treino e validação cega
+│       └── impressora-3d/           # Manufatura Aditiva FDM (01, 02 e printer_dataset.py)
+│
+└── livro-base/                      # Referência bibliográfica (Silva, Spatti &amp; Flauzino)</code></pre>
+  </div>
+</div>
+    </article>
+
+    <!-- SEÇÃO 4: ORDEM DE ESTUDO -->
+    <article id="ordem-de-estudo" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Trilha Sequencial Recomendada</span>
+          <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-extrabold tracking-tight">
+            4. Ordem de Estudo (As 4 Etapas Lineares)
+          </h2>
+        </div>
+        <a href="notebooks.html" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-on-secondary-container transition-colors shadow-sm">
+          <span class="material-symbols-outlined text-[18px]">checklist</span>
+          <span>Marcar Progresso nos 22 Notebooks</span>
+        </a>
+      </div>
+
+      <p class="leading-relaxed text-on-surface">
+        Para absorver 100% dos conceitos sem lacunas matemáticas ou de programação, siga as <strong>4 Etapas Lineares</strong> abaixo na ordem numérica. Clique em <strong>GitHub</strong> para ler o caderno renderizado ou em <strong>Colab</strong> para executá-lo imediatamente na nuvem.
+      </p>
+
+      <!-- ETAPA 1 -->
+      <div class="flex flex-col gap-2 pt-2">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded bg-primary text-on-primary font-label-md text-xs font-bold">ETAPA 1</span>
+          <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Fundamentos de Programação, Dados e Redes Neurais (Base Obrigatória)</h3>
+        </div>
+        <div class="w-full overflow-x-auto rounded-xl border border-outline-variant/40 bg-surface-container-lowest">
+          <table class="w-full text-left font-body-md text-body-md">
+            <thead class="bg-surface-container-high text-primary font-semibold text-xs uppercase tracking-wider">
+              <tr>
+                <th class="p-3 w-14 text-center">Ord.</th>
+                <th class="p-3">Notebook &amp; Conteúdo Essencial</th>
+                <th class="p-3 w-44">Acesso Rápido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-surface-container last:border-b-0 hover:bg-surface-container-low/70 transition-colors">
+      <td class="p-3 font-code-inline text-primary font-bold text-center">00</td>
+      <td class="p-3">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all">00_introducao_python_engenharia.ipynb</div>
+        <p class="text-on-surface-variant text-[13.5px] mt-1 leading-relaxed">Células do Jupyter, variáveis, listas, dicionários, condicionais if/else, laços for, funções def e classes aplicadas a fórmulas de Engenharia.</p>
+      </td>
+      <td class="p-3 align-middle"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/00_introducao_python_engenharia.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/00_introducao_python_engenharia.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></td>
+    </tr>
+<tr class="border-b border-surface-container last:border-b-0 hover:bg-surface-container-low/70 transition-colors">
+      <td class="p-3 font-code-inline text-primary font-bold text-center">01</td>
+      <td class="p-3">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all">01_numpy_vetores_e_matrizes.ipynb</div>
+        <p class="text-on-surface-variant text-[13.5px] mt-1 leading-relaxed">Vetores e matrizes (ndarray) no NumPy, broadcasting (cálculo vetorial sem laço for) e sistemas lineares Ax = b em malhas elétricas e treliças.</p>
+      </td>
+      <td class="p-3 align-middle"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/01_numpy_vetores_e_matrizes.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/01_numpy_vetores_e_matrizes.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></td>
+    </tr>
+<tr class="border-b border-surface-container last:border-b-0 hover:bg-surface-container-low/70 transition-colors">
+      <td class="p-3 font-code-inline text-primary font-bold text-center">02</td>
+      <td class="p-3">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all">02_pandas_exploracao_e_agrupamento.ipynb</div>
+        <p class="text-on-surface-variant text-[13.5px] mt-1 leading-relaxed">Leitura de tabelas .csv em DataFrames, inspeção estatística (head, info, describe), filtros booleanos e agrupamentos (groupby).</p>
+      </td>
+      <td class="p-3 align-middle"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/02_pandas_exploracao_e_agrupamento.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/02_pandas_exploracao_e_agrupamento.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></td>
+    </tr>
+<tr class="border-b border-surface-container last:border-b-0 hover:bg-surface-container-low/70 transition-colors">
+      <td class="p-3 font-code-inline text-primary font-bold text-center">03</td>
+      <td class="p-3">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all">03_pandas_limpeza_dados_reais.ipynb</div>
+        <p class="text-on-surface-variant text-[13.5px] mt-1 leading-relaxed">Tratamento de falhas de sensores (NaN — dados ausentes), imputação por média/mediana/moda, conversão de tipos e One-Hot Encoding.</p>
+      </td>
+      <td class="p-3 align-middle"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/03_pandas_limpeza_dados_reais.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/03_pandas_limpeza_dados_reais.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></td>
+    </tr>
+<tr class="border-b border-surface-container last:border-b-0 hover:bg-surface-container-low/70 transition-colors">
+      <td class="p-3 font-code-inline text-primary font-bold text-center">04</td>
+      <td class="p-3">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all">04_visualizacao_dados.ipynb</div>
+        <p class="text-on-surface-variant text-[13.5px] mt-1 leading-relaxed">Anatomia de gráficos científicos (Figure e Axes no Matplotlib/Seaborn), histogramas, boxplots para outliers e mapas de calor de correlação.</p>
+      </td>
+      <td class="p-3 align-middle"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/04_visualizacao_dados.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/04_visualizacao_dados.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></td>
+    </tr>
+<tr class="border-b border-surface-container last:border-b-0 hover:bg-surface-container-low/70 transition-colors">
+      <td class="p-3 font-code-inline text-primary font-bold text-center">05</td>
+      <td class="p-3">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all">05_perceptron_teoria_e_pratica.ipynb</div>
+        <p class="text-on-surface-variant text-[13.5px] mt-1 leading-relaxed">Neurônio de Rosenblatt: soma ponderada, pesos, viés (bias), função degrau, fronteira linear nas portas AND/OR e o limite geométrico do XOR.</p>
+      </td>
+      <td class="p-3 align-middle"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/05_perceptron_teoria_e_pratica.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/05_perceptron_teoria_e_pratica.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></td>
+    </tr>
+<tr class="border-b border-surface-container last:border-b-0 hover:bg-surface-container-low/70 transition-colors">
+      <td class="p-3 font-code-inline text-primary font-bold text-center">06</td>
+      <td class="p-3">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all">06_pmc_e_backpropagation.ipynb</div>
+        <p class="text-on-surface-variant text-[13.5px] mt-1 leading-relaxed">Perceptron Multicamadas (PMC/MLP), funções diferenciáveis (Sigmóide e ReLU), Gradiente Descendente e Backpropagation resolvendo o XOR do zero.</p>
+      </td>
+      <td class="p-3 align-middle"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/06_pmc_e_backpropagation.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/06_pmc_e_backpropagation.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></td>
+    </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ETAPAS 2 e 3 LADO A LADO -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md pt-2">
+        <!-- Etapa 2: Titanic -->
+        <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-3 min-w-0 overflow-hidden">
+          <div class="flex items-center justify-between gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-primary-container text-on-primary font-label-md text-xs font-bold">ETAPA 2 • 5 Notebooks</span>
+            <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/README.md" target="_blank" rel="noreferrer" class="text-xs font-semibold text-primary hover:underline shrink-0">README Titanic ↗</a>
+          </div>
+          <h3 class="font-title-md text-title-md text-primary font-bold m-0">Laboratório Guiado 1: Dados Reais Imperfeitos (Titanic)</h3>
+          <p class="text-[13.5px] text-on-surface-variant leading-relaxed m-0">
+            Prática intensiva de estatística vetorial, limpeza sem <strong>vazamento de dados</strong> (<em>Data Leakage</em>) e comparação Perceptron vs. MLP em dados ruidosos:
+          </p>
+          <div class="flex flex-col gap-2 text-[13px] min-w-0">
+            <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">01_exercicio_numpy.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Estatística vetorial e máscaras booleanas em idades</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/01_exercicio_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/01_exercicio_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+            <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">02_exercicio_pandas.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Taxas de sobrevivência por classe e exportação CSV</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/02_exercicio_pandas.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/02_exercicio_pandas.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+            <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">03_exercicio_visualizacao.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Gráficos diagnósticos multivariados sem outliers</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/03_exercicio_visualizacao.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/03_exercicio_visualizacao.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+            <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">04_desafio_titanic_parte1_perceptron.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Pré-processamento sem Data Leakage + Perceptron</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/04_desafio_titanic_parte1_perceptron.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/04_desafio_titanic_parte1_perceptron.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+            <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">05_desafio_titanic_parte2_mlp.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Rede multicamadas (MLP) em Python puro e Sklearn</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/05_desafio_titanic_parte2_mlp.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/titanic/05_desafio_titanic_parte2_mlp.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+          </div>
+        </div>
+
+        <!-- Etapa 3: Íris -->
+        <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-3 justify-between min-w-0 overflow-hidden">
+          <div class="flex flex-col gap-3 min-w-0">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded bg-tertiary-container text-on-tertiary font-label-md text-xs font-bold">ETAPA 3 • 2 Notebooks</span>
+              <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/iris/README.md" target="_blank" rel="noreferrer" class="text-xs font-semibold text-primary hover:underline shrink-0">README Íris ↗</a>
+            </div>
+            <h3 class="font-title-md text-title-md text-primary font-bold m-0">Laboratório Guiado 2: Classificação Multiclasse (Flor de Íris)</h3>
+            <p class="text-[13.5px] text-on-surface-variant leading-relaxed m-0">
+              Como decidir quando existem <strong>3 ou mais categorias simultâneas</strong>? Comparamos a abordagem linear <em>One-vs-Rest</em> (um neurônio especialista por espécie) contra uma rede PMC com saída vetorial <em>One-Hot</em> e probabilidades <span class="code-token">Softmax</span> (que somam 100%).
+            </p>
+            <div class="flex flex-col gap-2 text-[13px] min-w-0">
+              <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">01_desafio_iris_parte1_perceptron.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Estratégia One-vs-Rest e limite na fronteira curva</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/iris/01_desafio_iris_parte1_perceptron.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/iris/01_desafio_iris_parte1_perceptron.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+              <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">02_desafio_iris_parte2_mlp.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Saída One-Hot ([1,0,0]) + Softmax em Python puro e Sklearn</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/iris/02_desafio_iris_parte2_mlp.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/iris/02_desafio_iris_parte2_mlp.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-lg bg-surface-container-lowest border border-outline-variant/40 text-xs text-on-surface-variant leading-relaxed">
+            <strong class="text-primary">Por que estudar Íris antes de Engenharia?</strong> A arquitetura multiclasse <em>One-Hot</em> dominada aqui é exatamente a base usada na classificação industrial de conservantes químicos do <strong>Projeto Prático 2</strong>!
+          </div>
+        </div>
+      </div>
+
+      <!-- ETAPA 4: ENGENHARIA -->
+      <div class="flex flex-col gap-3 pt-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-secondary text-on-secondary font-label-md text-xs font-bold">ETAPA 4</span>
+            <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Projetos Aplicados de Engenharia (8 Notebooks + Script Industrial)</h3>
+          </div>
+          <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/README.md" target="_blank" rel="noreferrer" class="text-xs font-semibold text-secondary hover:underline">Ver README de Engenharia no GitHub ↗</a>
+        </div>
+
+        <div class="grid grid-cols-1 gap-3">
+          <!-- Projeto Óleo -->
+          <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2 min-w-0 overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="min-w-0">
+                <span class="text-xs font-semibold text-secondary uppercase tracking-wider">Engenharia Química &amp; Petróleo</span>
+                <h4 class="font-title-md text-[16px] text-primary font-bold">4.1. Destilação Fracionada — Classificação de Óleo em 3D</h4>
+              </div>
+              <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/01_classificacao_oleo_perceptron.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/01_classificacao_oleo_perceptron.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div>
+            </div>
+            <p class="text-[13.5px] text-on-surface-variant m-0 leading-relaxed">
+              Classificação de pureza (<span class="code-token">P1 = -1</span> vs. <span class="code-token">P2 = +1</span>) a partir de 3 grandezas físico-químicas e visualização 3D dos 5 hiperplanos separadores gerados por diferentes sementes de pesos iniciais.
+            </p>
+          </div>
+
+          <!-- Projeto 1 -->
+          <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2 min-w-0 overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="min-w-0">
+                <span class="text-xs font-semibold text-secondary uppercase tracking-wider">Engenharia Biomédica &amp; Elétrica • Seção 5.8 do Livro-Base</span>
+                <h4 class="font-title-md text-[16px] text-primary font-bold">4.2. Projeto Prático 1 — Energia Absorvida em Ressonância Magnética (PMC 3-10-1)</h4>
+              </div>
+              <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/prompt-projeto-pratico-1.md" target="_blank" rel="noreferrer" class="text-xs font-semibold text-primary hover:underline shrink-0">Especificação Técnica ↗</a>
+            </div>
+            <p class="text-[13.5px] text-on-surface-variant m-0 leading-relaxed">
+              Regressão não linear contínua (aproximação universal de funções), avaliação por erro relativo percentual e variância entre mínimos locais em 5 treinamentos independentes.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1">
+              <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">02_projeto1_pmc_regressao_numpy.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Parte A • Matemática aberta em NumPy puro</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/02_projeto1_pmc_regressao_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/02_projeto1_pmc_regressao_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+              <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">03_projeto1_comparacao_sklearn_keras.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Parte B • MLPRegressor e TensorFlow/Keras</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/03_projeto1_comparacao_sklearn_keras.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/03_projeto1_comparacao_sklearn_keras.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+            </div>
+          </div>
+
+          <!-- Projeto 2 -->
+          <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2 min-w-0 overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="min-w-0">
+                <span class="text-xs font-semibold text-secondary uppercase tracking-wider">Engenharia de Alimentos &amp; Processos Químicos • Seção 5.9 do Livro-Base</span>
+                <h4 class="font-title-md text-[16px] text-primary font-bold">4.3. Projeto Prático 2 — Conservantes Industriais &amp; Aceleração por Momentum</h4>
+              </div>
+              <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/prompt-projeto-pratico-2.md" target="_blank" rel="noreferrer" class="text-xs font-semibold text-primary hover:underline shrink-0">Especificação Técnica ↗</a>
+            </div>
+            <p class="text-[13.5px] text-on-surface-variant m-0 leading-relaxed">
+              Classificação multiclasse (<span class="code-token">A</span>, <span class="code-token">B</span>, <span class="code-token">C</span>) em rede <span class="code-token">4-15-3</span> comprovando experimentalmente a redução de mais de 80% do tempo de treinamento com o termo de inércia <strong>Momentum</strong> (α = 0,9).
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1">
+              <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">04_projeto2_pmc_conservantes_numpy.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Parte A • Backpropagation vs. Momentum (α = 0,9)</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/04_projeto2_pmc_conservantes_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/04_projeto2_pmc_conservantes_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+              <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">05_projeto2_comparacao_sklearn_keras.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Parte B • Softmax e Cross-Entropy industrial</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/05_projeto2_comparacao_sklearn_keras.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/05_projeto2_comparacao_sklearn_keras.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+            </div>
+          </div>
+
+          <!-- Projeto 3 -->
+          <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2 min-w-0 overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="min-w-0">
+                <span class="text-xs font-semibold text-secondary uppercase tracking-wider">Engenharia de Controle, Automação &amp; Produção • Seção 5.10 do Livro-Base</span>
+                <h4 class="font-title-md text-[16px] text-primary font-bold">4.4. Projeto Prático 3 — Predição de Séries Temporais com TDNN</h4>
+              </div>
+              <div class="flex flex-wrap items-center gap-2 shrink-0">
+                <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/prompt-projeto-pratico-3.md" target="_blank" rel="noreferrer" class="text-xs font-semibold text-primary hover:underline">Especificação ↗</a>
+                <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/06_projeto3_series_temporais_pmc.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/06_projeto3_series_temporais_pmc.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div>
+              </div>
+            </div>
+            <p class="text-[13.5px] text-on-surface-variant m-0 leading-relaxed">
+              Rede Neural com Atraso no Tempo (<strong>TDNN</strong> — janela deslizante de medidas passadas) comparando 3 arquiteturas (<span class="code-token">5-10-1</span>, <span class="code-token">10-15-1</span> e <span class="code-token">15-25-1</span>) para prever os instantes futuros <em>t = 101 … 120</em>.
+            </p>
+          </div>
+
+          <!-- Impressora 3D -->
+          <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2 min-w-0 overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="min-w-0">
+                <span class="text-xs font-semibold text-secondary uppercase tracking-wider">Engenharia Mecânica &amp; de Materiais</span>
+                <h4 class="font-title-md text-[16px] text-primary font-bold">4.5. Estudo de Caso Industrial — Manufatura Aditiva (Impressão 3D FDM)</h4>
+              </div>
+              <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/impressora-3d/printer_dataset.py" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-primary text-on-primary text-xs font-code-inline shrink-0">printer_dataset.py ↗</a>
+            </div>
+            <p class="text-[13.5px] text-on-surface-variant m-0 leading-relaxed">
+              Física térmica de polímeros (<span class="code-token">ABS</span> vs. <span class="code-token">PLA</span>), predição de resistência mecânica à tração (MPa) em pequenas amostras laboratoriais (<em>N = 50</em> com solver <span class="code-token">lbfgs</span> + Validação Cruzada) e introdução a <strong>Gêmeos Digitais</strong>.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1">
+              <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">01_impressora3d_eda_e_classificacao_material.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Análise termomecânica e classificação ABS/PLA</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/impressora-3d/01_impressora3d_eda_e_classificacao_material.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/impressora-3d/01_impressora3d_eda_e_classificacao_material.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+              <div class="flex flex-col gap-2 bg-surface-container-lowest p-3 rounded-lg border border-surface-container min-w-0">
+      <div class="min-w-0">
+        <div class="font-code-inline text-primary font-semibold text-[12.5px] break-all leading-snug">02_impressora3d_predicao_resistencia_mecanica.ipynb</div>
+        <div class="text-xs text-outline mt-0.5 leading-snug">Predição de tração (MPa) e Gêmeos Digitais</div>
+      </div>
+      <div class="flex items-center justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/impressora-3d/02_impressora3d_predicao_resistencia_mecanica.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/impressora-3d/02_impressora3d_predicao_resistencia_mecanica.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEÇÃO 5: TEORIA SIMPLIFICADA COM ANALOGIAS DE ENGENHARIA -->
+    <article id="teoria-simplificada" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+      <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Intuição Física Aplicada</span>
+      <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-extrabold tracking-tight">
+        5. Teoria Simplificada (Com Analogias de Engenharia)
+      </h2>
+      <p class="leading-relaxed text-on-surface">
+        Se você compreende como calibrar um manômetro de bancada ou regular válvulas em uma planta piloto, você já domina a intuição física de uma Rede Neural Artificial. Veja a tradução direta:
+      </p>
+
+      <!-- 5.1 Neurônio -->
+      <div class="flex flex-col gap-3 pt-1">
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">5.1. O Neurônio Artificial como uma Estação de Mistura com Válvulas</h3>
+        <p class="leading-relaxed text-on-surface m-0">
+          Um neurônio recebe grandezas medidas pelos sensores (<em>x₁, x₂, …, xₙ</em>), multiplica cada uma por um <strong>peso sináptico</strong> (<em>w₁, w₂, …, wₙ</em>) e desconta um <strong>limiar de ativação</strong> (<em>θ</em>, também chamado de <strong>viés</strong> ou <em>bias</em>), gerando o potencial interno <em>u</em>:
+        </p>
+        <div class="math-block text-sm font-semibold">
+          u = ∑ (wᵢ · xᵢ) − θ &nbsp;&nbsp;&nbsp;⇒&nbsp;&nbsp;&nbsp; saída y = g(u)
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <div class="font-bold text-primary text-sm mb-1">Pesos (wᵢ) ≈ Abertura de Válvulas</div>
+            <p class="text-[13px] text-on-surface-variant leading-relaxed m-0">
+              Se <em>w₁</em> é grande e positivo, a entrada <em>x₁</em> tem passagem franca; se <em>w₂ ≈ 0</em>, a válvula está fechada (variável irrelevante); se <em>w₃ &lt; 0</em>, atua como inibidor.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <div class="font-bold text-primary text-sm mb-1">Viés (θ) ≈ Parafuso de Offset</div>
+            <p class="text-[13px] text-on-surface-variant leading-relaxed m-0">
+              Equivale ao ajuste de zero de um sensor: sem <em>θ</em>, toda reta ou plano separador seria obrigado a cruzar a origem <em>(0, 0, …, 0)</em>.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <div class="font-bold text-primary text-sm mb-1">Ativação g(u) ≈ Elemento Atuador</div>
+            <p class="text-[13px] text-on-surface-variant leading-relaxed m-0">
+              No <strong>Perceptron</strong>, <em>g(u)</em> é um degrau brusco (pressostato <em>on/off</em>). No <strong>PMC</strong>, usamos curvas suaves deriváveis como <strong>Sigmóide</strong> (válvula proporcional 0–1) ou <strong>ReLU</strong> (diodo retificador ideal).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5.2 Normalização -->
+      <div class="flex flex-col gap-3 pt-2">
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">5.2. Normalização de Dados ≈ Adimensionalização</h3>
+        <p class="leading-relaxed text-on-surface m-0">
+          Em Fenômenos de Transporte, nunca misturamos temperatura do bico extrusor (<span class="code-token">240 °C</span>) com altura de camada (<span class="code-token">0,06 mm</span>) sem adimensionalizar as escalas — caso contrário, <span class="code-token">240</span> esmagaria numericamente <span class="code-token">0,06</span> e saturaria exponenciais como <em>e⁻ᵘ</em>. Por isso aplicamos <strong>Normalização Min-Max</strong> (<span class="code-token">[0, 1]</span>) ou <strong>Padronização Z-score</strong> (<em>z = (x − μ) / σ</em>).
+        </p>
+
+        <!-- Alerta Âmbar contra Data Leakage -->
+        <div class="w-full bg-secondary-container/10 p-space-md rounded-xl border-l-4 border-secondary flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0 mt-0.5">
+            <span class="material-symbols-outlined text-[20px]">warning</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="font-title-md text-[16px] text-secondary font-bold">Regra de Ouro contra Vazamento de Dados (Data Leakage)</span>
+            <p class="text-[13.5px] text-on-surface leading-relaxed m-0">
+              A média <em>μ</em> e o desvio padrão <em>σ</em> devem ser calculados <strong>exclusivamente no conjunto de treino</strong> (<span class="code-token">fit_transform</span>) e apenas reaplicados nas amostras cegas de teste (<span class="code-token">transform</span>). Calibrar o escalonador na tabela inteira antes da divisão equivale a calibrar um instrumento usando as próprias amostras secretas da prova de certificação!
+            </p>
+          </div>
+        </div>
+
+        <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">pre_processamento_sem_vazamento.py</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Python • Padrão Ouro</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="code-no-leakage" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="code-no-leakage">from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+# 1. Primeiro separamos treino (80%) e teste cego (20%)
+X_treino, X_teste, y_treino, y_teste = train_test_split(
+    X, y, test_size=0.20, random_state=42
+)
+
+# 2. Calibramos média (μ) e desvio (σ) APENAS no conjunto de treino!
+scaler = StandardScaler()
+X_treino_norm = scaler.fit_transform(X_treino)
+
+# 3. No teste cego aplicamos .transform() sem recalcular estatísticas (Zero Data Leakage)
+X_teste_norm = scaler.transform(X_teste)</code></pre>
+  </div>
+</div>
+      </div>
+
+      <!-- 5.3 Treinamento -->
+      <div class="flex flex-col gap-3 pt-2">
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">5.3. Otimização: Gradiente Descendente, Backpropagation, Momentum e TDNN</h3>
+        <p class="leading-relaxed text-on-surface m-0">
+          "Treinar" uma rede neural significa resolver um problema de otimização numérica: encontrar a abertura das válvulas (matrizes de pesos <strong>W</strong>) que minimiza o <strong>Erro Quadrático Médio</strong> (<em>MSE — Mean Squared Error</em>):
+        </p>
+        <div class="math-block text-sm font-semibold">
+          E_M = (1 / N) · ∑ ½ · (d⁽ᵏ⁾ − y⁽ᵏ⁾)²
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-[13.5px]">
+          <div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <strong class="text-primary block mb-1">1. Propagação Direta &amp; Backpropagation</strong>
+            Os dados entram pelos sensores e geram uma previsão <em>y</em> (<em>Forward Pass</em>). Em seguida, aplicamos a <strong>Regra da Cadeia do Cálculo Diferencial</strong> de trás para frente (<em>Backpropagation</em> — retropropagação do erro), descobrindo a parcela de culpa (gradiente local <em>δ</em>) de cada válvula intermediária.
+          </div>
+          <div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <strong class="text-primary block mb-1">2. Gradiente Descendente &amp; Taxa η</strong>
+            Como uma esfera buscando o fundo de um vale de energia potencial, ajustamos os pesos no sentido oposto ao gradiente (<em>−∇E</em>). A <strong>taxa de aprendizado η</strong> regula o passo: η minúsculo demora milhares de <strong>épocas</strong> (ciclos completos na tabela); η exagerado ricocheteia e diverge.
+          </div>
+          <div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <strong class="text-primary block mb-1">3. Momentum (α) ≈ Inércia Mecânica</strong>
+            Ao somar uma fração <em>α</em> (ex.: <span class="code-token">0.8</span> ou <span class="code-token">0.9</span>) do passo anterior ao passo atual (<em>Δw(t) = η·δ·x + α·Δw(t−1)</em>), trocamos uma bolinha de isopor por uma <strong>esfera pesada de aço</strong> que ganha embalo em rampas suaves e vence pequenos mínimos locais.
+          </div>
+          <div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <strong class="text-primary block mb-1">4. Janelas TDNN ≈ Filtro Digital FIR</strong>
+            Para prever o próximo valor <em>x(t)</em> de um sistema dinâmico, alimentamos a entrada de um PMC com uma <strong>janela deslizante</strong> de medidas atrasadas <span class="code-token">[x(t−1), …, x(t−p)]</span>, criando uma versão neural não linear de um modelo auto-regressivo.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEÇÃO 6: RESULTADOS E GRÁFICOS REAIS -->
+    <article id="resultados" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-lg">
+      <div>
+        <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Evidências Experimentais do Repositório</span>
+        <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-extrabold tracking-tight">
+          6. Resultados e Visualizações dos Projetos
+        </h2>
+        <p class="leading-relaxed text-on-surface mt-1 m-0">
+          Confira abaixo os gráficos reais gerados nos notebooks ao longo da trilha didática, do neurônio linear único até modelos industriais multicamadas.
+        </p>
+      </div>
+
+      <!-- Plot 1 & 2: Perceptron -->
+      <div class="w-full bg-surface-container-low rounded-2xl p-space-md lg:p-space-lg flex flex-col gap-space-sm border border-outline-variant/40">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Módulo 05 • Fundamentos</span>
+            <h3 class="font-title-md text-title-md text-primary font-bold">6.1. Estrutura do Perceptron e Evolução da Fronteira Linear</h3>
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/05_perceptron_teoria_e_pratica.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/05_perceptron_teoria_e_pratica.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div>
+        </div>
+        <p class="text-[13.5px] text-on-surface-variant leading-relaxed m-0">
+          À medida que a regra de correção de erro ajusta os pesos época por época, a reta separadora rotaciona e translada até isolar perfeitamente classes linearmente separáveis:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+          <figure class="bg-surface-container-lowest rounded-xl p-3 border border-surface-container flex flex-col items-center justify-between m-0">
+            <img src="assets/img/perceptron_illustration.png" alt="Estrutura matemática de um neurônio Perceptron" loading="lazy" class="w-full h-auto rounded object-contain max-h-64"/>
+            <figcaption class="text-xs text-outline text-center mt-2">Arquitetura matemática do Perceptron de Rosenblatt</figcaption>
+          </figure>
+          <figure class="bg-surface-container-lowest rounded-xl p-3 border border-surface-container flex flex-col items-center justify-between m-0">
+            <img src="assets/img/decision_boundary_epochs_illustration.png" alt="Evolução da fronteira de decisão do Perceptron por época" loading="lazy" class="w-full h-auto rounded object-contain max-h-64"/>
+            <figcaption class="text-xs text-outline text-center mt-2">Convergência geométrica da fronteira de decisão ao longo das épocas</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Plot 3: Óleo 3D -->
+      <div class="w-full bg-surface-container-low rounded-2xl p-space-md lg:p-space-lg flex flex-col gap-space-sm border border-outline-variant/40">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Engenharia Química &amp; Petróleo</span>
+            <h3 class="font-title-md text-title-md text-primary font-bold">6.2. Cinco Hiperplanos Separadores em ℝ³ (Amostras de Óleo)</h3>
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/01_classificacao_oleo_perceptron.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/01_classificacao_oleo_perceptron.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div>
+        </div>
+        <p class="text-[13.5px] text-on-surface-variant leading-relaxed m-0">
+          Com três variáveis físico-químicas (<em>x₁, x₂, x₃</em>), a fronteira <em>w₁x₁ + w₂x₂ + w₃x₃ − θ = 0</em> torna-se um <strong>plano separador 3D</strong>. Os 5 treinamentos com sementes aleatórias distintas atingem 100% de acerto no treino, mas estacionam em planos ligeiramente diferentes dentro do corredor vazio entre as classes P1 e P2:
+        </p>
+        <div class="bg-surface-container-lowest rounded-xl p-3 border border-surface-container flex justify-center">
+          <img src="assets/img/oleo_hiperplanos_3d.png" alt="Cinco hiperplanos separadores 3D na classificação de óleo" loading="lazy" class="w-full max-w-2xl h-auto rounded object-contain"/>
+        </div>
+      </div>
+
+      <!-- Plot 4 & 5: Projeto 1 PMC -->
+      <div class="w-full bg-surface-container-low rounded-2xl p-space-md lg:p-space-lg flex flex-col gap-space-sm border border-outline-variant/40">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Projeto Prático 1 • Topologia 3-10-1</span>
+            <h3 class="font-title-md text-title-md text-primary font-bold">6.3. Regressão Não Linear com PMC (Ressonância Magnética)</h3>
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/02_projeto1_pmc_regressao_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/02_projeto1_pmc_regressao_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div>
+        </div>
+        <p class="text-[13.5px] text-on-surface-variant leading-relaxed m-0">
+          A rede <span class="code-token">3-10-1</span> reduz o Erro Quadrático Médio assintoticamente até a precisão <em>ε = 10⁻⁶</em>, alcançando <strong>erro relativo médio em torno de 1%</strong> nas 20 amostras clínicas cegas:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+          <figure class="bg-surface-container-lowest rounded-xl p-3 border border-surface-container flex flex-col items-center justify-between m-0">
+            <img src="assets/img/topologia_pmc_3_10_1.svg" alt="Topologia da rede PMC 3-10-1" loading="lazy" class="w-full h-auto rounded object-contain max-h-64"/>
+            <figcaption class="text-xs text-outline text-center mt-2">Topologia 3 entradas → 10 neurônios ocultos sigmóides → 1 saída contínua</figcaption>
+          </figure>
+          <figure class="bg-surface-container-lowest rounded-xl p-3 border border-surface-container flex flex-col items-center justify-between m-0">
+            <img src="assets/img/pmc_convergencia_mse.png" alt="Curvas de convergência do MSE da rede PMC 3-10-1" loading="lazy" class="w-full h-auto rounded object-contain max-h-64"/>
+            <figcaption class="text-xs text-outline text-center mt-2">Queda do Erro Quadrático Médio (MSE) em 5 inicializações distintas</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Plot 6 & 7: Momentum + Impressora 3D -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+        <div class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between gap-space-sm border border-outline-variant/40">
+          <div class="flex flex-col gap-1.5">
+            <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Projeto Prático 2 • α = 0,9</span>
+            <h3 class="font-title-md text-[17px] text-primary font-bold">6.4. Aceleração com Momentum (Conservantes)</h3>
+            <p class="text-[13px] text-on-surface-variant leading-relaxed m-0">
+              Partindo exatamente dos mesmos pesos iniciais na rede <span class="code-token">4-15-3</span>, o termo de inércia economiza mais de <strong>80% das épocas</strong> até atingir <em>ε = 10⁻⁶</em>:
+            </p>
+          </div>
+          <div class="bg-surface-container-lowest rounded-xl p-2.5 border border-surface-container">
+            <img src="assets/img/conservantes_momentum_comparacao.png" alt="Comparação Backpropagation convencional vs Momentum" loading="lazy" class="w-full h-auto rounded object-contain"/>
+          </div>
+          <div class="flex justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/04_projeto2_pmc_conservantes_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/04_projeto2_pmc_conservantes_numpy.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+        </div>
+
+        <div class="bg-surface-container-low rounded-2xl p-space-md flex flex-col justify-between gap-space-sm border border-outline-variant/40">
+          <div class="flex flex-col gap-1.5">
+            <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Manufatura Aditiva FDM • N = 50</span>
+            <h3 class="font-title-md text-[17px] text-primary font-bold">6.5. Correlação Física na Impressão 3D</h3>
+            <p class="text-[13px] text-on-surface-variant leading-relaxed m-0">
+              Acoplamento termomecânico entre temperatura do bico, ventilação, preenchimento interno e resistência final à tração (MPa):
+            </p>
+          </div>
+          <div class="bg-surface-container-lowest rounded-xl p-2.5 border border-surface-container">
+            <img src="assets/img/impressora3d_correlacao.png" alt="Mapa de calor de correlação de Impressão 3D" loading="lazy" class="w-full h-auto rounded object-contain"/>
+          </div>
+          <div class="flex justify-end"><div class="flex flex-wrap items-center gap-1.5 shrink-0">
+      <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/impressora-3d/01_impressora3d_eda_e_classificacao_material.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">code</span>GitHub
+      </a>
+      <a href="https://colab.research.google.com/github/enzosarmento/python-rna-engenharia-didatico/blob/main/documentacao-didatica/engenharia/impressora-3d/01_impressora3d_eda_e_classificacao_material.ipynb" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-fixed/70 hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-[11.5px] font-semibold transition-colors">
+        <span class="material-symbols-outlined text-[14px]">play_circle</span>Colab
+      </a>
+    </div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SEÇÃO 7: TROUBLESHOOTING -->
+    <article id="troubleshooting" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
+      <div>
+        <span class="font-label-md text-label-md text-secondary uppercase font-bold tracking-wider">Diagnóstico Rápido</span>
+        <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-extrabold tracking-tight">
+          7. Troubleshooting (Solução de Problemas Comuns)
+        </h2>
+        <p class="leading-relaxed text-on-surface mt-1 m-0">
+          Apareceu uma mensagem com fundo vermelho ao executar uma célula no Jupyter? Não se assuste: em Python, a <strong>última linha do erro</strong> informa exatamente a causa. Consulte o guia rápido:
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">bug_report</span>
+        <code class="font-code-inline text-[13px] font-semibold text-primary break-words">ModuleNotFoundError: No module named 'numpy'</code>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-[13.5px]">
+        <div class="bg-surface-container-lowest p-3 rounded-lg border border-surface-container">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-outline block mb-1">Causa Mais Provável</span>
+          <p class="text-on-surface-variant leading-relaxed m-0">As bibliotecas não foram instaladas ou o Jupyter/VS Code está conectado a um Kernel Python diferente daquele onde você executou o pip install.</p>
+        </div>
+        <div class="bg-tertiary-container/5 p-3 rounded-lg border border-on-tertiary-container/30">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-tertiary font-semibold block mb-1">Como Resolver Imediatamente</span>
+          <p class="text-on-surface leading-relaxed m-0">No terminal (com o ambiente virtual ativo), rode pip install -r requirements.txt. No canto superior direito do notebook, clique no seletor de Kernel e escolha .venv ou base (Anaconda).</p>
+        </div>
+      </div>
+    </div>
+<div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">bug_report</span>
+        <code class="font-code-inline text-[13px] font-semibold text-primary break-words">FileNotFoundError: [Errno 2] No such file or directory: '...csv'</code>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-[13.5px]">
+        <div class="bg-surface-container-lowest p-3 rounded-lg border border-surface-container">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-outline block mb-1">Causa Mais Provável</span>
+          <p class="text-on-surface-variant leading-relaxed m-0">O diretório de trabalho atual foi alterado ou o arquivo .ipynb foi movido sem a pasta de dados correspondente.</p>
+        </div>
+        <div class="bg-tertiary-container/5 p-3 rounded-lg border border-on-tertiary-container/30">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-tertiary font-semibold block mb-1">Como Resolver Imediatamente</span>
+          <p class="text-on-surface leading-relaxed m-0">Mantenha a estrutura original de pastas do repositório. Todos os 22 notebooks já utilizam caminhos relativos validados (ex.: ../arquivos-csv/titanic.csv). No Google Colab, consulte a seção Colab da página de Instalação.</p>
+        </div>
+      </div>
+    </div>
+<div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">bug_report</span>
+        <code class="font-code-inline text-[13px] font-semibold text-primary break-words">NameError: name 'df' is not defined (ou 'np' is not defined)</code>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-[13.5px]">
+        <div class="bg-surface-container-lowest p-3 rounded-lg border border-surface-container">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-outline block mb-1">Causa Mais Provável</span>
+          <p class="text-on-surface-variant leading-relaxed m-0">Você executou uma célula no meio do notebook sem ter rodado as células anteriores (a memória RAM é limpa sempre que o notebook é fechado).</p>
+        </div>
+        <div class="bg-tertiary-container/5 p-3 rounded-lg border border-on-tertiary-container/30">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-tertiary font-semibold block mb-1">Como Resolver Imediatamente</span>
+          <p class="text-on-surface leading-relaxed m-0">No menu superior do JupyterLab ou VS Code, clique em Kernel → Restart Kernel and Run All Cells para executar tudo na sequência correta de cima para baixo.</p>
+        </div>
+      </div>
+    </div>
+<div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">bug_report</span>
+        <code class="font-code-inline text-[13px] font-semibold text-primary break-words">ValueError: shapes (m, n) and (p, q) not aligned</code>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-[13.5px]">
+        <div class="bg-surface-container-lowest p-3 rounded-lg border border-surface-container">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-outline block mb-1">Causa Mais Provável</span>
+          <p class="text-on-surface-variant leading-relaxed m-0">Incompatibilidade dimensional na multiplicação matricial (@ ou np.dot): o número de colunas da 1ª matriz (n) precisa coincidir com o número de linhas da 2ª (p).</p>
+        </div>
+        <div class="bg-tertiary-container/5 p-3 rounded-lg border border-on-tertiary-container/30">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-tertiary font-semibold block mb-1">Como Resolver Imediatamente</span>
+          <p class="text-on-surface leading-relaxed m-0">Imprima print(A.shape, B.shape) antes do cálculo para inspecionar as dimensões e utilize a matriz transposta .T quando necessário (ex.: X @ W.T).</p>
+        </div>
+      </div>
+    </div>
+<div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">bug_report</span>
+        <code class="font-code-inline text-[13px] font-semibold text-primary break-words">ValueError: could not convert string to float / Resultado dando nan</code>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-[13.5px]">
+        <div class="bg-surface-container-lowest p-3 rounded-lg border border-surface-container">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-outline block mb-1">Causa Mais Provável</span>
+          <p class="text-on-surface-variant leading-relaxed m-0">A planilha ainda possui textos ('male', 'abs', vírgula decimal '3,14') ou células vazias (NaN), ou a taxa de aprendizado η foi alta demais e explodiu as exponenciais.</p>
+        </div>
+        <div class="bg-tertiary-container/5 p-3 rounded-lg border border-on-tertiary-container/30">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-tertiary font-semibold block mb-1">Como Resolver Imediatamente</span>
+          <p class="text-on-surface leading-relaxed m-0">Revise a limpeza do módulo 03 (dropna/fillna, codificação numérica e normalização) e reduza a taxa de aprendizado η (por exemplo, de 1.0 para 0.05).</p>
+        </div>
+      </div>
+    </div>
+<div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">bug_report</span>
+        <code class="font-code-inline text-[13px] font-semibold text-primary break-words">SyntaxError ou IndentationError</code>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-[13.5px]">
+        <div class="bg-surface-container-lowest p-3 rounded-lg border border-surface-container">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-outline block mb-1">Causa Mais Provável</span>
+          <p class="text-on-surface-variant leading-relaxed m-0">Faltou fechar parêntese ), colchete ], aspas " ou dois-pontos : após if/for/def, ou o recuo de espaços à esquerda ficou desalinhado.</p>
+        </div>
+        <div class="bg-tertiary-container/5 p-3 rounded-lg border border-on-tertiary-container/30">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-tertiary font-semibold block mb-1">Como Resolver Imediatamente</span>
+          <p class="text-on-surface leading-relaxed m-0">Confira a linha indicada pela seta ^ na mensagem de erro e padronize os blocos internos com 4 espaços (tecla Tab).</p>
+        </div>
+      </div>
+    </div>
+<div class="p-space-md rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col gap-2">
+      <div class="flex items-start gap-2">
+        <span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">bug_report</span>
+        <code class="font-code-inline text-[13px] font-semibold text-primary break-words">Célula travada com asterisco [*] contínuo</code>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-[13.5px]">
+        <div class="bg-surface-container-lowest p-3 rounded-lg border border-surface-container">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-outline block mb-1">Causa Mais Provável</span>
+          <p class="text-on-surface-variant leading-relaxed m-0">Um laço entrou em repetição longa ou um treinamento pesado com milhares de épocas ainda está em andamento.</p>
+        </div>
+        <div class="bg-tertiary-container/5 p-3 rounded-lg border border-on-tertiary-container/30">
+          <span class="font-label-md text-[11px] uppercase tracking-wider text-tertiary font-semibold block mb-1">Como Resolver Imediatamente</span>
+          <p class="text-on-surface leading-relaxed m-0">Clique no botão quadrado Stop (Interromper Kernel) na barra superior. Se desejar limpar as variáveis e recomeçar limpo, use Kernel → Restart Kernel.</p>
+        </div>
+      </div>
+    </div>
+      </div>
+
+      <!-- Referência Bibliográfica -->
+      <div class="mt-2 p-space-md rounded-xl bg-primary-fixed/25 border border-primary/15 flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary text-[22px] mt-0.5">library_books</span>
+        <div class="text-[13.5px] leading-relaxed text-on-surface">
+          <strong class="text-primary block">Referência Bibliográfica Base</strong>
+          SILVA, Ivan Nunes da; SPATTI, Danilo Hernane; FLAUZINO, Rogério Andrade. <em>Redes Neurais Artificiais para Engenharia e Ciências Aplicadas: Curso Prático</em>. São Paulo: Artliber Editora. (Tabelas brutas disponíveis na pasta <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/tree/main/livro-base" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">livro-base/</a>).
+        </div>
+      </div>
+
+      <!-- Cards de Transição Inferior (Fiel ao Stitch) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-sm">
+        <a class="flex flex-col p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-sm group" href="instalacao.html">
+          <span class="flex items-center gap-1 font-label-md text-label-md text-on-surface-variant group-hover:text-primary">
+            <span class="material-symbols-outlined text-[16px]">download_done</span>
+            Preparar Ambiente
+          </span>
+          <span class="font-title-md text-title-md text-primary font-bold mt-1">Guia de Instalação do Zero</span>
+          <span class="font-label-md text-label-md text-outline">Anaconda, VS Code (.venv) ou Google Colab</span>
+        </a>
+        <a class="flex flex-col p-space-md rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-all shadow-sm text-right group" href="notebooks.html">
+          <span class="flex items-center justify-end gap-1 font-label-md text-label-md text-primary-fixed group-hover:text-on-primary">
+            Praticar Agora
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+          <span class="font-title-md text-title-md text-on-primary font-bold mt-1">Catálogo dos 22 Notebooks</span>
+          <span class="font-label-md text-label-md text-primary-fixed">Links diretos para GitHub e Google Colab com progresso</span>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/40 shadow-[0_-1px_6px_rgba(0,0,0,0.02)] py-space-lg px-gutter-mobile lg:px-gutter mt-space-xl">
+      <div class="max-w-[1360px] mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <div class="flex flex-col gap-1 text-center md:text-left">
+          <span class="font-title-md text-title-md text-primary font-semibold">PyEngenharia UESC • Integração de RNAs à Engenharia</span>
+          <span class="font-body-md text-body-md text-on-surface-variant">Programa de Iniciação à Docência (PID) • Enzo Fernandes Sarmento</span>
+        </div>
+        <nav class="flex flex-wrap items-center justify-center gap-space-md">
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="index.html">Guia Principal</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="notebooks.html">22 Notebooks</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="instalacao.html">Instalação</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="glossario.html">Glossário</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="https://github.com/enzosarmento/python-rna-engenharia-didatico" rel="noreferrer" target="_blank">Repositório GitHub</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portal didático aberto de Python, Ciência de Dados e Redes Neurais Artificiais para estudantes de Engenharia (PID/UESC)."/>
+  <title>Glossário de Engenharia &amp; RNAs • PyEngenharia UESC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#ffdad6","on-tertiary-container":"#10b981","secondary-container":"#fd651e","on-primary-fixed":"#001c37","on-tertiary-fixed-variant":"#005236","surface-container-highest":"#e1e3e4","on-surface":"#191c1d","surface-dim":"#d9dadb","on-error":"#ffffff",secondary:"#a73a00","surface-tint":"#436084",primary:"#002444","tertiary-container":"#00422b","inverse-surface":"#2e3132","inverse-on-surface":"#f0f1f2","surface-container-lowest":"#ffffff","tertiary-fixed":"#6ffbbe","primary-fixed-dim":"#abc9f2","on-background":"#191c1d","secondary-fixed":"#ffdbce","surface-container-low":"#f3f4f5","primary-fixed":"#d2e4ff",outline:"#73777f","on-secondary":"#ffffff",error:"#ba1a1a",surface:"#f8f9fa","on-primary-fixed-variant":"#2a486b","secondary-fixed-dim":"#ffb599","surface-container-high":"#e7e8e9","inverse-primary":"#abc9f2",background:"#f8f9fa",tertiary:"#002a1a","on-surface-variant":"#43474e","surface-container":"#edeeef","on-secondary-fixed-variant":"#7f2b00","tertiary-fixed-dim":"#4edea3","on-error-container":"#93000a","on-tertiary-fixed":"#002113","on-primary-container":"#87a4cc","surface-variant":"#e1e3e4","on-secondary-fixed":"#370e00","outline-variant":"#c3c6cf","primary-container":"#1a3a5c","on-primary":"#ffffff","on-tertiary":"#ffffff","on-secondary-container":"#571a00","surface-bright":"#f8f9fa"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xl":"2.5rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem",margin:"2rem",gutter:"1.5rem","gutter-mobile":"1rem"},fontFamily:{"display-lg-mobile":["Inter","sans-serif"],"body-md":["Inter","sans-serif"],"headline-md":["Inter","sans-serif"],"headline-lg":["Inter","sans-serif"],"display-lg":["Inter","sans-serif"],"label-md":["Inter","sans-serif"],"title-md":["Inter","sans-serif"],"body-lg":["Inter","sans-serif"],"code-inline":["JetBrains Mono","monospace"],"headline-lg-mobile":["Inter","sans-serif"],"code-block":["JetBrains Mono","monospace"],"headline-sm":["Inter","sans-serif"]},fontSize:{"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"title-md":["18px",{lineHeight:"26px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}],"code-inline":["13px",{lineHeight:"20px",fontWeight:"500"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"code-block":["13px",{lineHeight:"22px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script>
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <script src="assets/app.js" defer></script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface">
+  <!-- HEADER FIXO -->
+  <header class="fixed top-0 left-0 right-0 z-50 h-16 bg-surface-container-lowest border-b border-outline-variant/40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-16 w-full px-gutter-mobile lg:px-gutter flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm min-w-0 sm:min-w-[240px]">
+        <button id="mobile-menu-btn" aria-expanded="false" aria-label="Abrir menu de navegação" class="lg:hidden p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low flex items-center justify-center transition-colors" type="button">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+        <a class="flex items-center gap-2.5 min-w-0" href="index.html">
+          <svg class="h-9 w-9 shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="40" height="40" rx="9" fill="#002444"/>
+  <circle cx="11" cy="13" r="3" fill="#abc9f2"/>
+  <circle cx="11" cy="27" r="3" fill="#abc9f2"/>
+  <circle cx="21" cy="20" r="3.5" fill="#fd651e"/>
+  <circle cx="30" cy="20" r="3" fill="#10b981"/>
+  <path d="M13.5 14.5L18 18.2M13.5 25.5L18 21.8M24.5 20H27" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
+          <div class="flex flex-col min-w-0">
+            <span class="font-headline-sm text-title-md text-primary font-bold leading-tight truncate">PyEngenharia</span>
+            <span class="font-label-md text-label-md text-on-surface-variant leading-none truncate">UESC • Python &amp; RNAs</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Busca Global (Ctrl + K) -->
+      <div class="flex-1 max-w-xl hidden md:block relative">
+        <div class="relative flex items-center w-full">
+          <span class="material-symbols-outlined absolute left-3 text-outline text-[20px] pointer-events-none">search</span>
+          <input id="global-search-input" autocomplete="off" class="w-full h-[38px] pl-10 pr-20 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#1A3A5C] transition-all" placeholder="Pesquisar tópicos, notebooks ou termos... (ex: Pandas, Momentum, TDNN)" type="text"/>
+          <div class="absolute right-2 flex items-center gap-0.5 bg-surface-container-highest px-1.5 py-0.5 rounded text-outline font-code-inline text-[11px] pointer-events-none">
+            <span>Ctrl+K</span>
+          </div>
+        </div>
+        <div id="global-search-results" class="hidden absolute left-0 right-0 top-11 bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-xl overflow-hidden z-50"></div>
+      </div>
+
+      <!-- Links Superiores -->
+      <div class="flex items-center gap-space-md shrink-0">
+        <nav class="hidden xl:flex items-center gap-5">
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="index.html">Guia Principal</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="notebooks.html">Notebooks (22)</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="instalacao.html">Instalação</a>
+          <a class="text-primary font-semibold border-b-2 border-secondary pb-0.5 font-label-md text-label-md transition-colors" href="glossario.html">Glossário</a>
+        </nav>
+        <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm hover:bg-primary-container transition-colors" href="https://github.com/enzosarmento/python-rna-engenharia-didatico" rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-[18px]">code</span>
+          <span class="hidden sm:inline">Ver no GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BACKDROP MOBILE -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black/40 z-40 hidden lg:hidden backdrop-blur-[1px]"></div>
+
+  <!-- SIDEBAR LATERAL (Drawer Mobile + Fixa Desktop >= lg) -->
+  <aside id="left-sidebar" class="fixed top-16 left-0 bottom-0 w-72 bg-surface-container-lowest z-40 flex flex-col border-r border-outline-variant/40 shadow-[1px_0_6px_rgba(0,0,0,0.04)] -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-out">
+    <div class="p-space-md overflow-y-auto flex-1">
+      <div class="flex items-center justify-between lg:hidden mb-space-sm pb-2 border-b border-surface-container">
+        <span class="font-title-md text-sm font-bold text-primary">Navegação do Curso</span>
+        <button id="mobile-close-btn" aria-label="Fechar menu" class="p-1 rounded text-outline hover:text-primary" type="button">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Páginas do Portal</div>
+      <nav class="flex flex-col gap-1 mb-space-lg">
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="index.html">
+          <span class="material-symbols-outlined text-[19px]">home</span>
+          <span>Guia Principal (README)</span>
+        </a>
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html">
+          <span class="material-symbols-outlined text-[19px]">terminal</span>
+          <span>Catálogo de Notebooks (22)</span>
+        </a>
+        <a class="flex items-center gap-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container-low px-space-sm py-2 rounded-lg font-body-md text-body-md transition-colors" href="instalacao.html">
+          <span class="material-symbols-outlined text-[19px]">download_done</span>
+          <span>Instalação Passo a Passo</span>
+        </a>
+        <a class="flex items-center gap-2.5 px-space-sm py-2 rounded-lg bg-primary-container text-on-primary font-semibold font-body-md text-body-md transition-colors shadow-sm" href="glossario.html">
+          <span class="material-symbols-outlined text-[19px]">menu_book</span>
+          <span>Glossário de Engenharia</span>
+        </a>
+      </nav>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Capítulos do Guia</div>
+      <nav class="flex flex-col gap-0.5 mb-space-lg">
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="visao-geral" href="index.html#visao-geral">1. Visão Geral &amp; Metodologia</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="instalacao" href="index.html#instalacao">2. Instalação Rápida</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="estrutura" href="index.html#estrutura">3. Estrutura de Pastas</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="ordem-de-estudo" href="index.html#ordem-de-estudo">4. Ordem de Estudo (4 Etapas)</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="teoria-simplificada" href="index.html#teoria-simplificada">5. Teoria com Analogias</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="resultados" href="index.html#resultados">6. Resultados &amp; Gráficos</a>
+        <a class="sidebar-nav-link text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-r-lg font-body-md text-body-md transition-colors" data-spy-target="troubleshooting" href="index.html#troubleshooting">7. Troubleshooting (Erros)</a>
+      </nav>
+
+      <div class="text-outline font-label-md text-label-md uppercase tracking-wider mb-space-xs px-space-sm">Trilha Prática</div>
+      <nav class="flex flex-col gap-0.5">
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-base">Etapa 1 • Base Python &amp; RNAs</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-titanic">Etapa 2 • Laboratório Titanic</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-iris">Etapa 3 • Laboratório Íris</a>
+        <a class="text-on-surface-variant hover:text-primary px-space-sm py-1.5 rounded-lg font-body-md text-body-md transition-colors" href="notebooks.html#etapa-engenharia">Etapa 4 • Projetos Engenharia</a>
+      </nav>
+    </div>
+
+    <div class="p-space-md bg-surface-container-low border-t border-surface-container">
+      <div class="flex items-center justify-between text-outline font-label-md text-label-md">
+        <span>Programa PID • UESC</span>
+        <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-code-inline text-[11px]">22 .ipynb</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="lg:pl-72 flex flex-col min-h-screen">
+    <main class="flex-1 pt-16 w-full px-gutter-mobile lg:px-gutter py-space-lg bg-surface">
+      <div class="max-w-[1360px] mx-auto flex flex-col w-full">
+        
+<section class="w-full rounded-2xl bg-surface-container-lowest border border-outline-variant/40 shadow-md p-space-lg lg:p-space-xl mb-space-lg">
+  <div class="flex flex-wrap items-center justify-between gap-2">
+    <span class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-md text-xs font-semibold">34 Conceitos Fundamentais</span>
+    <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico/blob/main/GLOSSARIO.md" target="_blank" rel="noreferrer" class="text-xs font-semibold text-primary hover:underline">Ver GLOSSARIO.md no GitHub ↗</a>
+  </div>
+  <h1 class="font-display-lg text-display-lg-mobile lg:text-[36px] text-primary font-extrabold tracking-tight mt-3 mb-2">
+    Glossário Didático de Engenharia, Dados e RNAs
+  </h1>
+  <p class="text-on-surface-variant text-body-lg leading-relaxed max-w-3xl m-0">
+    Consulte rapidamente qualquer termo técnico de <strong>Python</strong>, <strong>Ciência de Dados</strong> ou <strong>Redes Neurais Artificiais</strong> traduzido para a linguagem física de Engenharia.
+  </p>
+
+  <!-- Busca + Filtros -->
+  <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 pt-space-md mt-space-md border-t border-surface-container">
+    <div class="flex flex-wrap items-center gap-1.5">
+      <button type="button" data-gfilter="all" class="g-filter-btn px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-xs font-semibold transition-colors">Todos (34)</button>
+      <button type="button" data-gfilter="python" class="g-filter-btn px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-xs font-semibold transition-colors">1. Python (8)</button>
+      <button type="button" data-gfilter="dados" class="g-filter-btn px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-xs font-semibold transition-colors">2. Dados (10)</button>
+      <button type="button" data-gfilter="arquitetura" class="g-filter-btn px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-xs font-semibold transition-colors">3. Arquitetura RNA (7)</button>
+      <button type="button" data-gfilter="treinamento" class="g-filter-btn px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-xs font-semibold transition-colors">4. Otimização &amp; Métricas (9)</button>
+    </div>
+
+    <div class="relative w-full md:w-80">
+      <span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+      <input id="glossary-search" type="text" placeholder="Pesquisar termo ou analogia (ex: válvula, época)..." class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-low border border-outline-variant/50 text-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/30"/>
+    </div>
+  </div>
+</section>
+
+<div id="glossary-empty" class="hidden p-space-xl rounded-2xl bg-surface-container-lowest border border-outline-variant/40 text-center mb-space-lg">
+  <span class="material-symbols-outlined text-outline text-[36px]">search_off</span>
+  <p class="font-title-md text-primary font-bold mt-2 mb-1">Nenhum termo encontrado</p>
+  <p class="text-sm text-on-surface-variant m-0">Tente buscar por "peso", "bias", "leakage", "momentum" ou "época".</p>
+</div>
+
+<section data-gsec="python" class="flex flex-col gap-space-md mb-space-xl">
+          <div class="border-b border-outline-variant/50 pb-2">
+            <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">1. Fundamentos de Python e Programação</h2>
+            <p class="text-sm text-on-surface-variant mt-0.5 m-0">Base sintática utilizada nos 22 cadernos computacionais.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+            <article data-cat="python" data-gsearch="variável (x = 10) espaço nomeado na memória do computador que guarda um valor (como a pressão p = 2.5 bar de uma caldeira). diferente da álgebra no papel, o sinal = em python significa atribuição (&#x27;guarde o valor da direita no nome à esquerda&#x27;), enquanto == compara igualdade. indicador digital rotulado em um painel de supervisão (p_caldeira = 2.5). 1. fundamentos de python e programação" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Variável (x = 10)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Espaço nomeado na memória do computador que guarda um valor (como a pressão P = 2.5 bar de uma caldeira). Diferente da álgebra no papel, o sinal = em Python significa atribuição (&#x27;guarde o valor da direita no nome à esquerda&#x27;), enquanto == compara igualdade.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Indicador digital rotulado em um painel de supervisão (P_caldeira = 2.5).
+              </div>
+            </article><article data-cat="python" data-gsearch="lista ([10, 20, 30]) sequência flexível de valores guardados em fila. cada posição possui um índice inteiro que começa em 0 (o primeiro elemento é lista[0]). bandeja numerada de corpos de prova na fila de ensaio. 1. fundamentos de python e programação" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Lista ([10, 20, 30])</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Sequência flexível de valores guardados em fila. Cada posição possui um índice inteiro que começa em 0 (o primeiro elemento é lista[0]).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Bandeja numerada de corpos de prova na fila de ensaio.
+              </div>
+            </article><article data-cat="python" data-gsearch="dicionário ({&#x27;material&#x27;: &#x27;abs&#x27;, &#x27;temp&#x27;: 230}) estrutura que associa pares chave: valor, permitindo consultar propriedades diretamente pelo nome técnico em vez da posição numérica. ficha técnica de especificação de engenharia. 1. fundamentos de python e programação" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Dicionário ({&#x27;material&#x27;: &#x27;ABS&#x27;, &#x27;temp&#x27;: 230})</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Estrutura que associa pares chave: valor, permitindo consultar propriedades diretamente pelo nome técnico em vez da posição numérica.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Ficha técnica de especificação de engenharia.
+              </div>
+            </article><article data-cat="python" data-gsearch="indentação (recuo de 4 espaços) em python, os blocos internos de um if, for ou def não usam chaves {}; eles são delimitados pelo alinhamento à esquerda. recuar errado gera indentationerror. hierarquia visual de subitens em um memorial de cálculo. 1. fundamentos de python e programação" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Indentação (Recuo de 4 espaços)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Em Python, os blocos internos de um if, for ou def não usam chaves {}; eles são delimitados pelo alinhamento à esquerda. Recuar errado gera IndentationError.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Hierarquia visual de subitens em um memorial de cálculo.
+              </div>
+            </article><article data-cat="python" data-gsearch="laço for (loop) estrutura que repete automaticamente uma sequência de instruções para cada elemento de uma coleção. linha automatizada que executa o mesmo ensaio de tração para cada um dos 50 corpos de prova. 1. fundamentos de python e programação" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Laço for (Loop)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Estrutura que repete automaticamente uma sequência de instruções para cada elemento de uma coleção.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Linha automatizada que executa o mesmo ensaio de tração para cada um dos 50 corpos de prova.
+              </div>
+            </article><article data-cat="python" data-gsearch="função (def) bloco reutilizável de código que recebe parâmetros de entrada, processa uma fórmula e devolve um resultado via return. sub-rotina de calculadora científica ou função física f(x, y). 1. fundamentos de python e programação" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Função (def)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Bloco reutilizável de código que recebe parâmetros de entrada, processa uma fórmula e devolve um resultado via return.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Sub-rotina de calculadora científica ou função física f(x, y).
+              </div>
+            </article><article data-cat="python" data-gsearch="classe (class) e objeto uma classe define atributos (dados internos via self) e métodos (ações). um objeto é uma instância concreta criada a partir dela (ex.: mlp = mlp(...)). a classe é a planta mecânica; o objeto é o equipamento fabricado e operando na bancada. 1. fundamentos de python e programação" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Classe (class) e Objeto</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Uma classe define atributos (dados internos via self) e métodos (ações). Um objeto é uma instância concreta criada a partir dela (ex.: mlp = MLP(...)).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> A classe é a planta mecânica; o objeto é o equipamento fabricado e operando na bancada.
+              </div>
+            </article><article data-cat="python" data-gsearch="biblioteca / módulo (import) conjunto de ferramentas matemáticas escritas e validadas por especialistas (ex.: import numpy as np). trazer uma maleta especializada de instrumentos de álgebra linear para a bancada. 1. fundamentos de python e programação" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Biblioteca / Módulo (import)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Conjunto de ferramentas matemáticas escritas e validadas por especialistas (ex.: import numpy as np).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Trazer uma maleta especializada de instrumentos de Álgebra Linear para a bancada.
+              </div>
+            </article>
+          </div>
+        </section>
+<section data-gsec="dados" class="flex flex-col gap-space-md mb-space-xl">
+          <div class="border-b border-outline-variant/50 pb-2">
+            <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">2. Estruturas e Pré-processamento de Dados</h2>
+            <p class="text-sm text-on-surface-variant mt-0.5 m-0">Como organizar planilhas experimentais e adimensionalizar grandezas antes da modelagem.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+            <article data-cat="dados" data-gsearch="csv (comma-separated values) arquivo texto universal onde cada linha representa um ensaio/amostra e as colunas são separadas por vírgula (,) ou ponto e vírgula (;). registro bruto exportado por um datalogger ou planilha de laboratório. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">CSV (Comma-Separated Values)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Arquivo texto universal onde cada linha representa um ensaio/amostra e as colunas são separadas por vírgula (,) ou ponto e vírgula (;).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Registro bruto exportado por um datalogger ou planilha de laboratório.
+              </div>
+            </article><article data-cat="dados" data-gsearch="array / ndarray (numpy) vetor (1d), matriz (2d) ou tensor (3d+) numérico homogêneo armazenado de forma contígua para cálculo matricial ultrarrápido. enquanto a lista python é uma sacola flexível com itens variados, o ndarray é uma viga de aço padronizada para cálculo estrutural pesado. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Array / ndarray (NumPy)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Vetor (1D), matriz (2D) ou tensor (3D+) numérico homogêneo armazenado de forma contígua para cálculo matricial ultrarrápido.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Enquanto a lista Python é uma sacola flexível com itens variados, o ndarray é uma viga de aço padronizada para cálculo estrutural pesado.
+              </div>
+            </article><article data-cat="dados" data-gsearch="broadcasting (transmissão vetorial) capacidade do numpy de aplicar operações aritméticas a todos os elementos de um vetor/matriz simultaneamente sem escrever laços for (ex.: kelvin = celsius + 273.15). conversão simultânea de unidades em toda uma coluna de telemetria. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Broadcasting (Transmissão Vetorial)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Capacidade do NumPy de aplicar operações aritméticas a todos os elementos de um vetor/matriz simultaneamente sem escrever laços for (ex.: kelvin = celsius + 273.15).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Conversão simultânea de unidades em toda uma coluna de telemetria.
+              </div>
+            </article><article data-cat="dados" data-gsearch="dataframe e series (pandas) o dataframe é uma tabela bidimensional inteligente com colunas nomeadas de tipos variados; cada coluna individual extraída dele (df[&#x27;age&#x27;]) é uma series. planilha de engenharia programável capaz de cruzar milhões de leituras sem travar. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">DataFrame e Series (Pandas)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">O DataFrame é uma tabela bidimensional inteligente com colunas nomeadas de tipos variados; cada coluna individual extraída dele (df[&#x27;age&#x27;]) é uma Series.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Planilha de engenharia programável capaz de cruzar milhões de leituras sem travar.
+              </div>
+            </article><article data-cat="dados" data-gsearch="feature (atributo de entrada, x) e target (rótulo/saída, d ou y) features são as grandezas medidas que alimentam o modelo (temperatura, espessura, acidez); target é a grandeza que desejamos prever ou classificar (resistência em mpa, pureza p1/p2). variáveis independentes (entradas controladas/medidas) vs. variável dependente do experimento. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Feature (Atributo de Entrada, x) e Target (Rótulo/Saída, d ou y)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Features são as grandezas medidas que alimentam o modelo (temperatura, espessura, acidez); Target é a grandeza que desejamos prever ou classificar (resistência em MPa, pureza P1/P2).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Variáveis independentes (entradas controladas/medidas) vs. variável dependente do experimento.
+              </div>
+            </article><article data-cat="dados" data-gsearch="nan (not a number) e imputação de dados nan marca um dado numérico ausente. a imputação preenche essas lacunas com estatísticas do treino (média, mediana ou moda) para evitar descartar o registro inteiro. falha momentânea de leitura em um termopar tratada estatisticamente. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">NaN (Not a Number) e Imputação de Dados</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">NaN marca um dado numérico ausente. A imputação preenche essas lacunas com estatísticas do treino (média, mediana ou moda) para evitar descartar o registro inteiro.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Falha momentânea de leitura em um termopar tratada estatisticamente.
+              </div>
+            </article><article data-cat="dados" data-gsearch="outlier (valor discrepante) observação muito afastada da distribuição típica da amostra (visível além das hastes de um boxplot), podendo indicar condição extrema real ou erro grosseiro de medição. pico espúrio de ruído elétrico ou sobrecarga pontual na linha. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Outlier (Valor Discrepante)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Observação muito afastada da distribuição típica da amostra (visível além das hastes de um boxplot), podendo indicar condição extrema real ou erro grosseiro de medição.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Pico espúrio de ruído elétrico ou sobrecarga pontual na linha.
+              </div>
+            </article><article data-cat="dados" data-gsearch="one-hot encoding codificação binária vetorial para categorias sem ordem numérica: 3 conservantes viram a=[1,0,0], b=[0,1,0], c=[0,0,1] em vez de 1, 2, 3 (evitando inventar hierarquia numérica falsa). painel com três lâmpadas independentes, uma exclusiva para cada estado de operação. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">One-Hot Encoding</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Codificação binária vetorial para categorias sem ordem numérica: 3 conservantes viram A=[1,0,0], B=[0,1,0], C=[0,0,1] em vez de 1, 2, 3 (evitando inventar hierarquia numérica falsa).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Painel com três lâmpadas independentes, uma exclusiva para cada estado de operação.
+              </div>
+            </article><article data-cat="dados" data-gsearch="normalização (min-max) e padronização (z-score) reescalonamento das entradas para faixas comparáveis, como [0, 1] no min-max ou média 0 e desvio padrão 1 no z-score: z = (x − μ) / σ. adimensionalização em fenômenos de transporte — impede que 250 °c esmague numericamente 0,02 mm. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Normalização (Min-Max) e Padronização (Z-score)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Reescalonamento das entradas para faixas comparáveis, como [0, 1] no Min-Max ou média 0 e desvio padrão 1 no Z-score: z = (x − μ) / σ.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Adimensionalização em Fenômenos de Transporte — impede que 250 °C esmague numericamente 0,02 mm.
+              </div>
+            </article><article data-cat="dados" data-gsearch="divisão treino / teste e vazamento de dados (data leakage) separamos dados para ajustar os pesos (treino) e dados inéditos para validação real (teste). data leakage ocorre quando informações do teste vazam para o treino (ex.: ajustar standardscaler antes de separar). calibrar o instrumento usando as próprias amostras cegas da auditoria de certificação. 2. estruturas e pré-processamento de dados" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Divisão Treino / Teste e Vazamento de Dados (Data Leakage)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Separamos dados para ajustar os pesos (treino) e dados inéditos para validação real (teste). Data Leakage ocorre quando informações do teste vazam para o treino (ex.: ajustar StandardScaler antes de separar).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Calibrar o instrumento usando as próprias amostras cegas da auditoria de certificação.
+              </div>
+            </article>
+          </div>
+        </section>
+<section data-gsec="arquitetura" class="flex flex-col gap-space-md mb-space-xl">
+          <div class="border-b border-outline-variant/50 pb-2">
+            <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">3. Arquitetura de Redes Neurais Artificiais</h2>
+            <p class="text-sm text-on-surface-variant mt-0.5 m-0">Componentes internos do neurônio de Rosenblatt até redes multicamadas e dinâmicas.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+            <article data-cat="arquitetura" data-gsearch="perceptron simples neurônio artificial clássico proposto por frank rosenblatt (1958). calcula combinação linear das entradas seguida por função degrau, resolvendo problemas linearmente separáveis. relé comparador linear de limiar único. 3. arquitetura de redes neurais artificiais" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Perceptron Simples</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Neurônio artificial clássico proposto por Frank Rosenblatt (1958). Calcula combinação linear das entradas seguida por função degrau, resolvendo problemas linearmente separáveis.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Relé comparador linear de limiar único.
+              </div>
+            </article><article data-cat="arquitetura" data-gsearch="pesos sinápticos (w) coeficientes multiplicativos ajustáveis associados a cada entrada que determinam a intensidade e o sinal (excitatório ou inibitório) daquela variável. grau de abertura das válvulas em uma estação de mistura industrial. 3. arquitetura de redes neurais artificiais" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Pesos Sinápticos (w)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Coeficientes multiplicativos ajustáveis associados a cada entrada que determinam a intensidade e o sinal (excitatório ou inibitório) daquela variável.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Grau de abertura das válvulas em uma estação de mistura industrial.
+              </div>
+            </article><article data-cat="arquitetura" data-gsearch="viés / bias / limiar de ativação (θ ou w₀) termo constante somado ao potencial interno (implementado fixando x₀ = −1 multiplicado por w₀ = θ), permitindo deslocar a fronteira de decisão para longe da origem. parafuso de offset (ajuste de zero) na calibração de um manômetro. 3. arquitetura de redes neurais artificiais" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Viés / Bias / Limiar de Ativação (θ ou w₀)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Termo constante somado ao potencial interno (implementado fixando x₀ = −1 multiplicado por w₀ = θ), permitindo deslocar a fronteira de decisão para longe da origem.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Parafuso de offset (ajuste de zero) na calibração de um manômetro.
+              </div>
+            </article><article data-cat="arquitetura" data-gsearch="potencial de ativação (u) e fronteira de decisão potencial u = ∑ wᵢxᵢ − θ. o lugar geométrico u = 0 define a fronteira separadora (reta em 2d, plano em 3d, hiperplano em nd). portas and/or são linearmente separáveis; xor não é. plano de corte crítico que divide dois regimes de operação em um diagrama de fases. 3. arquitetura de redes neurais artificiais" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Potencial de Ativação (u) e Fronteira de Decisão</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Potencial u = ∑ wᵢxᵢ − θ. O lugar geométrico u = 0 define a fronteira separadora (reta em 2D, plano em 3D, hiperplano em nD). Portas AND/OR são linearmente separáveis; XOR não é.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Plano de corte crítico que divide dois regimes de operação em um diagrama de fases.
+              </div>
+            </article><article data-cat="arquitetura" data-gsearch="funções de ativação: degrau, sigmóide, relu e softmax degrau gera saída brusca {-1,+1}; sigmóide logística 1/(1+e⁻ᵘ) gera curva &#x27;s&#x27; diferenciável em (0,1); relu max(0,u) evita saturação; softmax converte saídas em probabilidades somando 100%. degrau = pressostato on/off; sigmóide = válvula proporcional suave; relu = diodo retificador ideal. 3. arquitetura de redes neurais artificiais" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Funções de Ativação: Degrau, Sigmóide, ReLU e Softmax</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Degrau gera saída brusca {-1,+1}; Sigmóide Logística 1/(1+e⁻ᵘ) gera curva &#x27;S&#x27; diferenciável em (0,1); ReLU max(0,u) evita saturação; Softmax converte saídas em probabilidades somando 100%.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Degrau = pressostato on/off; Sigmóide = válvula proporcional suave; ReLU = diodo retificador ideal.
+              </div>
+            </article><article data-cat="arquitetura" data-gsearch="pmc / mlp (perceptron multicamadas) rede neural com uma ou mais camadas ocultas não lineares entre entrada e saída. atua como aproximador universal de funções contínuas e dobra fronteiras curvas. malha em cascata de múltiplos estágios não lineares acoplados. 3. arquitetura de redes neurais artificiais" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">PMC / MLP (Perceptron Multicamadas)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Rede neural com uma ou mais camadas ocultas não lineares entre entrada e saída. Atua como aproximador universal de funções contínuas e dobra fronteiras curvas.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Malha em cascata de múltiplos estágios não lineares acoplados.
+              </div>
+            </article><article data-cat="arquitetura" data-gsearch="tdnn (time-delay neural network) rede pmc alimentada por uma janela deslizante de leituras passadas [x(t−1), x(t−2), …, x(t−p)] para prever o estado futuro x(t) de uma série temporal. versão neural não linear de um filtro digital fir / modelo auto-regressivo em controle de processos. 3. arquitetura de redes neurais artificiais" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">TDNN (Time-Delay Neural Network)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Rede PMC alimentada por uma janela deslizante de leituras passadas [x(t−1), x(t−2), …, x(t−p)] para prever o estado futuro x(t) de uma série temporal.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Versão neural não linear de um filtro digital FIR / modelo auto-regressivo em Controle de Processos.
+              </div>
+            </article>
+          </div>
+        </section>
+<section data-gsec="treinamento" class="flex flex-col gap-space-md mb-space-xl">
+          <div class="border-b border-outline-variant/50 pb-2">
+            <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">4. Treinamento, Otimização e Métricas de Engenharia</h2>
+            <p class="text-sm text-on-surface-variant mt-0.5 m-0">Como os pesos convergem numericamente e como auditar a qualidade física do modelo.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+            <article data-cat="treinamento" data-gsearch="época (epoch) um ciclo completo em que todas as amostras da tabela de treinamento passaram pela rede neural uma vez. uma rodada completa de calibração percorrendo toda a bateria de ensaios. 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Época (Epoch)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Um ciclo completo em que todas as amostras da tabela de treinamento passaram pela rede neural uma vez.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Uma rodada completa de calibração percorrendo toda a bateria de ensaios.
+              </div>
+            </article><article data-cat="treinamento" data-gsearch="aprendizado online (batch=1), mini-batch e batch completo define quando os pesos são atualizados: após cada amostra individual (online, padrão do livro-base), a cada pequeno pacote de 16/32 amostras (mini-batch) ou só ao fim da tabela inteira (batch). ajustar a válvula a cada peça inspecionada vs. ajustar por lote de produção. 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Aprendizado Online (Batch=1), Mini-Batch e Batch Completo</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Define quando os pesos são atualizados: após cada amostra individual (Online, padrão do livro-base), a cada pequeno pacote de 16/32 amostras (Mini-Batch) ou só ao fim da tabela inteira (Batch).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Ajustar a válvula a cada peça inspecionada vs. ajustar por lote de produção.
+              </div>
+            </article><article data-cat="treinamento" data-gsearch="regra de aprendizado do perceptron (regra de hebb/rosenblatt) correção supervisionada proporcional ao erro: w ← w + η·(d − y)·x. se acertou (d = y), os pesos permanecem intactos. controle corretivo proporcional ao desvio observado na saída. 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Regra de Aprendizado do Perceptron (Regra de Hebb/Rosenblatt)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Correção supervisionada proporcional ao erro: w ← w + η·(d − y)·x. Se acertou (d = y), os pesos permanecem intactos.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Controle corretivo proporcional ao desvio observado na saída.
+              </div>
+            </article><article data-cat="treinamento" data-gsearch="erro quadrático médio (mse — mean squared error) média dos quadrados dos erros entre valor desejado d e previsto y, penalizando severamente desvios grandes. potência média dissipada proporcional ao quadrado da amplitude do erro (e²). 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Erro Quadrático Médio (MSE — Mean Squared Error)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Média dos quadrados dos erros entre valor desejado d e previsto y, penalizando severamente desvios grandes.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Potência média dissipada proporcional ao quadrado da amplitude do erro (e²).
+              </div>
+            </article><article data-cat="treinamento" data-gsearch="gradiente descendente e taxa de aprendizado (η) método iterativo que caminha no sentido oposto ao gradiente do erro (−∇e). a taxa η regula o tamanho do passo (η alto demais causa oscilação/divergência; η minúsculo torna a convergência lenta). esfera descendo a encosta de um vale de energia potencial; η é o tamanho do passo na descida. 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Gradiente Descendente e Taxa de Aprendizado (η)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Método iterativo que caminha no sentido oposto ao gradiente do erro (−∇E). A taxa η regula o tamanho do passo (η alto demais causa oscilação/divergência; η minúsculo torna a convergência lenta).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Esfera descendo a encosta de um vale de energia potencial; η é o tamanho do passo na descida.
+              </div>
+            </article><article data-cat="treinamento" data-gsearch="backpropagation (retropropagação do erro) algoritmo que aplica a regra da cadeia do cálculo diferencial da camada de saída de volta às camadas ocultas para calcular o gradiente local δ de cada neurônio interno. rastreamento reverso de sensibilidade em uma linha de processo em série. 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Backpropagation (Retropropagação do Erro)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Algoritmo que aplica a Regra da Cadeia do Cálculo Diferencial da camada de saída de volta às camadas ocultas para calcular o gradiente local δ de cada neurônio interno.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Rastreamento reverso de sensibilidade em uma linha de processo em série.
+              </div>
+            </article><article data-cat="treinamento" data-gsearch="momentum (α) e otimizador adam o momentum soma uma fração α (0,8 a 0,9) do passo anterior ao passo atual: δw(t) = η·δ·xᵀ + α·δw(t−1). o adam combina momentum com taxas adaptativas individuais por peso. inércia mecânica de uma esfera maciça de aço que acumula embalo em rampas e vence pequenas depressões. 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Momentum (α) e Otimizador Adam</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">O Momentum soma uma fração α (0,8 a 0,9) do passo anterior ao passo atual: ΔW(t) = η·δ·xᵀ + α·ΔW(t−1). O Adam combina Momentum com taxas adaptativas individuais por peso.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Inércia mecânica de uma esfera maciça de aço que acumula embalo em rampas e vence pequenas depressões.
+              </div>
+            </article><article data-cat="treinamento" data-gsearch="underfitting, overfitting e regularização (l2 / dropout) underfitting é modelo simples demais; overfitting ocorre quando a rede decora o ruído do treino mas falha no teste. regularização l2 (alpha) e dropout freiam pesos excessivos. ajustar um polinômio de grau 20 sobre 10 pontos ruidosos em vez de capturar a lei física suave. 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Underfitting, Overfitting e Regularização (L2 / Dropout)</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Underfitting é modelo simples demais; Overfitting ocorre quando a rede decora o ruído do treino mas falha no teste. Regularização L2 (alpha) e Dropout freiam pesos excessivos.</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Ajustar um polinômio de grau 20 sobre 10 pontos ruidosos em vez de capturar a lei física suave.
+              </div>
+            </article><article data-cat="treinamento" data-gsearch="métricas: acurácia, mae, erro relativo (%) e r² acurácia mede % de acertos em classes; mae mede erro médio na unidade física (ex.: ±2,1 mpa); erro relativo (%) mede |d−y|/|d|×100; r² indica a fração da variância física explicada (1,0 = ideal). indicadores de tolerância dimensional e conformidade metrológica de um instrumento. 4. treinamento, otimização e métricas de engenharia" class="glossary-card bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col justify-between gap-3">
+              <div class="flex flex-col gap-1.5">
+                <h3 class="font-title-md text-[16.5px] text-primary font-bold m-0">Métricas: Acurácia, MAE, Erro Relativo (%) e R²</h3>
+                <p class="text-[13.5px] text-on-surface leading-relaxed m-0">Acurácia mede % de acertos em classes; MAE mede erro médio na unidade física (ex.: ±2,1 MPa); Erro Relativo (%) mede |d−y|/|d|×100; R² indica a fração da variância física explicada (1,0 = ideal).</p>
+              </div>
+              <div class="p-3 rounded-xl bg-tertiary-container/10 border-l-4 border-on-tertiary-container text-[12.8px] text-on-surface leading-relaxed">
+                <strong class="text-tertiary font-semibold">🔧 Analogia de Engenharia:</strong> Indicadores de tolerância dimensional e conformidade metrológica de um instrumento.
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/40 shadow-[0_-1px_6px_rgba(0,0,0,0.02)] py-space-lg px-gutter-mobile lg:px-gutter mt-space-xl">
+      <div class="max-w-[1360px] mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-space-md">
+        <div class="flex flex-col gap-1 text-center md:text-left">
+          <span class="font-title-md text-title-md text-primary font-semibold">PyEngenharia UESC • Integração de RNAs à Engenharia</span>
+          <span class="font-body-md text-body-md text-on-surface-variant">Programa de Iniciação à Docência (PID) • Enzo Fernandes Sarmento</span>
+        </div>
+        <nav class="flex flex-wrap items-center justify-center gap-space-md">
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="index.html">Guia Principal</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="notebooks.html">22 Notebooks</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="instalacao.html">Instalação</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="glossario.html">Glossário</a>
+          <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="https://github.com/enzosarmento/python-rna-engenharia-didatico" rel="noreferrer" target="_blank">Repositório GitHub</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btns = document.querySelectorAll('.g-filter-btn');
+  const input = document.getElementById('glossary-search');
+  const sections = document.querySelectorAll('[data-gsec]');
+  const empty = document.getElementById('glossary-empty');
+  let activeCat = 'all';
+
+  function filterGlossary() {
+    const q = (input ? input.value : '').toLowerCase().trim();
+    let total = 0;
+    sections.forEach(sec => {
+      const cat = sec.getAttribute('data-gsec');
+      let secCount = 0;
+      sec.querySelectorAll('.glossary-card').forEach(card => {
+        const okCat = (activeCat === 'all' || cat === activeCat);
+        const okTxt = !q || (card.getAttribute('data-gsearch') || '').includes(q);
+        if (okCat && okTxt) {
+          card.style.display = 'flex';
+          secCount++;
+          total++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      sec.style.display = secCount > 0 ? 'flex' : 'none';
+    });
+    if (empty) empty.classList.toggle('hidden', total > 0);
+  }
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeCat = btn.getAttribute('data-gfilter') || 'all';
+      btns.forEach(b => {
+        b.className = (b === btn)
+          ? 'g-filter-btn px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-xs font-semibold transition-colors'
+          : 'g-filter-btn px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-xs font-semibold transition-colors';
+      });
+      filterGlossary();
+    });
+  });
+
+  if (input) input.addEventListener('input', filterGlossary);
+});
+</script>
+</body>
+</html>
