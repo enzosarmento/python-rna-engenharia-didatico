@@ -30,6 +30,7 @@ Para facilitar o aprendizado progressivo, os projetos extensos foram **divididos
 - **[`06_projeto3_series_temporais_pmc.ipynb`](06_projeto3_series_temporais_pmc.ipynb):** Rede Neural com Atraso no Tempo (**TDNN** / Janela Deslizante), comparando 3 topologias (`5-10-1`, `10-15-1` e `15-25-1`) com *Momentum* ($\alpha = 0{,}8$) para prever $t = 101 \dots 120$.
 
 ### 5. Engenharia Mecânica e de Materiais — Estudo de Caso em Impressão 3D (`impressora-3d/`)
+- **Fonte dos Dados:** Conjunto experimental obtido no **[Kaggle](https://www.kaggle.com/)** (*3D Printer Dataset for Mechanical Engineers* — [`impressora-3d/data.csv`](impressora-3d/data.csv)).
 - **[`impressora-3d/01_impressora3d_eda_e_classificacao_material.ipynb`](impressora-3d/01_impressora3d_eda_e_classificacao_material.ipynb):** Física do processo FDM (`ABS` vs. `PLA`, ventilação, rugosidade) e classificação supervisionada sem vazamento de dados.
 - **[`impressora-3d/02_impressora3d_predicao_resistencia_mecanica.ipynb`](impressora-3d/02_impressora3d_predicao_resistencia_mecanica.ipynb):** Predição da resistência à tração (MPa), otimização `lbfgs` + Validação Cruzada para amostras laboratoriais pequenas ($N = 50$) e conceito de **Gêmeos Digitais**.
 - **[`impressora-3d/printer_dataset.py`](impressora-3d/printer_dataset.py):** Script Python modular autônomo pronto para execução em terminal.

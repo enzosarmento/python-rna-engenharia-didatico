@@ -1,6 +1,6 @@
 # Desafios Práticos: Projeto Titanic
 
-Bem-vindo(a) à bateria de exercícios aplicados sobre o histórico conjunto de dados do naufrágio do **RMS Titanic (1912)**. Aqui você colocará em prática, degrau por degrau, tudo o que estudou nos Módulos `01` a `06` da trilha base.
+Bem-vindo(a) à bateria de exercícios aplicados sobre o histórico conjunto de dados do naufrágio do **RMS Titanic (1912)**, obtido na plataforma **[Kaggle](https://www.kaggle.com/)**. Aqui você colocará em prática, degrau por degrau, tudo o que estudou nos Módulos `01` a `06` da trilha base.
 
 ---
 

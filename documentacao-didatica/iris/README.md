@@ -1,6 +1,6 @@
 # Desafio Multiclasse: Classificação da Flor de Íris
 
-O conjunto de dados **Iris** (introduzido pelo estatístico Ronald Fisher em 1936) é o "Olá, Mundo!" universal da classificação multiclasse em Aprendizado de Máquina.
+O conjunto de dados **Iris** (introduzido pelo estatístico Ronald Fisher em 1936 e obtido para este laboratório via **[Kaggle](https://www.kaggle.com/)**) é o "Olá, Mundo!" universal da classificação multiclasse em Aprendizado de Máquina.
 
 Para a **Engenharia**, embora o exemplo clássico venha da botânica, a matemática é **exatamente a mesma** usada para classificar **3 tipos de falhas em rolamentos**, **3 graus de pureza química** ou **3 conservantes industriais** (como veremos na pasta [`../engenharia/`](../engenharia/README.md))!
 

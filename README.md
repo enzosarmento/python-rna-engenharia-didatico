@@ -310,6 +310,16 @@ Se aparecer uma mensagem de erro com fundo vermelho ao executar uma célula no J
 
 ---
 
-## Referência Bibliográfica Base
+## Referências, Fontes dos Datasets e Licença
 
-- **SILVA, Ivan Nunes da; SPATTI, Danilo Hernane; FLAUZINO, Rogério Andrade.** *Redes Neurais Artificiais para Engenharia e Ciências Aplicadas: Curso Prático*. São Paulo: Artliber Editora. *(Exemplar de referência e tabelas brutas disponíveis na pasta [`livro-base/`](livro-base/)).*
+### Referência Bibliográfica Base
+- **SILVA, Ivan Nunes da; SPATTI, Danilo Hernane; FLAUZINO, Rogério Andrade.** *Redes Neurais Artificiais para Engenharia e Ciências Aplicadas: Curso Prático*. São Paulo: Artliber Editora. *(Fonte teórica e das tabelas experimentais de Destilação de Óleo e dos Projetos Práticos 1, 2 e 3 em [`livro-base/`](livro-base/)).*
+
+### Fontes dos Conjuntos de Dados Públicos (Kaggle)
+Os conjuntos de dados utilizados nos laboratórios guiados e no estudo de caso de manufatura aditiva foram obtidos na plataforma **[Kaggle](https://www.kaggle.com/)** para fins exclusivamente didáticos e acadêmicos:
+- **Titanic:** Conjunto de dados público de sobrevivência de passageiros obtido no **Kaggle** (*Titanic — Machine Learning from Disaster*), armazenado em [`documentacao-didatica/arquivos-csv/`](documentacao-didatica/arquivos-csv/).
+- **Flor de Íris (*Iris*):** Conjunto clássico de classificação botânica multiclasse (R. A. Fisher, 1936) obtido via **Kaggle** (*Iris Species Dataset*), armazenado em [`documentacao-didatica/arquivos-csv/`](documentacao-didatica/arquivos-csv/).
+- **Impressora 3D FDM:** Dados experimentais de parâmetros de impressão e ensaios mecânicos obtidos no **Kaggle** (*3D Printer Dataset for Mechanical Engineers*), armazenados em [`documentacao-didatica/engenharia/impressora-3d/data.csv`](documentacao-didatica/engenharia/impressora-3d/data.csv).
+
+### Licença
+- O código-fonte, os scripts e a documentação didática autoral deste repositório são distribuídos sob a **[Licença MIT](LICENSE)**. Os conjuntos de dados externos permanecem sujeitos aos termos originais de suas respectivas fontes (Kaggle e editora do livro-base).
