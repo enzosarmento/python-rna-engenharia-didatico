@@ -1,6 +1,6 @@
 # Integração de Redes Neurais Artificiais à Engenharia — Guia Didático Completo (PID)
 
-> 🌐 **Acesse o Portal Didático Online (GitHub Pages):** https://enzosarmento.github.io/python-rna-engenharia-didatico/
+> 🌐 **Acesse o Portal Didático Online:** https://enzosarmento.github.io/python-rna-engenharia-didatico/
 >
 > **Público-alvo:** Estudantes de Engenharia (Química, Mecânica, Produção, Elétrica, Materiais, Controle e Automação) e Ciências Exatas que **nunca programaram em Python** e **nunca estudaram Redes Neurais Artificiais**, mas já dominam a base matemática da graduação (Cálculo, Álgebra Linear e Estatística Básica).
 
