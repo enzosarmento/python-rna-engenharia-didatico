@@ -310,6 +310,15 @@ Se aparecer uma mensagem de erro com fundo vermelho ao executar uma célula no J
 
 ---
 
+## Autoria e Orientação
+
+Material desenvolvido no âmbito do **Programa de Iniciação à Docência (PID)** da **Universidade Estadual de Santa Cruz (UESC)**:
+
+- **Autor (Bolsista PID):** Enzo Fernandes Sarmento — [efsarmento.cic@uesc.br](mailto:efsarmento.cic@uesc.br)
+- **Orientador:** Prof. Dr. Elilton Rodrigues Edwards — [eredwards@uesc.br](mailto:eredwards@uesc.br)
+
+---
+
 ## Referências, Fontes dos Datasets e Licença
 
 ### Referência Bibliográfica Base

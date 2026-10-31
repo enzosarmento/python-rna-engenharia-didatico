@@ -293,16 +293,29 @@
       </nav>
     </div>
 
-    <!-- Card do Responsável Acadêmico -->
-    <div class="w-full bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex items-center gap-3">
-      <div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0">
-        <span class="material-symbols-outlined text-[24px]">engineering</span>
+    <!-- Card dos Responsáveis Acadêmicos -->
+    <div class="w-full bg-surface-container-lowest rounded-2xl p-space-md border border-outline-variant/40 shadow-sm flex flex-col gap-3">
+      <div class="flex items-center gap-3 min-w-0">
+        <div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[24px]">engineering</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Autor • Bolsista PID</span>
+          <span class="font-title-md text-[16px] text-primary font-bold truncate">Enzo Fernandes Sarmento</span>
+          <a class="font-label-md text-label-md text-outline hover:text-primary break-all" href="mailto:efsarmento.cic@uesc.br">efsarmento.cic@uesc.br</a>
+        </div>
       </div>
-      <div class="flex flex-col min-w-0">
-        <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Desenvolvimento PID</span>
-        <span class="font-title-md text-[16px] text-primary font-bold truncate">Enzo Fernandes Sarmento</span>
-        <span class="font-label-md text-label-md text-outline">UESC • Dep. de Ciências Exatas</span>
+      <div class="flex items-center gap-3 min-w-0 pt-3 border-t border-surface-container">
+        <div class="w-12 h-12 rounded-xl bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[24px]">school</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Orientador</span>
+          <span class="font-title-md text-[16px] text-primary font-bold truncate">Prof. Dr. Elilton Rodrigues Edwards</span>
+          <a class="font-label-md text-label-md text-outline hover:text-primary break-all" href="mailto:eredwards@uesc.br">eredwards@uesc.br</a>
+        </div>
       </div>
+      <span class="font-label-md text-label-md text-outline">UESC • Programa de Iniciação à Docência</span>
     </div>
 
     <!-- Quick Action Card: Bases de Dados -->
@@ -1460,7 +1473,7 @@ X_teste_norm = scaler.transform(X_teste)</code></pre>
       <div class="max-w-[1360px] mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-space-md">
         <div class="flex flex-col gap-1 text-center md:text-left">
           <span class="font-title-md text-title-md text-primary font-semibold">PyEngenharia UESC • Integração de RNAs à Engenharia</span>
-          <span class="font-body-md text-body-md text-on-surface-variant">Programa de Iniciação à Docência (PID) • Enzo Fernandes Sarmento</span>
+          <span class="font-body-md text-body-md text-on-surface-variant">Programa de Iniciação à Docência (PID) • Autor: <a class="hover:text-primary underline decoration-dotted" href="mailto:efsarmento.cic@uesc.br">Enzo Fernandes Sarmento</a> • Orientador: <a class="hover:text-primary underline decoration-dotted" href="mailto:eredwards@uesc.br">Prof. Dr. Elilton Rodrigues Edwards</a></span>
         </div>
         <nav class="flex flex-wrap items-center justify-center gap-space-md">
           <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="index.html">Guia Principal</a>
