@@ -144,8 +144,8 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-md">
     <a href="#opcao-anaconda" class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high border-l-4 border-on-tertiary-container transition-all flex flex-col gap-1">
       <span class="text-xs font-bold text-tertiary uppercase">Opção 1 • Recomendada para Iniciantes</span>
-      <span class="font-title-md text-primary font-bold">Anaconda + JupyterLab</span>
-      <span class="text-xs text-on-surface-variant">Instalador visual completo que já traz Python, JupyterLab e pacotes científicos prontos.</span>
+      <span class="font-title-md text-primary font-bold">Anaconda + Ambiente Conda</span>
+      <span class="text-xs text-on-surface-variant">Instalador visual com Python e JupyterLab, mais um ambiente conda dedicado ao curso.</span>
     </a>
     <a href="#opcao-vscode" class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container-high border-l-4 border-primary transition-all flex flex-col gap-1">
       <span class="text-xs font-bold text-primary uppercase">Opção 2 • Leve e Profissional</span>
@@ -164,17 +164,29 @@
   <!-- OPÇÃO 1 -->
   <article id="opcao-anaconda" class="bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl border border-outline-variant/40 shadow-md flex flex-col gap-space-md">
     <div class="flex items-center justify-between flex-wrap gap-2">
-      <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">Opção 1: Anaconda + JupyterLab (Recomendada)</h2>
+      <h2 class="font-headline-md text-headline-md text-primary font-extrabold m-0">Opção 1: Anaconda + Ambiente Conda + JupyterLab (Recomendada)</h2>
       <span class="px-3 py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-md text-xs font-bold">Mais Simples</span>
     </div>
     <p class="text-on-surface leading-relaxed m-0">
-      O <strong>Anaconda</strong> é uma distribuição gratuita criada para cientistas e engenheiros. Ao instalá-lo, você recebe automaticamente o Python, o <strong>JupyterLab</strong> (interface onde abrimos os arquivos <span class="code-token">.ipynb</span>) e as principais bibliotecas matemáticas (<span class="code-token">numpy</span>, <span class="code-token">pandas</span>, <span class="code-token">matplotlib</span>, <span class="code-token">seaborn</span> e <span class="code-token">scikit-learn</span>).
+      O <strong>Anaconda</strong> é uma distribuição gratuita para cientistas e engenheiros. Ela instala o Python, o gerenciador de ambientes <span class="code-token">conda</span>, o painel visual <strong>Anaconda Navigator</strong> e o <strong>JupyterLab</strong> (interface onde abrimos os arquivos <span class="code-token">.ipynb</span>).
     </p>
-    <ol class="list-decimal pl-5 space-y-2 text-on-surface leading-relaxed">
-      <li><strong>Baixe e instale o Anaconda:</strong> acesse <a href="https://www.anaconda.com/download" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">anaconda.com/download</a> (clique em <em>Skip registration</em> se desejar), baixe o instalador para Windows, macOS ou Linux e mantenha as opções padrão (<em>Next → Agree → Just Me → Install</em>).</li>
-      <li><strong>Baixe este repositório:</strong> na página do <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">GitHub</a>, clique no botão verde <strong>&lt;&gt; Code → Download ZIP</strong> e extraia na sua pasta <span class="code-token">Documentos</span> (ou use <span class="code-token">git clone</span> abaixo).</li>
-      <li><strong>Instale o pacote complementar (<span class="code-token">tensorflow</span>) e abra o JupyterLab:</strong> abra o programa <strong>Anaconda Prompt</strong> no menu Iniciar (ou Terminal no Linux/macOS) e execute:</li>
-    </ol>
+    <div class="w-full bg-tertiary-container/10 p-space-md rounded-xl border-l-4 border-on-tertiary-container text-sm text-on-surface leading-relaxed">
+      <strong class="text-tertiary block mb-1">Por que criar um ambiente separado?</strong>
+      Um <strong>ambiente conda</strong> é como uma <strong>bancada de laboratório dedicada</strong>: guarda uma versão específica do Python e das bibliotecas só para este curso. Nada que você instale aqui quebra outros projetos, e se algo der errado basta apagar o ambiente e recriá-lo. <strong>Evite instalar pacotes direto no ambiente <span class="code-token">base</span>.</strong>
+    </div>
+
+    <div class="flex items-center gap-2 pt-2"><span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0">1</span><h3 class="font-title-md text-title-md text-primary font-bold m-0">Baixar e instalar o Anaconda</h3></div>
+    <ul class="list-disc pl-5 space-y-2 text-on-surface leading-relaxed m-0">
+      <li>Acesse <a href="https://www.anaconda.com/download" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">anaconda.com/download</a> (clique em <em>Skip registration</em> se não quiser criar conta) e baixe o instalador do seu sistema.</li>
+      <li><strong>Windows/macOS:</strong> mantenha as opções padrão (<em>Next → I Agree → Just Me → Install</em>). No Windows, <strong>não</strong> marque <em>"Add Anaconda3 to my PATH"</em>; usaremos o programa <strong>Anaconda Prompt</strong>.</li>
+      <li><strong>Linux:</strong> rode <span class="code-token">bash ~/Downloads/Anaconda3-*-Linux-x86_64.sh</span>, aceite a licença e responda <span class="code-token">yes</span> para inicializar o conda. Depois feche e reabra o terminal.</li>
+      <li><strong>Confirme:</strong> abra o <strong>Anaconda Prompt</strong> (ou Terminal) e digite <span class="code-token">conda --version</span>. O início da linha deve mostrar <span class="code-token">(base)</span>.</li>
+    </ul>
+
+    <div class="flex items-center gap-2 pt-2"><span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0">2</span><h3 class="font-title-md text-title-md text-primary font-bold m-0">Baixar este repositório</h3></div>
+    <p class="text-on-surface leading-relaxed m-0">
+      Com Git, rode os comandos abaixo. Sem Git, na página do <a href="https://github.com/enzosarmento/python-rna-engenharia-didatico" target="_blank" rel="noreferrer" class="text-primary font-semibold underline">GitHub</a> clique em <strong>&lt;&gt; Code → Download ZIP</strong>, extraia em <span class="code-token">Documentos</span> e entre na pasta com <span class="code-token">cd</span>.
+    </p>
     <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
   <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
     <div class="flex items-center gap-2 font-code-inline text-code-inline">
@@ -185,21 +197,113 @@
     </div>
     <div class="flex items-center gap-3">
       <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Bash</span>
-      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-anaconda-cmd" type="button">
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-anaconda-clone" type="button">
         <span class="material-symbols-outlined text-[16px]">content_copy</span>
         <span class="copy-label">Copiar</span>
       </button>
     </div>
   </div>
   <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
-    <pre class="m-0"><code id="inst-anaconda-cmd">git clone https://github.com/enzosarmento/python-rna-engenharia-didatico.git
-cd python-rna-engenharia-didatico
+    <pre class="m-0"><code id="inst-anaconda-clone">cd Documents
+git clone https://github.com/enzosarmento/python-rna-engenharia-didatico.git
+cd python-rna-engenharia-didatico</code></pre>
+  </div>
+</div>
+
+    <div class="flex items-center gap-2 pt-2"><span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0">3</span><h3 class="font-title-md text-title-md text-primary font-bold m-0">Criar e ativar o ambiente conda do curso</h3></div>
+    <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">Anaconda Prompt / Terminal</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Conda</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-anaconda-env" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="inst-anaconda-env"># Cria um ambiente isolado chamado rna-engenharia com Python 3.11
+conda create -n rna-engenharia python=3.11 -y
+
+# Ativa o ambiente: o terminal muda de (base) para (rna-engenharia)
+conda activate rna-engenharia</code></pre>
+  </div>
+</div>
+    <details class="rounded-xl bg-surface-container-low border border-outline-variant/40 p-space-md text-sm text-on-surface">
+      <summary class="cursor-pointer font-semibold text-primary">Prefere o painel visual (Anaconda Navigator)? Clique aqui.</summary>
+      <ol class="list-decimal pl-5 space-y-1.5 mt-3 leading-relaxed">
+        <li>Abra o <strong>Anaconda Navigator</strong> e clique em <strong>Environments</strong> na barra lateral.</li>
+        <li>Clique em <strong>Create</strong> (ícone <span class="code-token">+</span>) na parte inferior.</li>
+        <li>Em <em>Name</em> digite <span class="code-token">rna-engenharia</span>, marque <strong>Python 3.11</strong> e clique em <strong>Create</strong>.</li>
+        <li>Clique na <strong>seta verde ▶</strong> ao lado do ambiente → <strong>Open Terminal</strong>, navegue com <span class="code-token">cd</span> até a pasta do repositório e siga para o passo 4.</li>
+      </ol>
+    </details>
+
+    <div class="flex items-center gap-2 pt-2"><span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0">4</span><h3 class="font-title-md text-title-md text-primary font-bold m-0">Instalar as bibliotecas, registrar o Kernel e abrir o JupyterLab</h3></div>
+    <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">Anaconda Prompt / Terminal — (rna-engenharia)</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Bash</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-anaconda-pip" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="inst-anaconda-pip"># Com (rna-engenharia) ativo e dentro da pasta do repositório
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+
+# Registra o ambiente como Kernel do Jupyter
+python -m ipykernel install --user --name rna-engenharia --display-name &quot;Python (rna-engenharia)&quot;
+
+# Abre o JupyterLab no navegador
 jupyter lab</code></pre>
   </div>
 </div>
     <p class="text-sm text-on-surface-variant m-0">
-      Uma aba abrirá automaticamente no navegador! Na barra lateral esquerda do JupyterLab, dê duplo clique na pasta <span class="code-token">documentacao-didatica</span> e abra <span class="code-token">00_introducao_python_engenharia.ipynb</span>.
+      O navegador abrirá em <span class="code-token">http://localhost:8888/lab</span>. Entre em <span class="code-token">documentacao-didatica</span>, abra <span class="code-token">00_introducao_python_engenharia.ipynb</span> e confira se o Kernel (canto superior direito) é <strong>Python (rna-engenharia)</strong>. Não feche o terminal enquanto usa o Jupyter; para encerrar, pressione <span class="code-token">Ctrl + C</span>.
+    </p>
+
+    <div class="flex items-center gap-2 pt-2"><span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shrink-0">5</span><h3 class="font-title-md text-title-md text-primary font-bold m-0">Nos próximos dias (uso diário)</h3></div>
+    <p class="text-sm text-on-surface m-0">Não é preciso reinstalar nada. Basta ativar o ambiente e abrir o Jupyter:</p>
+    <div class="code-panel w-full rounded-xl overflow-hidden bg-[#1E1E1E] shadow-md flex flex-col my-2">
+  <div class="w-full bg-[#181818] px-4 py-2.5 flex items-center justify-between text-neutral-400">
+    <div class="flex items-center gap-2 font-code-inline text-code-inline">
+      <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+      <span class="ml-2 font-semibold text-neutral-300">Uso diário</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="font-label-md text-label-md uppercase tracking-wider text-neutral-400 hidden sm:inline">Bash</span>
+      <button class="copy-code-btn flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#2D2D2D] hover:bg-[#3D3D3D] text-neutral-200 font-label-md text-label-md transition-all active:scale-95" data-target="inst-anaconda-daily" type="button">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span class="copy-label">Copiar</span>
+      </button>
+    </div>
+  </div>
+  <div class="p-space-md overflow-x-auto dark-scroll text-[#D4D4D4] font-code-block text-code-block leading-relaxed">
+    <pre class="m-0"><code id="inst-anaconda-daily">conda activate rna-engenharia
+cd Documents/python-rna-engenharia-didatico
+jupyter lab</code></pre>
+  </div>
+</div>
+    <p class="text-xs text-on-surface-variant m-0">
+      Úteis: <span class="code-token">conda env list</span> (listar ambientes) • <span class="code-token">conda deactivate</span> (voltar ao base) • <span class="code-token">conda env remove -n rna-engenharia</span> (apagar e recomeçar do zero).
     </p>
   </article>
 
