@@ -113,7 +113,7 @@ rna-engenharia/
 │   │   ├── 01_desafio_iris_parte1_perceptron.ipynb
 │   │   └── 02_desafio_iris_parte2_mlp.ipynb
 │   │
-│   └── engenharia/                  # Projetos Reais de Engenharia (Livro-Base + Indústria)
+│   └── engenharia/                  # Projetos Aplicados de Engenharia (Livro-Base + Impressão 3D)
 │       ├── README.md
 │       ├── 01_classificacao_oleo_perceptron.ipynb
 │       ├── 02_projeto1_pmc_regressao_numpy.ipynb
@@ -125,12 +125,12 @@ rna-engenharia/
 │       ├── prompt-projeto-pratico-2.md
 │       ├── prompt-projeto-pratico-3.md
 │       ├── topologia-aprox-funcoes.html
-│       ├── datasets/                # Tabelas experimentais de treino e validação cega
+│       ├── datasets/                # Tabelas de treino e validação dos projetos práticos
 │       └── impressora-3d/           # Estudo de Caso: Manufatura Aditiva (Impressão 3D FDM)
 │           ├── 01_impressora3d_eda_e_classificacao_material.ipynb
 │           ├── 02_impressora3d_predicao_resistencia_mecanica.ipynb
 │           ├── printer_dataset.py   # Script Python modular autônomo para terminal
-│           └── data.csv             # Ensaios laboratoriais reais (50 corpos de prova)
+│           └── data.csv             # Conjunto de dados de impressão 3D (50 amostras - Kaggle)
 │
 └── livro-base/                      # Referência bibliográfica e tabelas brutas originais
     ├── redes_neurais_artificiais_para_engenharia_e_ciencias_aplicadas[1].pdf
@@ -313,7 +313,7 @@ Se aparecer uma mensagem de erro com fundo vermelho ao executar uma célula no J
 ## Referências, Fontes dos Datasets e Licença
 
 ### Referência Bibliográfica Base
-- **SILVA, Ivan Nunes da; SPATTI, Danilo Hernane; FLAUZINO, Rogério Andrade.** *Redes Neurais Artificiais para Engenharia e Ciências Aplicadas: Curso Prático*. São Paulo: Artliber Editora. *(Fonte teórica e das tabelas experimentais de Destilação de Óleo e dos Projetos Práticos 1, 2 e 3 em [`livro-base/`](livro-base/)).*
+- **SILVA, Ivan Nunes da; SPATTI, Danilo Hernane; FLAUZINO, Rogério Andrade.** *Redes Neurais Artificiais para Engenharia e Ciências Aplicadas: Curso Prático*. São Paulo: Artliber Editora. *(Fonte teórica e das tabelas didáticas de Destilação de Óleo e dos Projetos Práticos 1, 2 e 3 em [`livro-base/`](livro-base/)).*
 
 ### Fontes dos Conjuntos de Dados Públicos (Kaggle)
 Os conjuntos de dados utilizados nos laboratórios guiados e no estudo de caso de manufatura aditiva foram obtidos na plataforma **[Kaggle](https://www.kaggle.com/)** para fins exclusivamente didáticos e acadêmicos:

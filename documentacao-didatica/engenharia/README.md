@@ -1,6 +1,6 @@
 # Projetos Práticos de Engenharia com Redes Neurais Artificiais
 
-Esta pasta reúne **aplicações reais de Engenharia** baseadas no livro-texto *Redes Neurais Artificiais para Engenharia e Ciências Aplicadas* (Ivan Nunes da Silva, Danilo Hernane Spatti e Rogério Andrade Flauzino) e em dados experimentais de **Manufatura Aditiva (Impressão 3D FDM)**.
+Esta pasta reúne **projetos práticos aplicados à Engenharia** baseados nos estudos dirigidos do livro-texto *Redes Neurais Artificiais para Engenharia e Ciências Aplicadas* (Ivan Nunes da Silva, Danilo Hernane Spatti e Rogério Andrade Flauzino) e no conjunto de dados público de **Manufatura Aditiva (Impressão 3D FDM)**.
 
 Para facilitar o aprendizado progressivo, os projetos extensos foram **divididos em pares complementares**:
 - **Parte A (`_numpy.ipynb`):** Matemática aberta passo a passo em `Python/NumPy`, fiel às equações e tabelas do livro-base.
