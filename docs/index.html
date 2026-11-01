@@ -1123,10 +1123,14 @@ X_teste_norm = scaler.transform(X_teste)</code></pre>
 
       <!-- 5.3 Treinamento -->
       <div class="flex flex-col gap-3 pt-2">
-        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">5.3. Otimização: Gradiente Descendente, Backpropagation, Momentum e TDNN</h3>
+        <h3 class="font-headline-sm text-headline-sm text-primary font-bold">5.3. Arquitetura Multicamadas (PMC), Backpropagation, Momentum e TDNN</h3>
         <p class="leading-relaxed text-on-surface m-0">
-          "Treinar" uma rede neural significa resolver um problema de otimização numérica: encontrar a abertura das válvulas (matrizes de pesos <strong>W</strong>) que minimiza o <strong>Erro Quadrático Médio</strong> (<em>MSE — Mean Squared Error</em>):
+          Ao empilhar neurônios em camadas sucessivas conectadas por matrizes de pesos (<strong>W⁽¹⁾, W⁽²⁾, W⁽³⁾</strong>), formamos o <strong>Perceptron Multicamadas (PMC / MLP)</strong>. "Treinar" essa rede significa resolver um problema de otimização numérica para encontrar os pesos que minimizam o <strong>Erro Quadrático Médio</strong> (<em>MSE — Mean Squared Error</em>):
         </p>
+        <figure class="bg-surface-container-low rounded-xl p-3 border border-outline-variant/40 flex flex-col items-center m-0">
+          <img src="assets/img/topologia_pmc_generico.svg" alt="Arquitetura genérica de um Perceptron Multicamadas (PMC)" loading="lazy" class="w-full max-w-2xl h-auto rounded object-contain"/>
+          <figcaption class="text-xs text-outline text-center mt-2">Arquitetura genérica de um Perceptron Multicamadas (PMC): <em>n</em> entradas, camadas ocultas em cascata e <em>m</em> saídas</figcaption>
+        </figure>
         <div class="math-block text-sm font-semibold">
           E_M = (1 / N) · ∑ ½ · (d⁽ᵏ⁾ − y⁽ᵏ⁾)²
         </div>

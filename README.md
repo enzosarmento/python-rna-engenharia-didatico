@@ -214,7 +214,13 @@ Em Engenharia, nunca somamos diretamente a temperatura do bico extrusor (`240 °
 
 Por isso aplicamos **Normalização Min-Max** (reescalonando tudo para `[0, 1]`) ou **Padronização Z-score** ($z = \frac{x - \mu}{\sigma}$, deixando média zero e desvio padrão unitário). **Regra de ouro contra Vazamento de Dados (*Data Leakage*):** a média $\mu$ e o desvio $\sigma$ devem ser calculados **exclusivamente no conjunto de treino** e apenas reaplicados nas amostras inéditas de teste!
 
-### 5.3. Treinamento, Gradiente Descendente, Backpropagation e Momentum
+### 5.3. Arquitetura Multicamadas (PMC), Backpropagation e Momentum
+
+Quando empilhamos vários neurônios em camadas sucessivas conectadas por matrizes de pesos ($\mathbf{W}^{(1)}, \mathbf{W}^{(2)}, \dots$), obtemos o **Perceptron Multicamadas (PMC / MLP)**:
+
+<p align="center">
+  <img src="documentacao-didatica/imagens/topologia_pmc_generico.svg" alt="Arquitetura genérica de uma rede Perceptron Multicamadas (PMC)" width="72%">
+</p>
 
 "Treinar" uma rede neural nada mais é do que resolver um **problema de otimização numérica**: encontrar o conjunto de abertura das válvulas ($\mathbf{W}$) que minimiza o **Erro Quadrático Médio** (*MSE — Mean Squared Error*, média dos quadrados das diferenças entre o valor medido em laboratório $d$ e o valor previsto pela rede $y$):
 
