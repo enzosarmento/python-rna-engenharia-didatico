@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="380" viewBox="0 0 660 380">
+  <defs>
+    <radialGradient id="greenGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e2f5e6"/>
+      <stop offset="100%" stop-color="#9acfa5"/>
+    </radialGradient>
+    <radialGradient id="blueGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#7db9e8"/>
+      <stop offset="100%" stop-color="#1e5799"/>
+    </radialGradient>
+    <radialGradient id="weightGradient" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#f2f8fd"/>
+      <stop offset="100%" stop-color="#c5dff6"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="660" height="380" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+
+  <text x="70" y="30" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">Entradas</text>
+  <text x="194" y="30" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">Pesos Sinápticos</text>
+  <text x="362" y="30" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">Limiar (Viés)</text>
+  <text x="512" y="30" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">Função de Ativação</text>
+  <text x="622" y="30" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">Saída</text>
+
+  <line x1="90" y1="94" x2="163" y2="94" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="90" y1="164" x2="163" y2="164" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="90" y1="234" x2="163" y2="234" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="90" y1="332" x2="163" y2="332" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="223" y1="94" x2="332.5" y2="188.5" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="223" y1="164" x2="325.3" y2="200.8" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="223" y1="234" x2="323.4" y2="219.6" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="223" y1="332" x2="332.3" y2="239.2" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="362" y1="66" x2="362" y2="98" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="362" y1="132" x2="362" y2="175" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="398" y1="214" x2="470" y2="214" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="552" y1="214" x2="608" y2="214" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="82" y1="258" x2="82" y2="308" stroke="#777" stroke-width="3" stroke-dasharray="4,4"/>
+  <line x1="194" y1="261" x2="194" y2="305" stroke="#777" stroke-width="3" stroke-dasharray="4,4"/>
+
+  <rect x="74" y="86" width="16" height="16" fill="url(#greenGradient)" stroke="#000" stroke-width="1.5"/>
+  <rect x="74" y="156" width="16" height="16" fill="url(#greenGradient)" stroke="#000" stroke-width="1.5"/>
+  <rect x="74" y="226" width="16" height="16" fill="url(#greenGradient)" stroke="#000" stroke-width="1.5"/>
+  <rect x="74" y="324" width="16" height="16" fill="url(#greenGradient)" stroke="#000" stroke-width="1.5"/>
+  <text x="66" y="99" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="italic" fill="#000" text-anchor="end">x<tspan font-size="12" dy="4">1</tspan></text>
+  <text x="66" y="169" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="italic" fill="#000" text-anchor="end">x<tspan font-size="12" dy="4">2</tspan></text>
+  <text x="66" y="239" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="italic" fill="#000" text-anchor="end">x<tspan font-size="12" dy="4">3</tspan></text>
+  <text x="66" y="337" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="italic" fill="#000" text-anchor="end">x<tspan font-size="12" dy="4">n</tspan></text>
+
+  <rect x="165" y="77" width="58" height="34" rx="6" fill="url(#weightGradient)" stroke="#000" stroke-width="1.6"/>
+  <text x="194" y="98" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="italic" fill="#000" text-anchor="middle">w<tspan font-size="12" dy="4">1</tspan></text>
+  <rect x="165" y="147" width="58" height="34" rx="6" fill="url(#weightGradient)" stroke="#000" stroke-width="1.6"/>
+  <text x="194" y="168" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="italic" fill="#000" text-anchor="middle">w<tspan font-size="12" dy="4">2</tspan></text>
+  <rect x="165" y="217" width="58" height="34" rx="6" fill="url(#weightGradient)" stroke="#000" stroke-width="1.6"/>
+  <text x="194" y="238" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="italic" fill="#000" text-anchor="middle">w<tspan font-size="12" dy="4">3</tspan></text>
+  <rect x="165" y="315" width="58" height="34" rx="6" fill="url(#weightGradient)" stroke="#000" stroke-width="1.6"/>
+  <text x="194" y="336" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="italic" fill="#000" text-anchor="middle">w<tspan font-size="12" dy="4">n</tspan></text>
+
+  <rect x="354" y="50" width="16" height="16" fill="url(#greenGradient)" stroke="#000" stroke-width="1.5"/>
+  <text x="377" y="63" font-family="Arial, sans-serif" font-size="15" font-weight="bold" font-style="italic" fill="#000">x<tspan font-size="11" dy="3">0</tspan><tspan dx="4" dy="-3" font-style="normal">= −1</tspan></text>
+
+  <rect x="327" y="100" width="70" height="32" rx="6" fill="url(#weightGradient)" stroke="#000" stroke-width="1.6"/>
+  <text x="362" y="121" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="italic" fill="#000" text-anchor="middle">θ <tspan font-style="normal">=</tspan> w<tspan font-size="11" dy="3">0</tspan></text>
+
+  <circle cx="362" cy="214" r="36" fill="url(#blueGradient)" stroke="#000" stroke-width="2.2"/>
+  <text x="362" y="224" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#fff" text-anchor="middle">Σ</text>
+  <text x="362" y="272" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#333" text-anchor="middle">Combinador Linear</text>
+
+  <text x="435.0" y="204" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="italic" fill="#000" text-anchor="middle">u</text>
+
+  <rect x="472" y="191" width="80" height="46" rx="8" fill="url(#weightGradient)" stroke="#000" stroke-width="1.8"/>
+  <text x="512" y="220" font-family="Arial, sans-serif" font-size="19" font-weight="bold" font-style="italic" fill="#000" text-anchor="middle">g(<tspan font-style="normal">·</tspan>)</text>
+
+  <text x="622" y="220" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="italic" fill="#000">y</text>
+</svg>

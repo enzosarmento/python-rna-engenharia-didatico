@@ -239,7 +239,7 @@ Abaixo estão os principais resultados gráficos obtidos ao longo da trilha did�
 No módulo [`05_perceptron_teoria_e_pratica.ipynb`](documentacao-didatica/05_perceptron_teoria_e_pratica.ipynb), estudamos a estrutura interna do Perceptron e acompanhamos época a época como a reta de decisão gira e se desloca à medida que a regra de aprendizado corrige os erros:
 
 <p align="center">
-  <img src="documentacao-didatica/imagens/perceptron_illustration.png" alt="Estrutura matemática de um neurônio Perceptron" width="68%">
+  <img src="documentacao-didatica/imagens/topologia_perceptron_simples.svg" alt="Estrutura matemática de um neurônio Perceptron" width="68%">
 </p>
 
 <p align="center">
