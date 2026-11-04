@@ -44,6 +44,7 @@
     initProgressTracker();
     initGlobalSearch();
     initScrollSpy();
+    initQrModal();
   });
 
   // Drawer lateral responsivo para telas < 1024px (lg)
@@ -359,5 +360,310 @@
     window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
   }
+
+  // Sistema Interativo de QR Code no Navegador (Acesso Mobile & Gerador de Links)
+  function initQrModal() {
+    const MODAL_ID = 'pyeng-qr-modal';
+    let currentSvgData = '';
+    let currentUrl = 'https://enzosarmento.github.io/python-rna-engenharia-didatico/';
+
+    // Cria a estrutura HTML do modal se não existir no DOM
+    function ensureModalDom() {
+      let modal = document.getElementById(MODAL_ID);
+      if (modal) return modal;
+
+      modal = document.createElement('div');
+      modal.id = MODAL_ID;
+      modal.className = 'fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-xs transition-opacity duration-200';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-labelledby', 'pyeng-qr-title');
+
+      modal.innerHTML = `
+        <div class="relative w-full max-w-2xl bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/50 overflow-hidden flex flex-col max-h-[92vh] text-on-surface">
+          <!-- Cabeçalho -->
+          <div class="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-outline-variant/30 bg-surface-container-low">
+            <div class="flex items-center gap-3">
+              <div class="p-2 rounded-xl bg-primary-fixed/40 text-primary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[24px]">qr_code_2</span>
+              </div>
+              <div>
+                <h3 id="pyeng-qr-title" class="font-headline-sm text-title-md font-bold text-primary leading-tight">Acesso Mobile &amp; Gerador de QR Code</h3>
+                <p class="font-label-md text-label-md text-on-surface-variant m-0">Aponte a câmera para abrir ou gere QR Codes para links e apresentações</p>
+              </div>
+            </div>
+            <button id="pyeng-qr-close-btn" class="p-1.5 rounded-lg text-outline hover:text-primary hover:bg-surface-container transition-colors" type="button" aria-label="Fechar janela">
+              <span class="material-symbols-outlined text-[22px]">close</span>
+            </button>
+          </div>
+
+          <!-- Conteúdo com Rolagem -->
+          <div class="p-5 sm:p-6 overflow-y-auto space-y-5">
+            <!-- Atalhos Oficiais -->
+            <div>
+              <label class="block font-label-md text-label-md font-semibold text-on-surface-variant mb-2">Atalhos Oficiais do Projeto:</label>
+              <div class="flex flex-wrap gap-1.5" id="pyeng-qr-presets">
+                <button type="button" data-url="https://enzosarmento.github.io/python-rna-engenharia-didatico/" class="px-3 py-1.5 rounded-lg text-label-md font-medium bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-xs">🌐 Portal Principal</button>
+                <button type="button" data-url="CURRENT" class="px-3 py-1.5 rounded-lg text-label-md font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">📄 Página Atual</button>
+                <button type="button" data-url="https://enzosarmento.github.io/python-rna-engenharia-didatico/notebooks.html" class="px-3 py-1.5 rounded-lg text-label-md font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">📓 22 Notebooks</button>
+                <button type="button" data-url="https://enzosarmento.github.io/python-rna-engenharia-didatico/instalacao.html" class="px-3 py-1.5 rounded-lg text-label-md font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">⚙️ Instalação</button>
+                <button type="button" data-url="https://enzosarmento.github.io/python-rna-engenharia-didatico/glossario.html" class="px-3 py-1.5 rounded-lg text-label-md font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">📚 Glossário</button>
+                <button type="button" data-url="https://github.com/enzosarmento/python-rna-engenharia-didatico" class="px-3 py-1.5 rounded-lg text-label-md font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">💻 GitHub</button>
+              </div>
+            </div>
+
+            <!-- Campo de URL Customizada -->
+            <div>
+              <label for="pyeng-qr-url-input" class="block font-label-md text-label-md font-semibold text-on-surface-variant mb-1.5">Link / URL de Destino (edite ou cole qualquer endereço):</label>
+              <div class="relative flex items-center">
+                <span class="material-symbols-outlined absolute left-3 text-outline text-[20px] pointer-events-none">link</span>
+                <input id="pyeng-qr-url-input" type="url" class="w-full h-11 pl-10 pr-24 rounded-xl bg-surface-container-low border border-outline-variant/60 font-code-inline text-[13px] text-on-surface focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-all" placeholder="https://..." value="${currentUrl}"/>
+                <button id="pyeng-qr-copy-url-btn" type="button" class="absolute right-2 px-2.5 py-1 rounded-lg text-label-md font-semibold bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface-variant transition-colors flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[15px]">content_copy</span>
+                  <span id="pyeng-qr-copy-url-label">Copiar</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Moldura e Visualização do QR Code -->
+            <div class="flex flex-col sm:flex-row items-center gap-6 p-5 rounded-2xl bg-surface-container-low border border-outline-variant/40">
+              <div class="relative shrink-0 p-3 bg-white rounded-xl shadow-md border border-slate-200 flex flex-col items-center justify-center">
+                <canvas id="pyeng-qr-canvas" width="220" height="220" class="w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] block"></canvas>
+                <div class="mt-2 text-center">
+                  <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                    <span class="material-symbols-outlined text-[13px]">verified</span>
+                    Correção Nível H (30%)
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex-1 space-y-3.5 text-center sm:text-left">
+                <div>
+                  <h4 class="font-title-md text-[15px] font-bold text-primary m-0">Aponte a câmera do celular para abrir</h4>
+                  <p class="font-body-md text-[13px] text-on-surface-variant leading-relaxed mt-1">
+                    Funciona instantaneamente no aplicativo de câmera padrão do Android e iPhone, sem necessidade de instalar aplicativos adicionais.
+                  </p>
+                </div>
+
+                <div class="flex flex-wrap gap-2 justify-center sm:justify-start pt-1">
+                  <button id="pyeng-qr-download-png" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold shadow-xs transition-all">
+                    <span class="material-symbols-outlined text-[18px]">download</span>
+                    <span>Baixar PNG (1024px)</span>
+                  </button>
+                  <button id="pyeng-qr-download-svg" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold border border-outline-variant transition-all">
+                    <span class="material-symbols-outlined text-[18px]">polyline</span>
+                    <span>Baixar SVG</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modelos Oficiais para Apresentação -->
+            <div class="p-4 rounded-xl bg-primary-fixed/20 border border-primary/15 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-[24px] shrink-0">co_present</span>
+                <div class="text-[12.5px] text-on-surface text-center sm:text-left">
+                  <strong class="text-primary block font-semibold">Vai apresentar no Simpósio ou Defesa de TCC?</strong>
+                  Use os modelos prontos em 16:9 ou cartão vertical com créditos da UESC e do PID.
+                </div>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <a href="assets/img/qrcode_portal_didatico.png" download="qrcode_portal_didatico.png" class="px-2.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-[11.5px] font-semibold border border-outline-variant/60 shadow-xs transition-colors">
+                  PNG Puro
+                </a>
+                <a href="assets/img/qrcode_portal_didatico.svg" download="qrcode_portal_didatico.svg" class="px-2.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-[11.5px] font-semibold border border-outline-variant/60 shadow-xs transition-colors">
+                  SVG Puro
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(modal);
+      return modal;
+    }
+
+    // Atualiza a renderização do QR Code no Canvas
+    function updateQr(url) {
+      if (!url) return;
+      currentUrl = url;
+      const modal = ensureModalDom();
+      const canvas = modal.querySelector('#pyeng-qr-canvas');
+      if (!canvas) return;
+
+      try {
+        if (typeof window.PyEngQR === 'function') {
+          const qr = window.PyEngQR(url, { errorCorrection: 'H' });
+          qr.drawCanvas(canvas, { size: 440, border: 2, fill: '#002444', background: '#ffffff' });
+          currentSvgData = qr.toSvg({ size: 1024, border: 2, fill: '#002444', background: 'transparent' });
+        } else {
+          // Fallback para imagem estática pré-gerada se a biblioteca não estiver carregada
+          const ctx = canvas.getContext('2d');
+          const img = new Image();
+          img.onload = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+          };
+          img.src = 'assets/img/qrcode_portal_didatico.png';
+        }
+      } catch (err) {
+        console.warn('Erro ao gerar QR Code dinâmico:', err);
+      }
+    }
+
+    function openModal(initialUrl) {
+      const modal = ensureModalDom();
+      const input = modal.querySelector('#pyeng-qr-url-input');
+
+      const urlToUse = initialUrl || (input ? input.value : currentUrl) || window.location.href;
+      if (input) input.value = urlToUse;
+      updateQr(urlToUse);
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      if (input) {
+        input.focus();
+        input.select();
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById(MODAL_ID);
+      if (!modal) return;
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Configura eventos da janela modal
+    const modal = ensureModalDom();
+
+    // Fechar ao clicar no X ou no fundo escuro
+    modal.querySelector('#pyeng-qr-close-btn').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // Edição em tempo real da URL
+    const urlInput = modal.querySelector('#pyeng-qr-url-input');
+    if (urlInput) {
+      urlInput.addEventListener('input', (e) => {
+        updateQr(e.target.value.trim());
+      });
+    }
+
+    // Botões de Presets
+    const presetsContainer = modal.querySelector('#pyeng-qr-presets');
+    if (presetsContainer) {
+      presetsContainer.querySelectorAll('button').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          let targetUrl = btn.getAttribute('data-url');
+          if (targetUrl === 'CURRENT') {
+            targetUrl = window.location.href.split('#')[0];
+          }
+          if (urlInput) urlInput.value = targetUrl;
+          updateQr(targetUrl);
+
+          // Atualiza o estilo visual do preset ativo
+          presetsContainer.querySelectorAll('button').forEach((b) => {
+            b.className = 'px-3 py-1.5 rounded-lg text-label-md font-medium bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors';
+          });
+          btn.className = 'px-3 py-1.5 rounded-lg text-label-md font-medium bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-xs';
+        });
+      });
+    }
+
+    // Botão Copiar URL
+    const copyUrlBtn = modal.querySelector('#pyeng-qr-copy-url-btn');
+    const copyLabel = modal.querySelector('#pyeng-qr-copy-url-label');
+    if (copyUrlBtn && copyLabel) {
+      copyUrlBtn.addEventListener('click', async () => {
+        const text = urlInput ? urlInput.value : currentUrl;
+        try {
+          await navigator.clipboard.writeText(text);
+          const orig = copyLabel.textContent;
+          copyLabel.textContent = 'Copiado!';
+          copyUrlBtn.classList.add('!bg-emerald-600', '!text-white');
+          setTimeout(() => {
+            copyLabel.textContent = orig;
+            copyUrlBtn.classList.remove('!bg-emerald-600', '!text-white');
+          }, 2000);
+        } catch (_) {
+          urlInput.select();
+          document.execCommand('copy');
+        }
+      });
+    }
+
+    // Download PNG em alta resolução (1024 x 1024 px)
+    const downloadPngBtn = modal.querySelector('#pyeng-qr-download-png');
+    if (downloadPngBtn) {
+      downloadPngBtn.addEventListener('click', () => {
+        try {
+          const exportCanvas = document.createElement('canvas');
+          exportCanvas.width = 1024;
+          exportCanvas.height = 1024;
+          if (typeof window.PyEngQR === 'function') {
+            const qr = window.PyEngQR(currentUrl, { errorCorrection: 'H' });
+            qr.drawCanvas(exportCanvas, { size: 1024, border: 2, fill: '#002444', background: '#ffffff' });
+          } else {
+            const srcCanvas = modal.querySelector('#pyeng-qr-canvas');
+            const ctx = exportCanvas.getContext('2d');
+            ctx.drawImage(srcCanvas, 0, 0, 1024, 1024);
+          }
+          const link = document.createElement('a');
+          link.download = 'qrcode_personalizado.png';
+          link.href = exportCanvas.toDataURL('image/png');
+          link.click();
+        } catch (err) {
+          console.error('Falha no download PNG:', err);
+        }
+      });
+    }
+
+    // Download SVG vetorial puro
+    const downloadSvgBtn = modal.querySelector('#pyeng-qr-download-svg');
+    if (downloadSvgBtn) {
+      downloadSvgBtn.addEventListener('click', () => {
+        try {
+          let svgContent = currentSvgData;
+          if (!svgContent && typeof window.PyEngQR === 'function') {
+            const qr = window.PyEngQR(currentUrl, { errorCorrection: 'H' });
+            svgContent = qr.toSvg({ size: 1024, border: 2, fill: '#002444', background: 'transparent' });
+          }
+          if (!svgContent) return;
+
+          const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.download = 'qrcode_personalizado.svg';
+          link.href = url;
+          link.click();
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+        } catch (err) {
+          console.error('Falha no download SVG:', err);
+        }
+      });
+    }
+
+    // Conecta todos os botões de abertura presentes nas páginas
+    document.querySelectorAll('.open-qr-modal-btn, [data-action="open-qr"]').forEach((trigger) => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const initial = trigger.getAttribute('data-qr-url');
+        openModal(initial);
+      });
+    });
+
+    // Registra atalho global no objeto window para fácil invocação
+    window.openPyEngQrModal = openModal;
+  }
 })();
+
 

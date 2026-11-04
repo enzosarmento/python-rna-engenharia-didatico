@@ -1,7 +1,9 @@
 # Integração de Redes Neurais Artificiais à Engenharia — Guia Didático Completo (PID)
 
-> 🌐 **Acesse o Portal Didático Online:** https://enzosarmento.github.io/python-rna-engenharia-didatico/
->
+| 🌐 Portal Didático Online | 📱 Acesso Rápido no Celular |
+| :--- | :---: |
+| Acesse os cadernos interativos, visualizações e glossário:<br>**[enzosarmento.github.io/python-rna-engenharia-didatico/](https://enzosarmento.github.io/python-rna-engenharia-didatico/)** | <img src="documentacao-didatica/imagens/qrcode_portal_didatico.png" alt="QR Code do Portal Didático" width="120"> |
+
 > **Público-alvo:** Estudantes de Engenharia (Química, Mecânica, Produção, Elétrica, Materiais, Controle e Automação) e Ciências Exatas que **nunca programaram em Python** e **nunca estudaram Redes Neurais Artificiais**, mas já dominam a base matemática da graduação (Cálculo, Álgebra Linear e Estatística Básica).
 
 ---
@@ -14,7 +16,8 @@
 4. [Ordem de Estudo](#4-ordem-de-estudo)
 5. [Teoria Simplificada (Com Analogias de Engenharia)](#5-teoria-simplificada-com-analogias-de-engenharia)
 6. [Resultados e Visualizações dos Projetos](#6-resultados-e-visualizações-dos-projetos)
-7. [Troubleshooting (Solução de Problemas Comuns)](#7-troubleshooting-solução-de-problemas-comuns)
+7. [Gerador de QR Code para Apresentações](#7-gerador-de-qr-code-para-apresentações)
+8. [Troubleshooting (Solução de Problemas Comuns)](#8-troubleshooting-solução-de-problemas-comuns)
 
 ---
 
@@ -131,6 +134,9 @@ rna-engenharia/
 │           ├── 02_impressora3d_predicao_resistencia_mecanica.ipynb
 │           ├── printer_dataset.py   # Script Python modular autônomo para terminal
 │           └── data.csv             # Conjunto de dados de impressão 3D (50 amostras - Kaggle)
+│
+├── scripts/                         # Utilitários de automação e apresentação acadêmica
+│   └── gerar_qrcode.py              # Gerador de QR Code em SVG/PNG (modos bare, card e slide 16:9)
 │
 └── livro-base/                      # Referência bibliográfica e tabelas brutas originais
     ├── redes_neurais_artificiais_para_engenharia_e_ciencias_aplicadas[1].pdf
@@ -300,7 +306,41 @@ Nos notebooks da pasta [`impressora-3d/`](documentacao-didatica/engenharia/impre
 
 ---
 
-## 7. Troubleshooting (Solução de Problemas Comuns)
+## 7. Gerador de QR Code para Apresentações
+
+Para facilitar o compartilhamento instantâneo do portal em **apresentações de simpósio**, **slides de defesa** e **pôsteres impressos**, o repositório disponibiliza o utilitário autônomo [`scripts/gerar_qrcode.py`](scripts/gerar_qrcode.py):
+
+<p align="center">
+  <img src="documentacao-didatica/imagens/qrcode_portal_didatico_slide.png" alt="Slide panorâmico 16:9 de encerramento com QR Code do Portal Didático UESC" width="90%">
+</p>
+
+### Como Usar no Terminal
+
+```bash
+# 1. Gerar todos os formatos oficiais para o Portal Didático (bare, card e slide 16:9):
+python3 scripts/gerar_qrcode.py --site
+
+# 2. Gerar cartão vertical (920 x 1120 px) para pôster impresso ou banner:
+python3 scripts/gerar_qrcode.py --mode card --format png
+
+# 3. Gerar slide panorâmico 16:9 com fundo transparente para encerramento de simpósio:
+python3 scripts/gerar_qrcode.py --mode slide --format all
+
+# 4. Gerar para qualquer outro link customizado:
+python3 scripts/gerar_qrcode.py --url https://github.com/enzosarmento/python-rna-engenharia-didatico/ --mode bare
+```
+
+### Características Técnicas
+- **Correção de Erro Nível H (30% de redundância):** Permite leitura perfeita mesmo com reflexos de projetor, ângulo oblíquo na plateia ou áreas levemente sombreadas.
+- **3 Modos de Apresentação:**
+  - `bare`: QR Code puro em vetor escalável (`.svg`) e alta resolução (`.png` 1024×1024 px) com fundo transparente.
+  - `card`: Cartão vertical com moldura, instrução de leitura e créditos acadêmicos (UESC/PID).
+  - `slide`: Slide panorâmico 16:9 estilizado no padrão visual de simpósio, com resumo dos recursos didáticos e rodapé institucional.
+- **Pré-visualização ASCII no Terminal:** Exibe o QR Code diretamente no console para leitura e conferência imediatas com o celular antes de exportar.
+
+---
+
+## 8. Troubleshooting (Solução de Problemas Comuns)
 
 Se aparecer uma mensagem de erro com fundo vermelho ao executar uma célula no Jupyter, **não se assuste!** Erros em Python são diagnósticos objetivos que dizem na **última linha** exatamente o que aconteceu. Consulte a tabela rápida abaixo:
 
