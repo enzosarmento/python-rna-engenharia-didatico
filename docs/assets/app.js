@@ -457,25 +457,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- Modelos Oficiais para Apresentação -->
-            <div class="p-4 rounded-xl bg-primary-fixed/20 border border-primary/15 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-primary text-[24px] shrink-0">co_present</span>
-                <div class="text-[12.5px] text-on-surface text-center sm:text-left">
-                  <strong class="text-primary block font-semibold">Vai apresentar no Simpósio ou Defesa de TCC?</strong>
-                  Use os modelos prontos em 16:9 ou cartão vertical com créditos da UESC e do PID.
-                </div>
-              </div>
-              <div class="flex items-center gap-2 shrink-0">
-                <a href="assets/img/qrcode_portal_didatico.png" download="qrcode_portal_didatico.png" class="px-2.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-[11.5px] font-semibold border border-outline-variant/60 shadow-xs transition-colors">
-                  PNG Puro
-                </a>
-                <a href="assets/img/qrcode_portal_didatico.svg" download="qrcode_portal_didatico.svg" class="px-2.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-[11.5px] font-semibold border border-outline-variant/60 shadow-xs transition-colors">
-                  SVG Puro
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       `;
