@@ -1,0 +1,423 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1540" height="680" viewBox="0 0 1540 680">
+  <defs>
+    <radialGradient id="greenGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e2f5e6"/>
+      <stop offset="100%" stop-color="#9acfa5"/>
+    </radialGradient>
+    <radialGradient id="blueGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#7db9e8"/>
+      <stop offset="100%" stop-color="#1e5799"/>
+    </radialGradient>
+    <radialGradient id="weightGradient" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#f2f8fd"/>
+      <stop offset="100%" stop-color="#c5dff6"/>
+    </radialGradient>
+
+    <linearGradient id="cardBgLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7faff"/>
+    </linearGradient>
+    <linearGradient id="cardBgRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7fbfa"/>
+    </linearGradient>
+    <linearGradient id="mriBgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f2f8ff"/>
+      <stop offset="100%" stop-color="#e0effe"/>
+    </linearGradient>
+    <linearGradient id="mriShellGrad" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <radialGradient id="mriBoreGrad" cx="50%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="65%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <radialGradient id="rfGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="formulaBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#eef6ff"/>
+      <stop offset="100%" stop-color="#e0effe"/>
+    </linearGradient>
+
+    <filter id="panelShadow" x="-6%" y="-6%" width="112%" height="116%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="0" dy="3" result="offsetBlur"/>
+      <feFlood flood-color="#0f172a" flood-opacity="0.09" result="color"/>
+      <feComposite in="color" in2="offsetBlur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="cardShadow" x="-6%" y="-10%" width="112%" height="128%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
+      <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+      <feFlood flood-color="#0f172a" flood-opacity="0.08" result="color"/>
+      <feComposite in="color" in2="offsetBlur" operator="in" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 0.5 L 10 5 L 0 9.5 z" fill="#222"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M 0 0.5 L 10 5 L 0 9.5 z" fill="#15803d"/>
+    </marker>
+    <marker id="arrowBackprop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.2" markerHeight="6.2" orient="auto">
+      <path d="M 0 0.5 L 10 5 L 0 9.5 z" fill="#b91c1c"/>
+    </marker>
+
+    <clipPath id="clip-left-card"><rect x="16" y="16" width="796" height="648" rx="18"/></clipPath>
+    <clipPath id="clip-right-card"><rect x="836" y="16" width="688" height="648" rx="18"/></clipPath>
+    <clipPath id="clip-table-box"><rect x="860" y="342" width="644" height="228" rx="12"/></clipPath>
+  </defs>
+
+  <!-- ==================== LEFT CARD: COMO A REDE FUNCIONA ==================== -->
+  <rect x="16" y="16" width="796" height="648" rx="18" fill="url(#cardBgLeft)" filter="url(#panelShadow)"/>
+  <rect x="16" y="16" width="9" height="648" fill="#1e5799" clip-path="url(#clip-left-card)"/>
+  <rect x="16" y="16" width="796" height="648" rx="18" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+
+  <!-- Left Header -->
+  <rect x="42" y="34" width="292" height="24" rx="12" fill="#1e5799"/>
+  <text x="188" y="50" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.4">APLICAÇÃO NA SAÚDE • REDE MULTICAMADAS</text>
+  <text x="42" y="84" font-family="Arial, sans-serif" font-size="19.5" font-weight="bold" fill="#102a43">Ressonância Magnética: Estimativa da Energia Absorvida</text>
+  <line x1="42" y1="100" x2="790" y2="100" stroke="#dde6f0" stroke-width="1.3"/>
+
+  <!-- Numbered Step Headers (1 -> 5) -->
+  <text x="124" y="126" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334e68" text-anchor="middle">1. Exame Real</text>
+  <text x="262" y="126" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334e68" text-anchor="middle">2. Entradas</text>
+  <text x="416" y="126" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334e68" text-anchor="middle">3. Camada Oculta</text>
+  <text x="582" y="126" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334e68" text-anchor="middle">4. Saída</text>
+  <text x="726" y="126" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334e68" text-anchor="middle">5. Resultado</text>
+
+  <!-- Step 1: MRI Physical Context Sub-Panel -->
+  <rect x="38" y="138" width="172" height="428" rx="14" fill="url(#mriBgGrad)" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="124" y="160" font-family="Arial, sans-serif" font-size="9.8" font-weight="bold" fill="#1e40af" text-anchor="middle" letter-spacing="0.4">RESSONÂNCIA MAGNÉTICA</text>
+
+  <!-- MRI Scanner Illustration -->
+  <path d="M 80 328 L 68 384 L 180 384 L 168 328 Z" fill="#cbd5e1" stroke="#334e68" stroke-width="1.7" stroke-linejoin="round"/>
+  <line x1="58" y1="384" x2="190" y2="384" stroke="#334e68" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="124" cy="264" r="62" fill="url(#mriShellGrad)" stroke="#1e3a8a" stroke-width="2.2"/>
+  <circle cx="124" cy="264" r="51" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <rect x="103" y="209" width="42" height="8" rx="4" fill="#e2e8f0" stroke="#64748b" stroke-width="1"/>
+  <circle cx="112" cy="213" r="2.2" fill="#10b981"/>
+  <circle cx="121" cy="213" r="2.2" fill="#0ea5e9"/>
+  <line x1="128" y1="213" x2="139" y2="213" stroke="#475569" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="124" cy="264" r="37" fill="url(#mriBoreGrad)" stroke="#334e68" stroke-width="1.8"/>
+  <circle cx="124" cy="260" r="26" fill="url(#rfGlow)"/>
+  <path d="M 101 250 A 26 26 0 0 1 147 250" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 106 243 A 20 20 0 0 1 142 243" fill="none" stroke="#7dd3fc" stroke-width="1.3" stroke-linecap="round" opacity="0.8"/>
+  <ellipse cx="124" cy="260" rx="14" ry="11" fill="#0284c7" fill-opacity="0.35" stroke="#22d3ee" stroke-width="1.6"/>
+  <line x1="106" y1="260" x2="142" y2="260" stroke="#67e8f9" stroke-width="1" stroke-dasharray="2,2" opacity="0.85"/>
+  <line x1="124" y1="245" x2="124" y2="275" stroke="#67e8f9" stroke-width="1" stroke-dasharray="2,2" opacity="0.85"/>
+  <circle cx="124" cy="260" r="3.2" fill="#fde047"/>
+  <path d="M 100 282 L 148 282 L 160 340 L 88 340 Z" fill="#f8fafc" stroke="#334e68" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M 104 285 L 144 285 L 152 330 L 96 330 Z" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.1" stroke-linejoin="round"/>
+  <rect x="114" y="340" width="20" height="44" fill="#94a3b8" stroke="#334e68" stroke-width="1.5"/>
+  <line x1="124" y1="344" x2="124" y2="380" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round"/>
+
+  <text x="124" y="414" font-family="Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#1e3a8a" text-anchor="middle">Aparelho de Exame</text>
+  <text x="124" y="432" font-family="Arial, sans-serif" font-size="11" fill="#334e68" text-anchor="middle">Ondas e campo magnético</text>
+
+  <rect x="46" y="446" width="156" height="106" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1.3"/>
+  <text x="124" y="465" font-family="Arial, sans-serif" font-size="9.3" font-weight="bold" fill="#1e40af" text-anchor="middle" letter-spacing="0.2">3 MEDIDAS DO APARELHO</text>
+  <text x="124" y="483" font-family="Arial, sans-serif" font-size="10.8" fill="#486581" text-anchor="middle">Valores na escala de 0 a 1:</text>
+  <text x="124" y="509" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#102a43" text-anchor="middle">(<tspan font-style="italic">x</tspan><tspan font-size="11" font-style="normal" dy="3">1</tspan><tspan font-style="normal" dx="1" dy="-3">,</tspan><tspan dx="4"> </tspan><tspan font-style="italic">x</tspan><tspan font-size="11" font-style="normal" dy="3">2</tspan><tspan font-style="normal" dx="1" dy="-3">,</tspan><tspan dx="4"> </tspan><tspan font-style="italic">x</tspan><tspan font-size="11" font-style="normal" dy="3">3</tspan><tspan font-style="normal" dx="1" dy="-3">)</tspan></text>
+  <rect x="53" y="522" width="142" height="21" rx="10.5" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="124" y="536" font-family="Arial, sans-serif" font-size="9.6" font-weight="bold" fill="#1d4ed8" text-anchor="middle">200 p/ treinar • 20 p/ testar</text>
+
+  <!-- Input Bus from MRI Panel to x1, x2, x3 -->
+  <line x1="210" y1="316" x2="229" y2="316" stroke="#1e5799" stroke-width="2.3"/>
+  <circle cx="210" cy="316" r="4.5" fill="#38bdf8" stroke="#1e3a8a" stroke-width="1.5"/>
+  <circle cx="229" cy="316" r="3.3" fill="#1e5799"/>
+  <path d="M 229 316 L 229 236 Q 229 228 237 228 L 251 228" fill="none" stroke="#334e68" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="229" y1="316" x2="251" y2="316" stroke="#334e68" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M 229 316 L 229 396 Q 229 404 237 404 L 251 404" fill="none" stroke="#334e68" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Friendly Connection Pills above Synaptic Lines -->
+  <rect x="284" y="146" width="110" height="23" rx="11.5" fill="#eef6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="339" y="161.5" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Pesos ajustáveis</text>
+
+  <rect x="446" y="146" width="112" height="23" rx="11.5" fill="#eef6ff" stroke="#93c5fd" stroke-width="1.2"/>
+  <text x="502" y="161.5" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Combinação final</text>
+
+  <!-- Clean 3 -> 10 -> 1 Connections -->
+  <line x1="271.0" y1="228.0" x2="388.9" y2="208.5" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="271.0" y1="228.0" x2="390.7" y2="279.2" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="271.0" y1="228.0" x2="398.5" y2="382.8" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="271.0" y1="316.0" x2="394.2" y2="220.8" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="271.0" y1="316.0" x2="388.9" y2="294.9" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="271.0" y1="316.0" x2="392.5" y2="389.7" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="271.0" y1="404.0" x2="399.9" y2="226.3" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="271.0" y1="404.0" x2="394.4" y2="307.0" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="271.0" y1="404.0" x2="388.5" y2="404.0" stroke="#222" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="437.4" y1="216.9" x2="556.7" y2="288.8" stroke="#222" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="440.9" y1="292.1" x2="552.6" y2="301.5" stroke="#222" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="437.4" y1="391.1" x2="556.7" y2="319.2" stroke="#222" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Input Nodes x1, x2, x3 -->
+  <rect x="253" y="219" width="18" height="18" fill="url(#greenGradient)" stroke="#000" stroke-width="1.5"/>
+  <text x="262" y="212" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000" text-anchor="middle"><tspan font-style="italic">x</tspan><tspan font-size="11" font-style="normal" dy="3">1</tspan></text>
+
+  <rect x="253" y="307" width="18" height="18" fill="url(#greenGradient)" stroke="#000" stroke-width="1.5"/>
+  <text x="262" y="300" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000" text-anchor="middle"><tspan font-style="italic">x</tspan><tspan font-size="11" font-style="normal" dy="3">2</tspan></text>
+
+  <rect x="253" y="395" width="18" height="18" fill="url(#greenGradient)" stroke="#000" stroke-width="1.5"/>
+  <text x="262" y="388" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#000" text-anchor="middle"><tspan font-style="italic">x</tspan><tspan font-size="11" font-style="normal" dy="3">3</tspan></text>
+
+  <!-- Hidden Layer Neurons (1, 2, ..., 10) -->
+  <circle cx="416" cy="204" r="25" fill="url(#blueGradient)" stroke="#000" stroke-width="2.1"/>
+  <text x="416" y="210" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+
+  <circle cx="416" cy="290" r="25" fill="url(#blueGradient)" stroke="#000" stroke-width="2.1"/>
+  <text x="416" y="296" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+
+  <circle cx="416" cy="333" r="2.8" fill="#475569"/>
+  <circle cx="416" cy="347" r="2.8" fill="#475569"/>
+  <circle cx="416" cy="361" r="2.8" fill="#475569"/>
+
+  <circle cx="416" cy="404" r="25" fill="url(#blueGradient)" stroke="#000" stroke-width="2.1"/>
+  <text x="416" y="410" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="middle">10</text>
+
+  <!-- Plain-Language Hidden Activation Card -->
+  <rect x="346" y="438" width="140" height="44" rx="9" fill="url(#weightGradient)" stroke="#64748b" stroke-width="1.3"/>
+  <path d="M 358 458 C 366 458, 367 446, 375 446" fill="none" stroke="#1e5799" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="427" y="456" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#102a43" text-anchor="middle">Função em Curva</text>
+  <text x="416" y="473" font-family="Arial, sans-serif" font-size="9.8" font-weight="bold" fill="#334e68" text-anchor="middle">Aprende padrões curvos</text>
+
+  <!-- Output Neuron (1) + Friendly Smooth Scale Box -->
+  <circle cx="582" cy="304" r="27" fill="url(#blueGradient)" stroke="#000" stroke-width="2.2"/>
+  <text x="582" y="310" font-family="Arial, sans-serif" font-size="19" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+
+  <rect x="525" y="342" width="114" height="48" rx="8" fill="url(#weightGradient)" stroke="#1e5799" stroke-width="1.4"/>
+  <line x1="544" y1="359" x2="620" y2="359" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2,2"/>
+  <path d="M 548 368 C 572 368, 592 350, 616 350" fill="none" stroke="#1e5799" stroke-width="2.3" stroke-linecap="round"/>
+  <text x="582" y="382" font-family="Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#102a43" text-anchor="middle">Saída suave (0 a 1)</text>
+
+  <!-- Output Connection & Target Card -->
+  <line x1="609" y1="304" x2="660" y2="304" stroke="#15803d" stroke-width="2.0" marker-end="url(#arrowGreen)"/>
+  <text x="634" y="295" font-family="Arial, sans-serif" font-size="15.5" font-weight="bold" font-style="italic" fill="#14532d" text-anchor="middle">y</text>
+
+  <rect x="664" y="248" width="124" height="112" rx="12" fill="#ecfdf5" stroke="#16a34a" stroke-width="1.8" filter="url(#cardShadow)"/>
+  <rect x="675" y="259" width="102" height="19" rx="9.5" fill="#dcfce7"/>
+  <text x="726" y="272" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#15803d" text-anchor="middle" letter-spacing="0.3">VALOR PREVISTO</text>
+  <text x="726" y="296" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#14532d" text-anchor="middle">Energia</text>
+  <text x="726" y="314" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#14532d" text-anchor="middle">Absorvida</text>
+  <line x1="678" y1="326" x2="774" y2="326" stroke="#86efac" stroke-width="1.2"/>
+  <text x="726" y="346" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#15803d" text-anchor="middle">Escala de 0 a 1</text>
+
+  <!-- Friendly Error-Correction Feedback Loop -->
+  <path d="M 726 360 L 726 494 Q 726 502 718 502 L 298 502 Q 290 502 290 494 L 290 480" fill="none" stroke="#b91c1c" stroke-width="1.45" stroke-dasharray="4,3" marker-end="url(#arrowBackprop)"/>
+  <line x1="534" y1="502" x2="534" y2="480" stroke="#b91c1c" stroke-width="1.45" stroke-dasharray="4,3" marker-end="url(#arrowBackprop)"/>
+  <text x="290" y="471" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#991b1b" text-anchor="middle">Ajusta pesos</text>
+  <text x="534" y="471" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#991b1b" text-anchor="middle">Ajusta pesos</text>
+  <rect x="564" y="491" width="152" height="21" rx="10.5" fill="#fef2f2" stroke="#fecaca" stroke-width="1.1"/>
+  <text x="640" y="505" font-family="Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#991b1b" text-anchor="middle">Compara e corrige o erro</text>
+
+  <!-- Plain-Portuguese Learning Pill -->
+  <rect x="234" y="524" width="548" height="34" rx="17" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="508" y="545.5" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334e68" text-anchor="middle">Como a rede aprende: mede o erro na saída e corrige os pesos a cada exemplo</text>
+
+  <!-- Left Bottom Training Goal Banner -->
+  <rect x="38" y="584" width="754" height="60" rx="12" fill="url(#formulaBannerGrad)" stroke="#b8d4f2" stroke-width="1.5"/>
+  <rect x="52" y="601" width="184" height="26" rx="13" fill="#1e5799"/>
+  <text x="144" y="618" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.4">META DO TREINAMENTO</text>
+  <text x="514" y="619" font-family="Arial, sans-serif" font-size="13.8" font-weight="bold" fill="#102a43" text-anchor="middle">Chegar o mais perto possível da energia real ao longo de 5.000 ciclos de treino</text>
+
+
+  <!-- ==================== RIGHT CARD: RESULTADOS DOS 5 TESTES ==================== -->
+  <rect x="836" y="16" width="688" height="648" rx="18" fill="url(#cardBgRight)" filter="url(#panelShadow)"/>
+  <rect x="836" y="16" width="9" height="648" fill="#0f766e" clip-path="url(#clip-right-card)"/>
+  <rect x="836" y="16" width="688" height="648" rx="18" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+
+  <!-- Right Header -->
+  <rect x="862" y="34" width="286" height="24" rx="12" fill="#0f766e"/>
+  <text x="1005" y="50" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.4">TESTES NA PRÁTICA • 5 TREINAMENTOS</text>
+  <text x="862" y="84" font-family="Arial, sans-serif" font-size="19.5" font-weight="bold" fill="#102a43">Queda do Erro no Treino e Precisão em Novos Exames</text>
+  <line x1="862" y1="100" x2="1502" y2="100" stroke="#dde6f0" stroke-width="1.3"/>
+
+  <!-- Upper Box: Error Curve Chart -->
+  <rect x="860" y="112" width="644" height="218" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="876" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#102a43">Queda do erro durante os 5.000 ciclos</text>
+
+  <!-- Inline Legend -->
+  <line x1="1158" y1="128" x2="1174" y2="128" stroke="#1f77b4" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="1179" y="132" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">T1</text>
+
+  <line x1="1208" y1="128" x2="1224" y2="128" stroke="#ff7f0e" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="1229" y="132" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">T2</text>
+
+  <line x1="1258" y1="128" x2="1274" y2="128" stroke="#2ca02c" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="1279" y="132" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">T3</text>
+
+  <rect x="1304" y="118" width="114" height="19" rx="9.5" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
+  <line x1="1312" y1="127.5" x2="1328" y2="127.5" stroke="#d62728" stroke-width="2.6" stroke-linecap="round"/>
+  <text x="1333" y="131.5" font-family="Arial, sans-serif" font-size="10.8" font-weight="bold" fill="#b91c1c">T4 ★ Melhor</text>
+
+  <line x1="1430" y1="128" x2="1446" y2="128" stroke="#9467bd" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="1451" y="132" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">T5</text>
+
+  <!-- Plot Frame & Grid -->
+  <rect x="928.0" y="146.0" width="556.0" height="146.0" fill="#fcfdff" stroke="#94a3b8" stroke-width="1.2"/>
+  <line x1="928.0" y1="265.3" x2="1484.0" y2="265.3" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="255.5" x2="1484.0" y2="255.5" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="248.6" x2="1484.0" y2="248.6" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="243.2" x2="1484.0" y2="243.2" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="238.8" x2="1484.0" y2="238.8" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="235.1" x2="1484.0" y2="235.1" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="231.9" x2="1484.0" y2="231.9" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="229.0" x2="1484.0" y2="229.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="209.8" x2="1484.0" y2="209.8" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="200.0" x2="1484.0" y2="200.0" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="193.1" x2="1484.0" y2="193.1" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="187.7" x2="1484.0" y2="187.7" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="183.3" x2="1484.0" y2="183.3" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="179.6" x2="1484.0" y2="179.6" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="176.4" x2="1484.0" y2="176.4" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="173.5" x2="1484.0" y2="173.5" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="154.3" x2="1484.0" y2="154.3" stroke="#f1f5f9" stroke-width="0.9"/>
+  <line x1="928.0" y1="171.0" x2="1484.0" y2="171.0" stroke="#cbd5e1" stroke-width="1.15" stroke-dasharray="3,3"/>
+  <line x1="924.0" y1="171.0" x2="928.0" y2="171.0" stroke="#475569" stroke-width="1.3"/>
+  <text x="922.0" y="174.8" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#334e68" text-anchor="end">0,01</text>
+  <line x1="928.0" y1="226.5" x2="1484.0" y2="226.5" stroke="#cbd5e1" stroke-width="1.15" stroke-dasharray="3,3"/>
+  <line x1="924.0" y1="226.5" x2="928.0" y2="226.5" stroke="#475569" stroke-width="1.3"/>
+  <text x="922.0" y="230.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#334e68" text-anchor="end">0,001</text>
+  <line x1="928.0" y1="282.0" x2="1484.0" y2="282.0" stroke="#cbd5e1" stroke-width="1.15" stroke-dasharray="3,3"/>
+  <line x1="924.0" y1="282.0" x2="928.0" y2="282.0" stroke="#475569" stroke-width="1.3"/>
+  <text x="922.0" y="285.8" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#334e68" text-anchor="end">0,0001</text>
+  <line x1="928.0" y1="292.0" x2="928.0" y2="296.0" stroke="#475569" stroke-width="1.3"/>
+  <text x="928.0" y="307.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#475569" text-anchor="middle">0</text>
+  <line x1="1039.2" y1="146.0" x2="1039.2" y2="292.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3,3"/>
+  <line x1="1039.2" y1="292.0" x2="1039.2" y2="296.0" stroke="#475569" stroke-width="1.3"/>
+  <text x="1039.2" y="307.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#475569" text-anchor="middle">1.000</text>
+  <line x1="1150.4" y1="146.0" x2="1150.4" y2="292.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3,3"/>
+  <line x1="1150.4" y1="292.0" x2="1150.4" y2="296.0" stroke="#475569" stroke-width="1.3"/>
+  <text x="1150.4" y="307.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#475569" text-anchor="middle">2.000</text>
+  <line x1="1261.6" y1="146.0" x2="1261.6" y2="292.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3,3"/>
+  <line x1="1261.6" y1="292.0" x2="1261.6" y2="296.0" stroke="#475569" stroke-width="1.3"/>
+  <text x="1261.6" y="307.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#475569" text-anchor="middle">3.000</text>
+  <line x1="1372.8" y1="146.0" x2="1372.8" y2="292.0" stroke="#e2e8f0" stroke-width="1.0" stroke-dasharray="3,3"/>
+  <line x1="1372.8" y1="292.0" x2="1372.8" y2="296.0" stroke="#475569" stroke-width="1.3"/>
+  <text x="1372.8" y="307.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#475569" text-anchor="middle">4.000</text>
+  <line x1="1484.0" y1="292.0" x2="1484.0" y2="296.0" stroke="#475569" stroke-width="1.3"/>
+  <text x="1484.0" y="307.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#475569" text-anchor="middle">5.000</text>
+
+  <!-- Plain-Language Axis Titles -->
+  <text x="874" y="219" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#334e68" text-anchor="middle" transform="rotate(-90 874 219)">Erro da rede</text>
+  <text x="1484" y="322" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#64748b" text-anchor="end">ciclos de treino →</text>
+
+  <!-- 5 Error Curves -->
+  <path d="M 928.0,153.7 L 928.9,160.9 L 929.8,168.4 L 930.7,176.3 L 931.6,184.7 L 932.4,195.0 L 933.3,206.1 L 934.2,215.8 L 935.1,222.1 L 936.0,225.0 L 936.9,227.4 L 937.8,229.2 L 938.7,230.3 L 939.6,230.6 L 940.5,230.8 L 941.3,230.9 L 944.1,231.2 L 946.9,231.4 L 949.7,231.6 L 952.5,231.7 L 955.2,231.9 L 958.0,232.0 L 960.8,232.1 L 963.6,232.3 L 966.4,232.4 L 969.1,232.4 L 971.9,232.5 L 972.5,232.5 L 978.0,232.7 L 983.6,232.9 L 989.2,233.0 L 994.7,233.1 L 1000.3,233.3 L 1005.8,233.4 L 1011.4,233.5 L 1017.0,233.6 L 1022.5,233.7 L 1028.1,233.8 L 1033.6,233.9 L 1039.2,234.0 L 1044.8,234.1 L 1050.3,234.2 L 1055.9,234.3 L 1061.4,234.3 L 1067.0,234.4 L 1072.6,234.5 L 1078.1,234.5 L 1083.7,234.6 L 1089.2,234.7 L 1094.8,234.8 L 1100.4,234.9 L 1105.9,235.1 L 1111.5,235.2 L 1117.0,235.3 L 1122.6,235.5 L 1128.2,235.7 L 1133.7,235.9 L 1139.3,236.1 L 1144.8,236.3 L 1150.4,236.6 L 1156.0,237.0 L 1161.5,237.3 L 1167.1,237.8 L 1172.6,238.2 L 1178.2,238.7 L 1183.8,239.3 L 1189.3,240.0 L 1194.9,240.8 L 1200.4,241.7 L 1206.0,242.7 L 1211.6,243.7 L 1217.1,244.9 L 1222.7,246.3 L 1228.2,248.0 L 1233.8,249.9 L 1239.4,252.0 L 1244.9,254.1 L 1250.5,256.3 L 1256.0,258.3 L 1261.6,260.2 L 1267.2,262.0 L 1272.7,263.9 L 1278.3,265.8 L 1283.8,267.7 L 1289.4,269.4 L 1295.0,271.0 L 1300.5,272.4 L 1306.1,273.6 L 1311.6,274.5 L 1317.2,275.4 L 1322.8,276.3 L 1328.3,277.1 L 1333.9,277.7 L 1339.4,278.3 L 1345.0,278.8 L 1350.6,279.1 L 1356.1,279.3 L 1361.7,279.5 L 1367.2,279.6 L 1372.8,279.8 L 1378.4,279.9 L 1383.9,280.1 L 1389.5,280.2 L 1395.0,280.2 L 1400.6,280.3 L 1406.2,280.4 L 1411.7,280.4 L 1417.3,280.5 L 1422.8,280.5 L 1428.4,280.6 L 1434.0,280.6 L 1439.5,280.7 L 1445.1,280.7 L 1450.6,280.7 L 1456.2,280.8 L 1461.8,280.8 L 1467.3,280.8 L 1472.9,280.8 L 1478.4,280.8 L 1484.0,280.8" fill="none" stroke="#1f77b4" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 928.0,151.5 L 928.9,160.2 L 929.8,169.0 L 930.7,178.0 L 931.6,187.4 L 932.4,198.9 L 933.3,211.1 L 934.2,221.4 L 935.1,227.4 L 936.0,229.4 L 936.9,230.9 L 937.8,232.0 L 938.7,232.6 L 939.6,232.8 L 940.5,233.0 L 941.3,233.1 L 944.1,233.3 L 946.9,233.5 L 949.7,233.7 L 952.5,233.8 L 955.2,234.0 L 958.0,234.1 L 960.8,234.3 L 963.6,234.4 L 966.4,234.5 L 969.1,234.6 L 971.9,234.8 L 972.5,234.8 L 978.0,235.2 L 983.6,235.6 L 989.2,236.1 L 994.7,236.7 L 1000.3,237.3 L 1005.8,238.0 L 1011.4,238.7 L 1017.0,239.5 L 1022.5,240.4 L 1028.1,241.4 L 1033.6,242.5 L 1039.2,243.6 L 1044.8,244.8 L 1050.3,246.0 L 1055.9,247.2 L 1061.4,248.6 L 1067.0,250.0 L 1072.6,251.5 L 1078.1,253.0 L 1083.7,254.6 L 1089.2,256.1 L 1094.8,257.7 L 1100.4,259.3 L 1105.9,261.1 L 1111.5,262.8 L 1117.0,264.6 L 1122.6,266.3 L 1128.2,267.9 L 1133.7,269.2 L 1139.3,270.5 L 1144.8,271.7 L 1150.4,272.9 L 1156.0,274.0 L 1161.5,274.9 L 1167.1,275.7 L 1172.6,276.2 L 1178.2,276.7 L 1183.8,277.0 L 1189.3,277.3 L 1194.9,277.6 L 1200.4,277.9 L 1206.0,278.1 L 1211.6,278.3 L 1217.1,278.4 L 1222.7,278.6 L 1228.2,278.7 L 1233.8,278.8 L 1239.4,278.9 L 1244.9,279.0 L 1250.5,279.1 L 1256.0,279.2 L 1261.6,279.3 L 1267.2,279.3 L 1272.7,279.4 L 1278.3,279.4 L 1283.8,279.5 L 1289.4,279.5 L 1295.0,279.6 L 1300.5,279.6 L 1306.1,279.6 L 1311.6,279.7 L 1317.2,279.7 L 1322.8,279.7 L 1328.3,279.8 L 1333.9,279.8 L 1339.4,279.8 L 1345.0,279.8 L 1350.6,279.9 L 1356.1,279.9 L 1361.7,279.9 L 1367.2,279.9 L 1372.8,279.9 L 1378.4,279.9 L 1383.9,280.0 L 1389.5,280.0 L 1395.0,280.0 L 1400.6,280.0 L 1406.2,280.0 L 1411.7,280.0 L 1417.3,280.1 L 1422.8,280.1 L 1428.4,280.1 L 1434.0,280.1 L 1439.5,280.1 L 1445.1,280.1 L 1450.6,280.1 L 1456.2,280.1 L 1461.8,280.1 L 1467.3,280.1 L 1472.9,280.1 L 1478.4,280.1 L 1484.0,280.2" fill="none" stroke="#ff7f0e" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 928.0,154.4 L 928.9,162.8 L 929.8,171.4 L 930.7,180.1 L 931.6,189.1 L 932.4,199.9 L 933.3,211.3 L 934.2,221.0 L 935.1,226.7 L 936.0,228.6 L 936.9,230.2 L 937.8,231.3 L 938.7,231.9 L 939.6,232.1 L 940.5,232.2 L 941.3,232.3 L 944.1,232.5 L 946.9,232.7 L 949.7,232.9 L 952.5,233.0 L 955.2,233.0 L 958.0,233.1 L 960.8,233.2 L 963.6,233.3 L 966.4,233.4 L 969.1,233.5 L 971.9,233.6 L 972.5,233.7 L 978.0,233.8 L 983.6,234.0 L 989.2,234.2 L 994.7,234.3 L 1000.3,234.5 L 1005.8,234.7 L 1011.4,234.9 L 1017.0,235.1 L 1022.5,235.3 L 1028.1,235.5 L 1033.6,235.7 L 1039.2,235.9 L 1044.8,236.2 L 1050.3,236.5 L 1055.9,236.9 L 1061.4,237.3 L 1067.0,237.8 L 1072.6,238.3 L 1078.1,238.9 L 1083.7,239.5 L 1089.2,240.1 L 1094.8,240.9 L 1100.4,241.7 L 1105.9,242.6 L 1111.5,243.5 L 1117.0,244.5 L 1122.6,245.5 L 1128.2,246.5 L 1133.7,247.6 L 1139.3,248.7 L 1144.8,249.9 L 1150.4,251.2 L 1156.0,252.4 L 1161.5,253.8 L 1167.1,255.1 L 1172.6,256.4 L 1178.2,257.8 L 1183.8,259.3 L 1189.3,260.8 L 1194.9,262.4 L 1200.4,263.9 L 1206.0,265.4 L 1211.6,266.7 L 1217.1,268.0 L 1222.7,269.1 L 1228.2,270.3 L 1233.8,271.4 L 1239.4,272.5 L 1244.9,273.4 L 1250.5,274.3 L 1256.0,275.1 L 1261.6,275.7 L 1267.2,276.2 L 1272.7,276.7 L 1278.3,277.1 L 1283.8,277.6 L 1289.4,278.0 L 1295.0,278.3 L 1300.5,278.6 L 1306.1,278.9 L 1311.6,279.1 L 1317.2,279.3 L 1322.8,279.4 L 1328.3,279.6 L 1333.9,279.7 L 1339.4,279.8 L 1345.0,279.9 L 1350.6,280.0 L 1356.1,280.1 L 1361.7,280.2 L 1367.2,280.3 L 1372.8,280.4 L 1378.4,280.4 L 1383.9,280.5 L 1389.5,280.6 L 1395.0,280.6 L 1400.6,280.6 L 1406.2,280.7 L 1411.7,280.7 L 1417.3,280.8 L 1422.8,280.8 L 1428.4,280.9 L 1434.0,280.9 L 1439.5,280.9 L 1445.1,281.0 L 1450.6,281.0 L 1456.2,281.0 L 1461.8,281.0 L 1467.3,281.0 L 1472.9,281.1 L 1478.4,281.1 L 1484.0,281.1" fill="none" stroke="#2ca02c" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 928.0,155.0 L 928.9,167.5 L 929.8,179.1 L 930.7,189.6 L 931.6,199.5 L 932.4,209.5 L 933.3,218.3 L 934.2,224.4 L 935.1,227.0 L 936.0,228.8 L 936.9,230.1 L 937.8,231.0 L 938.7,231.4 L 939.6,231.5 L 940.5,231.5 L 941.3,231.6 L 944.1,231.8 L 946.9,232.0 L 949.7,232.1 L 952.5,232.1 L 955.2,232.2 L 958.0,232.3 L 960.8,232.4 L 963.6,232.5 L 966.4,232.6 L 969.1,232.7 L 971.9,232.8 L 972.5,232.8 L 978.0,232.9 L 983.6,233.1 L 989.2,233.2 L 994.7,233.3 L 1000.3,233.5 L 1005.8,233.7 L 1011.4,233.8 L 1017.0,234.0 L 1022.5,234.1 L 1028.1,234.3 L 1033.6,234.5 L 1039.2,234.7 L 1044.8,234.9 L 1050.3,235.2 L 1055.9,235.5 L 1061.4,235.9 L 1067.0,236.3 L 1072.6,236.8 L 1078.1,237.3 L 1083.7,237.9 L 1089.2,238.6 L 1094.8,239.5 L 1100.4,240.6 L 1105.9,241.7 L 1111.5,243.0 L 1117.0,244.3 L 1122.6,245.5 L 1128.2,246.8 L 1133.7,248.0 L 1139.3,249.3 L 1144.8,250.6 L 1150.4,251.9 L 1156.0,253.2 L 1161.5,254.6 L 1167.1,256.0 L 1172.6,257.4 L 1178.2,258.8 L 1183.8,260.4 L 1189.3,262.0 L 1194.9,263.6 L 1200.4,265.2 L 1206.0,266.7 L 1211.6,268.2 L 1217.1,269.5 L 1222.7,270.8 L 1228.2,272.1 L 1233.8,273.4 L 1239.4,274.7 L 1244.9,275.8 L 1250.5,276.8 L 1256.0,277.6 L 1261.6,278.2 L 1267.2,278.7 L 1272.7,279.1 L 1278.3,279.4 L 1283.8,279.8 L 1289.4,280.1 L 1295.0,280.3 L 1300.5,280.6 L 1306.1,280.8 L 1311.6,280.9 L 1317.2,281.1 L 1322.8,281.2 L 1328.3,281.3 L 1333.9,281.4 L 1339.4,281.4 L 1345.0,281.5 L 1350.6,281.6 L 1356.1,281.7 L 1361.7,281.7 L 1367.2,281.8 L 1372.8,281.8 L 1378.4,281.9 L 1383.9,281.9 L 1389.5,282.0 L 1395.0,282.0 L 1400.6,282.0 L 1406.2,282.1 L 1411.7,282.1 L 1417.3,282.2 L 1422.8,282.2 L 1428.4,282.2 L 1434.0,282.3 L 1439.5,282.3 L 1445.1,282.3 L 1450.6,282.4 L 1456.2,282.4 L 1461.8,282.4 L 1467.3,282.4 L 1472.9,282.5 L 1478.4,282.5 L 1484.0,282.5" fill="none" stroke="#9467bd" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 928.0,155.3 L 928.9,160.6 L 929.8,166.9 L 930.7,174.0 L 931.6,182.6 L 932.4,192.9 L 933.3,203.1 L 934.2,211.3 L 935.1,218.4 L 936.0,225.0 L 936.9,229.6 L 937.8,231.1 L 938.7,231.7 L 939.6,232.1 L 940.5,232.4 L 941.3,232.5 L 944.1,232.8 L 946.9,233.0 L 949.7,233.2 L 952.5,233.3 L 955.2,233.4 L 958.0,233.5 L 960.8,233.6 L 963.6,233.7 L 966.4,233.8 L 969.1,233.9 L 971.9,234.0 L 972.5,234.0 L 978.0,234.2 L 983.6,234.4 L 989.2,234.6 L 994.7,234.8 L 1000.3,235.0 L 1005.8,235.2 L 1011.4,235.4 L 1017.0,235.6 L 1022.5,235.8 L 1028.1,236.0 L 1033.6,236.3 L 1039.2,236.6 L 1044.8,237.0 L 1050.3,237.4 L 1055.9,237.9 L 1061.4,238.5 L 1067.0,239.2 L 1072.6,240.0 L 1078.1,240.8 L 1083.7,241.7 L 1089.2,242.7 L 1094.8,243.9 L 1100.4,245.2 L 1105.9,246.6 L 1111.5,248.2 L 1117.0,249.7 L 1122.6,251.3 L 1128.2,252.9 L 1133.7,254.5 L 1139.3,256.2 L 1144.8,258.0 L 1150.4,259.8 L 1156.0,261.7 L 1161.5,263.4 L 1167.1,265.1 L 1172.6,266.7 L 1178.2,268.1 L 1183.8,269.6 L 1189.3,271.0 L 1194.9,272.4 L 1200.4,273.7 L 1206.0,274.8 L 1211.6,275.9 L 1217.1,276.8 L 1222.7,277.6 L 1228.2,278.4 L 1233.8,279.1 L 1239.4,279.8 L 1244.9,280.4 L 1250.5,281.0 L 1256.0,281.4 L 1261.6,281.8 L 1267.2,282.1 L 1272.7,282.3 L 1278.3,282.6 L 1283.8,282.8 L 1289.4,283.0 L 1295.0,283.2 L 1300.5,283.3 L 1306.1,283.5 L 1311.6,283.6 L 1317.2,283.8 L 1322.8,283.9 L 1328.3,284.0 L 1333.9,284.1 L 1339.4,284.2 L 1345.0,284.4 L 1350.6,284.5 L 1356.1,284.6 L 1361.7,284.7 L 1367.2,284.7 L 1372.8,284.8 L 1378.4,284.9 L 1383.9,285.0 L 1389.5,285.0 L 1395.0,285.1 L 1400.6,285.1 L 1406.2,285.2 L 1411.7,285.2 L 1417.3,285.3 L 1422.8,285.3 L 1428.4,285.4 L 1434.0,285.4 L 1439.5,285.5 L 1445.1,285.5 L 1450.6,285.5 L 1456.2,285.6 L 1461.8,285.6 L 1467.3,285.6 L 1472.9,285.6 L 1478.4,285.6 L 1484.0,285.6" fill="none" stroke="#d62728" stroke-width="2.65" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Plain-Language Annotations -->
+  <line x1="1022.5" y1="230.1" x2="1048.5" y2="208.1" stroke="#64748b" stroke-width="1.2"/>
+  <circle cx="1022.5" cy="233.1" r="3" fill="#475569"/>
+  <rect x="1032.5" y="187.1" width="184" height="21" rx="10.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.1"/>
+  <text x="1124.5" y="201.6" font-family="Arial, sans-serif" font-size="10.2" font-weight="bold" fill="#334e68" text-anchor="middle">Trecho de queda mais lenta</text>
+
+  <circle cx="1484.0" cy="285.6" r="4.2" fill="#d62728" stroke="#ffffff" stroke-width="1.4"/>
+  <line x1="1481.0" y1="282.6" x2="1450.0" y2="250.6" stroke="#b91c1c" stroke-width="1.3"/>
+  <rect x="1288.0" y="229.6" width="184" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.3"/>
+  <text x="1380.0" y="244.6" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#065f46" text-anchor="middle">Menor erro: T4 (0,000086)</text>
+
+  <!-- Middle Box: Clean 4-Column Explanatory Table -->
+  <rect x="860" y="342" width="644" height="228" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <g clip-path="url(#clip-table-box)">
+    <rect x="860" y="342" width="102" height="48" fill="#f1f5f9"/>
+    <rect x="962" y="342" width="180" height="48" fill="#f8fafc"/>
+    <rect x="1142" y="342" width="224" height="48" fill="#e0f2fe"/>
+    <rect x="1366" y="342" width="138" height="48" fill="#ecfdf5"/>
+
+    <rect x="1142" y="390" width="224" height="36" fill="#f7fcff"/>
+    <rect x="881" y="396.0" width="60" height="24" rx="6" fill="#e2e8f0"/>
+    <circle cx="894" cy="408.0" r="4.5" fill="#1f77b4"/>
+    <text x="918" y="412.5" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1e293b" text-anchor="middle">T1</text>
+    <text x="1052" y="413.0" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#1e293b" text-anchor="middle">0,000105</text>
+    <text x="1254" y="413.0" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0f172a" text-anchor="middle">1,86%</text>
+    <rect x="1399" y="395.5" width="72" height="25" rx="12.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="1435" y="412.5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155" text-anchor="middle">5.000</text>
+    <rect x="860" y="426" width="644" height="36" fill="#f8fafc"/>
+    <rect x="1142" y="426" width="224" height="36" fill="#f0f9ff"/>
+    <line x1="860" y1="426" x2="1504" y2="426" stroke="#e2e8f0" stroke-width="1.15"/>
+    <rect x="881" y="432.0" width="60" height="24" rx="6" fill="#e2e8f0"/>
+    <circle cx="894" cy="444.0" r="4.5" fill="#ff7f0e"/>
+    <text x="918" y="448.5" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1e293b" text-anchor="middle">T2</text>
+    <text x="1052" y="449.0" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#1e293b" text-anchor="middle">0,000108</text>
+    <text x="1254" y="449.0" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0f172a" text-anchor="middle">1,79%</text>
+    <rect x="1399" y="431.5" width="72" height="25" rx="12.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="1435" y="448.5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155" text-anchor="middle">5.000</text>
+    <rect x="1142" y="462" width="224" height="36" fill="#f7fcff"/>
+    <line x1="860" y1="462" x2="1504" y2="462" stroke="#e2e8f0" stroke-width="1.15"/>
+    <rect x="881" y="468.0" width="60" height="24" rx="6" fill="#e2e8f0"/>
+    <circle cx="894" cy="480.0" r="4.5" fill="#2ca02c"/>
+    <text x="918" y="484.5" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1e293b" text-anchor="middle">T3</text>
+    <text x="1052" y="485.0" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#1e293b" text-anchor="middle">0,000104</text>
+    <text x="1254" y="485.0" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0f172a" text-anchor="middle">1,88%</text>
+    <rect x="1399" y="467.5" width="72" height="25" rx="12.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="1435" y="484.5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155" text-anchor="middle">5.000</text>
+    <rect x="860" y="498" width="644" height="36" fill="#ecfdf5"/>
+    <rect x="860" y="498" width="5" height="36" fill="#10b981"/>
+    <line x1="860" y1="498" x2="1504" y2="498" stroke="#a7f3d0" stroke-width="1.15"/>
+    <rect x="881" y="504.0" width="60" height="24" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.2"/>
+    <circle cx="894" cy="516.0" r="4.5" fill="#d62728"/>
+    <text x="918" y="520.5" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1e293b" text-anchor="middle">T4</text>
+    <text x="1052" y="521.0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#065f46" text-anchor="middle">0,000086</text>
+    <rect x="1182" y="503.5" width="144" height="25" rx="12.5" fill="#10b981" stroke="#059669" stroke-width="1.2"/>
+    <text x="1254" y="520.5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1,59% ★ Melhor</text>
+    <rect x="1399" y="503.5" width="72" height="25" rx="12.5" fill="#dcfce7" stroke="#86efac" stroke-width="1.2"/>
+    <text x="1435" y="520.5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#166534" text-anchor="middle">5.000</text>
+    <rect x="1142" y="534" width="224" height="36" fill="#f7fcff"/>
+    <line x1="860" y1="534" x2="1504" y2="534" stroke="#a7f3d0" stroke-width="1.15"/>
+    <rect x="881" y="540.0" width="60" height="24" rx="6" fill="#e2e8f0"/>
+    <circle cx="894" cy="552.0" r="4.5" fill="#9467bd"/>
+    <text x="918" y="556.5" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1e293b" text-anchor="middle">T5</text>
+    <text x="1052" y="557.0" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#1e293b" text-anchor="middle">0,000098</text>
+    <text x="1254" y="557.0" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0f172a" text-anchor="middle">1,74%</text>
+    <rect x="1399" y="539.5" width="72" height="25" rx="12.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="1435" y="556.5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#334155" text-anchor="middle">5.000</text>
+  </g>
+
+  <!-- Table Dividers & Two-Line Self-Explanatory Headers -->
+  <line x1="860" y1="390" x2="1504" y2="390" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="962" y1="342" x2="962" y2="570" stroke="#cbd5e1" stroke-width="1.2"/>
+  <line x1="1142" y1="342" x2="1142" y2="570" stroke="#93c5fd" stroke-width="1.3"/>
+  <line x1="1366" y1="342" x2="1366" y2="570" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="860" y="342" width="644" height="228" rx="12" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <text x="911" y="362" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334e68" text-anchor="middle">Tentativa</text>
+  <text x="911" y="378" font-family="Arial, sans-serif" font-size="9.8" fill="#64748b" text-anchor="middle">Partida aleatória</text>
+
+  <text x="1052" y="362" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#334e68" text-anchor="middle">Erro Final no Treino</text>
+  <text x="1052" y="378" font-family="Arial, sans-serif" font-size="9.8" fill="#64748b" text-anchor="middle">Diferença p/ o valor real</text>
+
+  <text x="1254" y="362" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0c4a6e" text-anchor="middle">Erro em Novos Exames</text>
+  <text x="1254" y="378" font-family="Arial, sans-serif" font-size="9.8" fill="#0369a1" text-anchor="middle">Média em 20 testes (%)</text>
+
+  <text x="1435" y="362" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#065f46" text-anchor="middle">Ciclos de Treino</text>
+  <text x="1435" y="378" font-family="Arial, sans-serif" font-size="9.8" fill="#047857" text-anchor="middle">Repetições feitas</text>
+
+  <!-- Bottom 3 Summary Cards (Plain Spoken Portuguese) -->
+  <rect x="860.0" y="584" width="205.3" height="60" rx="12" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.5"/>
+  <text x="962.7" y="606" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#0f766e" text-anchor="middle" letter-spacing="0.3">MELHOR TREINO (T4)</text>
+  <text x="962.7" y="629" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#102a43" text-anchor="middle">Menor erro: 0,000086</text>
+
+  <rect x="1079.3" y="584" width="205.3" height="60" rx="12" fill="#f0f7ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="1182.0" y="606" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1e5799" text-anchor="middle" letter-spacing="0.3">ERRO EM NOVOS EXAMES</text>
+  <text x="1182.0" y="629" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#102a43" text-anchor="middle">Apenas 1,59% em média</text>
+
+  <rect x="1298.7" y="584" width="205.3" height="60" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="1401.3" y="606" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#15803d" text-anchor="middle" letter-spacing="0.3">CONSISTÊNCIA (T1 A T5)</text>
+  <text x="1401.3" y="629" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#102a43" text-anchor="middle">Erro sempre &lt; 1,9%</text>
+</svg>
